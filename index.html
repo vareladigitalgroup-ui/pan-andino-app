@@ -1,0 +1,879 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Pan Andino — La Biblia del Pan Gocho</title>
+</head>
+<body>
+
+<style>
+/* ============ TOKENS · Artesanal cálido (Táchira) ============ */
+:root{
+  --paper:#FBF4E9; --paper-2:#F5EAD8; --surface:#FFFDF8; --surface-2:#FBF3E5;
+  --ink:#2A211A; --ink-soft:#5C4A3A; --muted:#8C7B66;
+  --line:#EADCC4; --line-strong:#DAC6A8;
+  --ember:#B4531F; --ember-deep:#8F3E12; --ember-tint:#F4E1D3;
+  --gold:#CE9026; --gold-deep:#A9760F; --gold-tint:#F7E9C9;
+  --green:#2F7A4E; --green-tint:#DEEBE0;
+  --guava:#C0392B; --guava-tint:#F6DBD6;
+  --shadow-sm:0 1px 2px rgba(42,33,26,.06), 0 4px 12px rgba(42,33,26,.06);
+  --shadow:0 2px 6px rgba(42,33,26,.07), 0 14px 34px rgba(42,33,26,.12);
+  --radius:20px; --radius-sm:13px; --radius-xs:9px;
+  --font-display:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
+  --font-body:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-mono:ui-monospace,"Cascadia Code","Segoe UI Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#16110D; --paper-2:#1D1712; --surface:#231B15; --surface-2:#2B2119;
+    --ink:#F4E8D6; --ink-soft:#D9C8B2; --muted:#A2907A;
+    --line:#392D23; --line-strong:#4B3B2D;
+    --ember:#E27C3E; --ember-deep:#C25E22; --ember-tint:#3A2418;
+    --gold:#E8B454; --gold-deep:#C9922E; --gold-tint:#372B15;
+    --green:#5CB080; --green-tint:#1D2C22;
+    --guava:#E36F5F; --guava-tint:#33201C;
+    --shadow-sm:0 1px 2px rgba(0,0,0,.34), 0 4px 12px rgba(0,0,0,.30);
+    --shadow:0 2px 6px rgba(0,0,0,.4), 0 16px 38px rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="light"]{
+  --paper:#FBF4E9; --paper-2:#F5EAD8; --surface:#FFFDF8; --surface-2:#FBF3E5;
+  --ink:#2A211A; --ink-soft:#5C4A3A; --muted:#8C7B66;
+  --line:#EADCC4; --line-strong:#DAC6A8;
+  --ember:#B4531F; --ember-deep:#8F3E12; --ember-tint:#F4E1D3;
+  --gold:#CE9026; --gold-deep:#A9760F; --gold-tint:#F7E9C9;
+  --green:#2F7A4E; --green-tint:#DEEBE0; --guava:#C0392B; --guava-tint:#F6DBD6;
+  --shadow-sm:0 1px 2px rgba(42,33,26,.06), 0 4px 12px rgba(42,33,26,.06);
+  --shadow:0 2px 6px rgba(42,33,26,.07), 0 14px 34px rgba(42,33,26,.12);
+}
+:root[data-theme="dark"]{
+  --paper:#16110D; --paper-2:#1D1712; --surface:#231B15; --surface-2:#2B2119;
+  --ink:#F4E8D6; --ink-soft:#D9C8B2; --muted:#A2907A;
+  --line:#392D23; --line-strong:#4B3B2D;
+  --ember:#E27C3E; --ember-deep:#C25E22; --ember-tint:#3A2418;
+  --gold:#E8B454; --gold-deep:#C9922E; --gold-tint:#372B15;
+  --green:#5CB080; --green-tint:#1D2C22; --guava:#E36F5F; --guava-tint:#33201C;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.34), 0 4px 12px rgba(0,0,0,.30);
+  --shadow:0 2px 6px rgba(0,0,0,.4), 0 16px 38px rgba(0,0,0,.5);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--font-body); color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden;}
+.stage{min-height:100vh; min-height:100dvh; display:flex; align-items:center; justify-content:center; padding:0;
+  background:radial-gradient(120% 80% at 50% -10%, rgba(206,144,38,.16), transparent 60%),
+    radial-gradient(90% 70% at 100% 110%, rgba(180,83,31,.14), transparent 60%), var(--paper);}
+.device{position:relative; width:100%; max-width:none; height:100dvh; overflow:hidden; background:var(--paper); display:flex; flex-direction:column;}
+@media(min-width:600px){
+  .stage{padding:28px}
+  .device{max-width:410px; height:min(880px,94dvh); border-radius:46px;
+    box-shadow:0 0 0 11px #17130f, 0 0 0 13px #2a2320, var(--shadow); outline:1px solid rgba(0,0,0,.2);}
+}
+.device::after{content:""; position:absolute; inset:0; pointer-events:none; z-index:60; opacity:.5; mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/></svg>");}
+@media (prefers-color-scheme:dark){ .device::after{mix-blend-mode:screen; opacity:.35} }
+:root[data-theme="dark"] .device::after{mix-blend-mode:screen; opacity:.35}
+.watermark{position:absolute; inset:0; z-index:55; pointer-events:none; overflow:hidden; opacity:.05}
+.watermark div{position:absolute; white-space:nowrap; font-family:var(--font-mono); font-size:11px; color:var(--ink); transform:rotate(-30deg); letter-spacing:2px;}
+.viewport{flex:1; overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch; scroll-behavior:smooth}
+.viewport::-webkit-scrollbar{width:0}
+.screen{display:none; padding:0 0 108px}
+.screen.active{display:block; animation:fade .34s ease both}
+@keyframes fade{from{opacity:0; transform:translateY(6px)}to{opacity:1; transform:none}}
+.appbar{position:sticky; top:0; z-index:40; display:flex; align-items:center; gap:11px; padding:14px 17px 12px;
+  background:color-mix(in srgb,var(--paper) 86%, transparent); backdrop-filter:blur(12px) saturate(1.1); border-bottom:1px solid var(--line);}
+.brand{display:flex; align-items:center; gap:9px; margin-right:auto}
+.mark{width:34px;height:34px;flex:none;border-radius:11px;display:grid;place-items:center;background:linear-gradient(150deg,var(--ember),var(--ember-deep)); box-shadow:var(--shadow-sm)}
+.mark svg{width:20px;height:20px}
+.brand b{font-family:var(--font-display); font-weight:700; font-size:16px; letter-spacing:.2px; line-height:1}
+.brand small{display:block; font-size:9.5px; letter-spacing:2.4px; text-transform:uppercase; color:var(--gold-deep); margin-top:2px}
+.userchip{display:flex; align-items:center; gap:7px; padding:5px 6px 5px 5px; border:1px solid var(--line-strong); border-radius:100px; background:var(--surface); box-shadow:var(--shadow-sm); cursor:pointer}
+.avatar{width:26px;height:26px;border-radius:50%;flex:none;display:grid;place-items:center;color:#fff;font-weight:700;font-size:12px;background:linear-gradient(150deg,var(--gold),var(--gold-deep))}
+.userchip span{font-size:12px;font-weight:600;max-width:78px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-right:3px}
+.h1{font-family:var(--font-display); font-weight:700; font-size:26px; line-height:1.08; letter-spacing:.2px; text-wrap:balance; margin:0}
+.h2{font-family:var(--font-display); font-weight:700; font-size:20px; line-height:1.15; margin:0}
+.eyebrow{font-size:10.5px; letter-spacing:2.6px; text-transform:uppercase; color:var(--gold-deep); font-weight:700; margin:0}
+.lead{color:var(--ink-soft); font-size:14px; line-height:1.5; margin:0}
+.section{padding:20px 17px 4px}
+.section-h{display:flex; align-items:end; justify-content:space-between; gap:10px; margin-bottom:13px}
+.section-h a{font-size:12px;color:var(--ember);font-weight:700;text-decoration:none;cursor:pointer}
+.hero{position:relative; margin:14px 15px 4px; border-radius:26px; overflow:hidden; box-shadow:var(--shadow); isolation:isolate}
+.hero-photo{position:relative; height:290px;
+  background:radial-gradient(90% 60% at 30% 22%, rgba(255,229,168,.55), transparent 55%),
+    radial-gradient(120% 90% at 75% 85%, #6b2f10, transparent 60%),
+    linear-gradient(155deg,#e6a54b 0%, #c9721f 42%, #93481a 74%, #5f2f14 100%);}
+.hero-photo::before{content:""; position:absolute; inset:0; opacity:.5; mix-blend-mode:overlay;
+  background-image:radial-gradient(rgba(60,25,5,.5) 1px, transparent 1.4px), radial-gradient(rgba(255,220,160,.5) .8px, transparent 1.2px);
+  background-size:11px 11px, 7px 7px; background-position:0 0, 4px 6px;}
+.hero-photo::after{content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(24,14,7,.82) 2%, rgba(24,14,7,.28) 34%, transparent 62%)}
+.steam{position:absolute; top:-8px; left:0; right:0; height:150px; z-index:1; pointer-events:none}
+.steam i{position:absolute; bottom:0; width:60px; height:100px; border-radius:50%; background:radial-gradient(circle,rgba(255,255,255,.5),transparent 70%); filter:blur(9px); opacity:0; animation:steam 6s ease-in-out infinite}
+.steam i:nth-child(1){left:24%; animation-delay:.2s}
+.steam i:nth-child(2){left:44%; animation-delay:1.9s; transform:scale(1.25)}
+.steam i:nth-child(3){left:64%; animation-delay:3.4s}
+@keyframes steam{0%{opacity:0;transform:translateY(18px) scale(.8)}25%{opacity:.7}70%{opacity:.25}100%{opacity:0;transform:translateY(-56px) scale(1.5)}}
+.hero-copy{position:absolute; left:0; right:0; bottom:0; padding:18px 18px 17px; z-index:2; color:#fff}
+.hero-copy .eyebrow{color:#ffd98a}
+.hero-copy h2{font-family:var(--font-display);font-weight:700;font-size:25px;line-height:1.05;margin:5px 0 0;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;margin-top:11px;padding:7px 12px;border-radius:100px;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:12px;font-weight:600}
+.tv-card{display:flex;align-items:center;gap:15px;margin:14px 15px 2px;padding:15px 16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm);cursor:pointer}
+.ring{position:relative;width:62px;height:62px;flex:none}
+.ring svg{transform:rotate(-90deg)}
+.ring .val{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--font-mono);font-weight:700;font-size:16px;color:var(--ember);font-variant-numeric:tabular-nums}
+.tv-card .info b{font-family:var(--font-display);font-size:16px;display:block}
+.tv-card .info p{margin:2px 0 0;color:var(--muted);font-size:12.5px;line-height:1.4}
+.tv-card .info .go{color:var(--ember);font-weight:700;font-size:12px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:16px 15px 2px}
+.tile{position:relative;padding:15px 14px;border-radius:var(--radius-sm);border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow-sm);cursor:pointer;overflow:hidden;transition:transform .16s ease}
+.tile:active{transform:scale(.975)}
+.tile .ic{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;margin-bottom:10px}
+.tile .ic svg{width:21px;height:21px}
+.tile b{font-family:var(--font-display);font-size:15.5px;font-weight:700;display:block}
+.tile small{color:var(--muted);font-size:11.5px;display:block;margin-top:2px;line-height:1.35}
+.ic.ember{background:var(--ember-tint);color:var(--ember)}
+.ic.gold{background:var(--gold-tint);color:var(--gold-deep)}
+.ic.green{background:var(--green-tint);color:var(--green)}
+.ic.guava{background:var(--guava-tint);color:var(--guava)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm)}
+.note{display:flex;gap:9px;align-items:flex-start;margin:14px 15px 0;padding:10px 13px;border-radius:var(--radius-xs);background:var(--gold-tint);border:1px solid var(--line-strong);color:var(--ink-soft);font-size:11.5px;line-height:1.45}
+.note b{color:var(--gold-deep)}
+.cont{display:flex;gap:13px;align-items:center;margin:0 15px;padding:13px;border-radius:var(--radius-sm);background:linear-gradient(120deg,var(--ember-tint),var(--surface));border:1px solid var(--line);box-shadow:var(--shadow-sm);cursor:pointer}
+.cont .thumb{width:52px;height:52px;border-radius:11px;flex:none;display:grid;place-items:center;font-size:28px;background:linear-gradient(150deg,#d9862f,#8f451a)}
+.cont b{font-size:14px;font-family:var(--font-display)}
+.cont p{margin:2px 0 0;font-size:12px;color:var(--muted)}
+.bar{height:6px;border-radius:100px;background:var(--line);overflow:hidden;margin-top:7px}
+.bar i{display:block;height:100%;border-radius:100px;background:linear-gradient(90deg,var(--gold),var(--ember))}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 15px 14px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:8px 14px;border-radius:100px;border:1px solid var(--line-strong);background:var(--surface);font-size:12.5px;font-weight:600;color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.rlist{display:flex;flex-direction:column;gap:12px;padding:0 15px}
+.recipe{display:flex;gap:13px;padding:11px;border-radius:var(--radius-sm);border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow-sm);cursor:pointer;transition:transform .15s}
+.recipe:active{transform:scale(.99)}
+.recipe .rimg{width:78px;height:78px;flex:none;border-radius:12px;position:relative;overflow:hidden;background:linear-gradient(150deg,#e6a54b,#93481a)}
+.recipe .rimg span{position:absolute;inset:0;display:grid;place-items:center;font-size:30px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
+.recipe .rbody{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.recipe .rbody b{font-family:var(--font-display);font-size:16px;line-height:1.12}
+.recipe .rbody p{margin:3px 0 0;font-size:12px;color:var(--muted)}
+.meta{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.pill{font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:100px;background:var(--paper-2);color:var(--ink-soft);letter-spacing:.3px}
+.pill.g{background:var(--green-tint);color:var(--green)}
+.pill.a{background:var(--gold-tint);color:var(--gold-deep)}
+.sheet{position:absolute;inset:0;z-index:70;background:var(--paper);display:flex;flex-direction:column;transform:translateY(100%);transition:transform .38s cubic-bezier(.4,0,.2,1);visibility:hidden}
+.sheet.open{transform:none;visibility:visible}
+.sheet-hd{position:relative;height:210px;flex:none;background:linear-gradient(155deg,#e6a54b,#c9721f 46%,#7c3c16);color:#fff}
+.sheet-hd::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,11,5,.8),transparent 60%)}
+.sheet-hd .emoji{position:absolute;top:50%;left:50%;transform:translate(-50%,-58%);font-size:74px;filter:drop-shadow(0 6px 12px rgba(0,0,0,.35))}
+.sheet-back{position:absolute;top:14px;left:14px;z-index:3;width:38px;height:38px;border-radius:50%;border:none;background:rgba(255,255,255,.9);color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow-sm)}
+.sheet-title{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;z-index:2}
+.sheet-title h2{font-family:var(--font-display);font-size:23px;margin:0;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+.sheet-title .meta{margin-top:8px}
+.sheet-title .pill{background:rgba(255,255,255,.2);color:#fff}
+.sheet-body{flex:1;overflow-y:auto;padding:18px 17px 40px}
+.tabsm{display:flex;gap:6px;background:var(--paper-2);padding:4px;border-radius:100px;margin-bottom:16px}
+.tabsm button{flex:1;border:none;background:none;padding:8px;border-radius:100px;font-size:12.5px;font-weight:700;color:var(--muted);cursor:pointer}
+.tabsm button.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-sm)}
+.grouplbl{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ember);font-weight:800;margin:16px 0 6px;display:flex;align-items:center;gap:7px}
+.grouplbl:first-child{margin-top:2px}
+.ingrow{display:flex;justify-content:space-between;gap:12px;padding:10px 2px;border-bottom:1px dashed var(--line)}
+.ingrow span:first-child{font-size:13.5px}
+.ingrow .q{font-family:var(--font-mono);font-weight:700;color:var(--ember);font-variant-numeric:tabular-nums;white-space:nowrap}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px}
+.steps li{position:relative;padding-left:42px;font-size:14px;line-height:1.5;color:var(--ink-soft)}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-2px;width:29px;height:29px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-weight:700;font-size:14px;color:#fff;background:linear-gradient(150deg,var(--ember),var(--ember-deep))}
+.callout{margin-top:16px;padding:12px 14px;border-radius:var(--radius-xs);background:var(--ember-tint);border-left:3px solid var(--ember);font-size:13px;line-height:1.5;color:var(--ink)}
+.callout+.callout{margin-top:9px}
+.tv-hero{margin:14px 15px 0;padding:18px;border-radius:var(--radius);color:#fff;position:relative;overflow:hidden;background:linear-gradient(150deg,#7a4a2a,#4d2c17)}
+.tv-hero .eyebrow{color:#f2c98a}
+.tv-hero h2{font-family:var(--font-display);font-size:23px;margin:6px 0 6px}
+.tv-hero p{margin:0;font-size:13px;line-height:1.5;color:rgba(255,255,255,.86)}
+.seg{display:flex;gap:6px;margin:14px 15px 0;background:var(--paper-2);padding:4px;border-radius:100px}
+.seg button{flex:1;border:none;background:none;padding:9px;border-radius:100px;font-size:12.5px;font-weight:700;color:var(--muted);cursor:pointer}
+.seg button.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-sm)}
+.daybar{display:flex;gap:7px;overflow-x:auto;padding:14px 15px 6px;scrollbar-width:none}
+.daybar::-webkit-scrollbar{display:none}
+.day{flex:none;min-width:62px;height:64px;padding:0 10px;border-radius:14px;border:1px solid var(--line-strong);background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;color:var(--ink-soft)}
+.day small{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.day b{font-family:var(--font-mono);font-size:19px;font-weight:700}
+.day.on{background:linear-gradient(150deg,var(--ember),var(--ember-deep));color:#fff;border-color:transparent;box-shadow:var(--shadow)}
+.day.on small{color:rgba(255,255,255,.8)}
+.day.done{background:var(--green-tint);border-color:var(--green-tint);color:var(--green)}
+.dayview{margin:8px 15px 0;padding:17px;border-radius:var(--radius-sm);background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.dayview h3{font-family:var(--font-display);font-size:18px;margin:0 0 3px}
+.dayview .todo{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.dayview .todo li{display:flex;gap:10px;font-size:13.5px;line-height:1.45;color:var(--ink-soft)}
+.dayview .todo li svg{flex:none;margin-top:2px;color:var(--green)}
+.senses{display:flex;gap:9px;margin-top:14px}
+.sense{flex:1;padding:11px 8px;border-radius:var(--radius-xs);background:var(--paper-2);text-align:center}
+.sense small{display:block;font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.sense span{font-size:11.5px;font-weight:600;line-height:1.3}
+.alert{margin-top:13px;padding:11px 13px;border-radius:var(--radius-xs);background:var(--guava-tint);border-left:3px solid var(--guava);font-size:12.5px;color:var(--ink);line-height:1.45}
+.ready{margin:16px 15px 0;padding:16px;border-radius:var(--radius-sm);background:linear-gradient(150deg,var(--green-tint),var(--surface));border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.ready h3{font-family:var(--font-display);font-size:17px;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.ready ul{margin:0;padding-left:18px;font-size:13px;line-height:1.6;color:var(--ink-soft)}
+.ready .float{margin-top:12px;padding:12px;border-radius:var(--radius-xs);background:var(--surface);border:1px dashed var(--green);font-size:12.5px;line-height:1.45}
+.ready .float b{color:var(--green)}
+.rules{margin:0 15px;display:flex;flex-direction:column;gap:8px}
+.rule{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:var(--radius-sm);background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.rule .n{width:24px;height:24px;flex:none;border-radius:50%;background:var(--ember-tint);color:var(--ember);display:grid;place-items:center;font-family:var(--font-mono);font-weight:700;font-size:13px}
+.rule p{margin:0;font-size:13px;line-height:1.45}
+.rule p b{color:var(--ink)}
+.acc{margin:0 15px;display:flex;flex-direction:column;gap:9px}
+.acc details{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow-sm)}
+.acc summary{list-style:none;padding:14px 15px;font-weight:700;font-size:13.5px;cursor:pointer;display:flex;align-items:center;gap:10px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .dot{width:9px;height:9px;border-radius:50%;background:var(--guava);flex:none}
+.acc summary .chev{margin-left:auto;transition:transform .2s;color:var(--muted);flex:none}
+.acc details[open] summary .chev{transform:rotate(180deg)}
+.acc .inner{padding:0 15px 15px;font-size:13px;line-height:1.55;color:var(--ink-soft)}
+.acc .inner b{color:var(--ink)}
+.calc-tabs{display:flex;gap:7px;padding:2px 15px 14px}
+.calc-tabs button{flex:1;padding:12px 6px;border-radius:14px;border:1px solid var(--line);background:var(--surface);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--muted)}
+.calc-tabs button svg{width:20px;height:20px}
+.calc-tabs button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.calc-tabs button.on svg{color:var(--gold)}
+.calc{display:none;padding:0 15px}
+.calc.on{display:block;animation:fade .3s ease both}
+.field{margin-bottom:15px}
+.field label{display:flex;justify-content:space-between;align-items:baseline;font-size:12.5px;font-weight:700;margin-bottom:8px;color:var(--ink-soft)}
+.field label .v{font-family:var(--font-mono);font-size:15px;color:var(--ember);font-variant-numeric:tabular-nums}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:100px;background:var(--line-strong);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;cursor:pointer;background:linear-gradient(150deg,var(--ember),var(--ember-deep));box-shadow:0 2px 6px rgba(143,62,18,.5);border:3px solid var(--surface)}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;border:3px solid var(--surface);background:var(--ember);cursor:pointer}
+.selectwrap{position:relative}
+.selectwrap svg{position:absolute;right:13px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted)}
+select,input[type=number],input[type=text],input[type=email]{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);font-family:var(--font-body);font-size:15px;font-weight:600;-webkit-appearance:none;appearance:none;outline:none}
+select:focus,input:focus{border-color:var(--ember);box-shadow:0 0 0 3px var(--ember-tint)}
+.money{position:relative}
+.money .sym{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700;font-size:14px}
+.money input{padding-left:34px;font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.subhead{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:700;margin:6px 0 11px}
+.result{margin-top:6px;padding:18px;border-radius:var(--radius);color:#fff;position:relative;overflow:hidden;background:linear-gradient(150deg,var(--ember),var(--ember-deep));box-shadow:var(--shadow)}
+.result.green{background:linear-gradient(150deg,#2f7a4e,#1f5637)}
+.result .rlbl{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:.85;font-weight:700}
+.result .big{font-family:var(--font-mono);font-weight:700;font-size:38px;line-height:1;margin:6px 0 2px;font-variant-numeric:tabular-nums}
+.result .sub{font-size:12.5px;opacity:.9}
+.res-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.res-row .box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:13px}
+.res-row .box small{font-size:10.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);font-weight:700;display:block;margin-bottom:4px}
+.res-row .box b{font-family:var(--font-mono);font-size:19px;color:var(--ink);font-variant-numeric:tabular-nums}
+.res-row .box b.q{color:var(--ember)}
+.res-row .box b.gr{color:var(--green)}
+.ing-out .ingrow .q{color:var(--gold-deep)}
+.advtoggle{background:none;border:none;color:var(--ember);font-weight:700;font-size:12.5px;cursor:pointer;padding:6px 0;display:flex;align-items:center;gap:6px}
+.adv{display:none;padding:14px;background:var(--paper-2);border-radius:var(--radius-sm);margin-bottom:15px}
+.adv.on{display:block}
+.blist{display:flex;flex-direction:column;gap:10px;padding:0 15px}
+.brow{display:flex;align-items:center;gap:13px;padding:13px;border-radius:var(--radius-sm);border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow-sm);cursor:pointer}
+.brow .bic{width:40px;height:40px;border-radius:11px;flex:none;display:grid;place-items:center;background:var(--gold-tint);color:var(--gold-deep);font-size:18px}
+.brow b{font-size:14px;font-family:var(--font-display)}
+.brow p{margin:2px 0 0;font-size:11.5px;color:var(--muted)}
+.brow .chev{margin-left:auto;color:var(--muted)}
+.upsell{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:0 15px}
+.up{position:relative;border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow-sm)}
+.up .uimg{height:88px;background:linear-gradient(150deg,#b98a53,#5f4326);display:grid;place-items:center;font-size:34px;filter:grayscale(.25)}
+.up .ubody{padding:11px 12px 13px}
+.up b{font-size:13px;font-family:var(--font-display);line-height:1.1;display:block}
+.up small{font-size:11px;color:var(--muted);display:block;margin-top:3px}
+.up .lockbadge{position:absolute;top:8px;right:8px;background:rgba(20,12,6,.72);color:#fff;font-size:10px;font-weight:700;padding:4px 8px;border-radius:100px;display:flex;align-items:center;gap:4px;backdrop-filter:blur(4px)}
+.up .buy{margin-top:9px;width:100%;padding:9px;border-radius:10px;border:none;background:var(--paper-2);color:var(--muted);font-weight:700;font-size:12px;cursor:default}
+.tabbar{position:absolute;left:0;right:0;bottom:0;z-index:45;display:flex;padding:9px 8px calc(9px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--paper) 90%, transparent);backdrop-filter:blur(14px) saturate(1.1);border-top:1px solid var(--line)}
+.tabbar button{flex:1;border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:5px 0;color:var(--muted)}
+.tabbar button svg{width:23px;height:23px;transition:transform .18s}
+.tabbar button span{font-size:10px;font-weight:700;letter-spacing:.2px}
+.tabbar button.on{color:var(--ember)}
+.tabbar button.on svg{transform:translateY(-2px)}
+.gate{position:absolute;inset:0;z-index:90;background:var(--paper);display:flex;flex-direction:column;overflow-y:auto}
+.gate-top{position:relative;height:44%;min-height:230px;flex:none;overflow:hidden;background:linear-gradient(160deg,#e6a54b 0%,#c9721f 44%,#7c3c16 100%);color:#fff}
+.gate-top::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,11,5,.7),transparent 55%)}
+.gate-top .gmark{position:absolute;top:24px;left:22px;z-index:2;display:flex;align-items:center;gap:9px}
+.gate-top .gmark .mark{width:38px;height:38px}
+.gate-top .gmark b{font-family:var(--font-display);font-size:17px}
+.gate-top .gbread{position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);font-size:92px;filter:drop-shadow(0 8px 16px rgba(0,0,0,.4))}
+.gate-top .gcopy{position:absolute;bottom:0;padding:20px;z-index:2}
+.gate-top .gcopy .eyebrow{color:#ffd98a}
+.gate-top .gcopy h1{font-family:var(--font-display);font-size:27px;line-height:1.05;margin:6px 0 0;max-width:15ch;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.gate-form{padding:22px 20px 30px;display:flex;flex-direction:column;gap:14px}
+.gate-form label{font-size:12px;font-weight:700;color:var(--ink-soft);margin-bottom:-7px}
+.btn-primary{width:100%;padding:16px;border-radius:14px;border:none;cursor:pointer;font-size:15.5px;font-weight:800;color:#fff;background:linear-gradient(150deg,var(--ember),var(--ember-deep));box-shadow:0 6px 18px rgba(143,62,18,.35);font-family:var(--font-body);letter-spacing:.2px;transition:transform .15s}
+.btn-primary:active{transform:scale(.98)}
+.gate-form .fine{font-size:11px;color:var(--muted);text-align:center;line-height:1.5}
+.gate-form .fine b{color:var(--green)}
+.gate-demo{background:none;border:none;color:var(--ember);font-weight:700;font-size:13px;cursor:pointer;text-decoration:underline;align-self:center}
+.toast{position:absolute;left:50%;bottom:88px;transform:translateX(-50%) translateY(20px);z-index:80;opacity:0;pointer-events:none;background:var(--ink);color:var(--paper);padding:11px 18px;border-radius:100px;font-size:12.5px;font-weight:600;box-shadow:var(--shadow);transition:.3s;max-width:80%;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%)}
+.footer-sig{text-align:center;padding:26px 20px 8px;color:var(--muted);font-size:11px;line-height:1.6}
+.footer-sig .stamp{font-family:var(--font-display);font-style:italic;color:var(--gold-deep);font-size:14px}
+.labor{margin:-4px 0 15px;padding:11px 13px;border-radius:var(--radius-xs);background:var(--green-tint);color:var(--ink);font-size:12.5px;line-height:1.4;font-weight:600;display:flex;align-items:center;gap:8px}
+.labor b{font-family:var(--font-mono);color:var(--green)}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.cal-head b{font-family:var(--font-display);font-size:18px}
+.cal-head button{width:38px;height:38px;border-radius:11px;border:1px solid var(--line-strong);background:var(--surface);font-size:20px;cursor:pointer;color:var(--ink);line-height:1}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.cal-grid .wd{text-align:center;font-size:9.5px;font-weight:700;color:var(--muted);padding:2px 0 6px;text-transform:uppercase;letter-spacing:.5px}
+.cal-cell{aspect-ratio:1;border-radius:10px;border:1px solid var(--line);background:var(--surface);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:13px;font-weight:600;position:relative;color:var(--ink-soft)}
+.cal-cell.empty{border:none;background:none;cursor:default}
+.cal-cell.today{border-color:var(--ember);color:var(--ember);font-weight:800}
+.cal-cell.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.cal-cell .dot{position:absolute;bottom:5px;left:50%;transform:translateX(-50%);width:6px;height:6px;border-radius:50%}
+.cal-cell .dot.pos{background:var(--green)}
+.cal-cell .dot.neg{background:var(--guava)}
+.dayform-card{margin-top:16px;padding:16px;border-radius:var(--radius-sm);background:var(--surface);border:1px solid var(--line-strong);box-shadow:var(--shadow)}
+.dayform-card>b{font-family:var(--font-display);font-size:17px;display:block;margin-bottom:14px}
+.dayform-actions{display:flex;gap:8px;margin-top:2px}
+.dayform-actions button{flex:1;padding:13px;border-radius:11px;border:none;font-weight:700;font-size:14px;cursor:pointer}
+.dayform-actions .save{background:linear-gradient(150deg,var(--ember),var(--ember-deep));color:#fff}
+.dayform-actions .cancel{background:var(--paper-2);color:var(--ink-soft)}
+.learn{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:9px;font-size:14px;line-height:1.5;color:var(--ink-soft)}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+[hidden]{display:none !important}
+.selectnone{user-select:none;-webkit-user-select:none}
+img{-webkit-user-drag:none;user-select:none}
+input,select{user-select:auto;-webkit-user-select:auto}
+</style>
+
+<div class="stage">
+<div class="device selectnone" id="device">
+  <div class="watermark" id="wm" aria-hidden="true"></div>
+
+  <!-- GATE -->
+  <div class="gate" id="gate">
+    <div class="gate-top">
+      <div class="gmark"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14c-2 0-3-1.5-3-3.2C3 8.5 5 7 7 7.4 7.4 5 9.4 3.5 12 3.5S16.6 5 17 7.4C19 7 21 8.5 21 10.8c0 1.7-1 3.2-3 3.2"/><path d="M6 14l1.4 6.5h9.2L18 14"/></svg></span><b>Pan Andino</b></div>
+      <div class="gbread">🥖</div>
+      <div class="gcopy"><p class="eyebrow">La Biblia del Pan Gocho</p><h1>El pan de tu tierra, en tu cocina</h1></div>
+    </div>
+    <form class="gate-form" id="gateForm">
+      <p class="lead">Bienvenido a tu academia del pan andino. Entra con el <b>correo con el que compraste</b> para guardar tu progreso.</p>
+      <label for="gName">Tu nombre</label>
+      <input type="text" id="gName" placeholder="Ej: María González" autocomplete="name" required />
+      <label for="gMail">Tu correo</label>
+      <input type="email" id="gMail" placeholder="tucorreo@ejemplo.com" autocomplete="email" required />
+      <label for="gPais">¿Desde qué país nos acompañas?</label>
+      <div class="selectwrap">
+        <select id="gPais"><option>🇺🇸 Estados Unidos</option><option>🇪🇸 España</option><option>🇨🇱 Chile</option><option>🇨🇴 Colombia</option><option>🇵🇪 Perú</option><option>🇦🇷 Argentina</option><option>🇵🇦 Panamá</option><option>🇲🇽 México</option><option>🇻🇪 Venezuela</option><option>🌎 Otro</option></select>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <button type="submit" class="btn-primary">Entrar a mi Pan Andino →</button>
+      <p class="fine">🔒 Tu acceso es personal. <b>Compra verificada</b> · No compartas tu correo.</p>
+      <button type="button" class="gate-demo" id="demoBtn">Solo quiero ver la demo</button>
+    </form>
+  </div>
+
+  <!-- APP BAR -->
+  <div class="appbar">
+    <div class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14c-2 0-3-1.5-3-3.2C3 8.5 5 7 7 7.4 7.4 5 9.4 3.5 12 3.5S16.6 5 17 7.4C19 7 21 8.5 21 10.8c0 1.7-1 3.2-3 3.2"/><path d="M6 14l1.4 6.5h9.2L18 14"/></svg></span><div><b>Pan Andino</b><small>La Biblia del Pan Gocho</small></div></div>
+    <div class="userchip" onclick="go('mas')"><span class="avatar" id="avatar">M</span><span id="chipName">María</span></div>
+  </div>
+
+  <div class="viewport" id="viewport">
+
+    <!-- INICIO -->
+    <section class="screen active" id="inicio">
+      <div class="hero">
+        <div class="hero-photo"><div class="steam"><i></i><i></i><i></i></div></div>
+        <div class="hero-copy"><p class="eyebrow">Hola de nuevo 👋</p><h2 id="heroName">María, tu horno te espera</h2><span class="hero-tag">🔥 Sigamos donde quedaste</span></div>
+      </div>
+      <div class="tv-card" onclick="go('talvina')">
+        <div class="ring">
+          <svg width="62" height="62" viewBox="0 0 62 62"><circle cx="31" cy="31" r="26" fill="none" stroke="var(--line)" stroke-width="7"/><circle cx="31" cy="31" r="26" fill="none" stroke="var(--ember)" stroke-width="7" stroke-linecap="round" stroke-dasharray="163.4" stroke-dashoffset="54"/></svg>
+          <span class="val">D2</span>
+        </div>
+        <div class="info"><b>Tu talvina va creciendo</b><p>Día 2 de 3 · toca la primera alimentación</p><span class="go">Ver qué hacer hoy →</span></div>
+      </div>
+      <div class="tiles">
+        <div class="tile" onclick="go('talvina')"><span class="ic ember"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1 2.5-4 4.5-4 8a4 4 0 0 0 8 0c0-3.5-3-5.5-4-8z"/></svg></span><b>La Talvina</b><small>Día por día, sin fallar</small></div>
+        <div class="tile" onclick="go('recetas')"><span class="ic gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 5.5v15"/></svg></span><b>12 Recetas</b><small>Panes tachirenses</small></div>
+        <div class="tile" onclick="go('calcular')"><span class="ic green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M8 15h2M14 11v6"/></svg></span><b>Calculadoras</b><small>Talvina · costos · precios</small></div>
+        <div class="tile" onclick="go('mas')"><span class="ic guava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v7l9 4 9-4V7"/></svg></span><b>Vende tu pan</b><small>Convierte tu horno en negocio</small></div>
+      </div>
+      <div class="section"><div class="section-h"><h2 class="h2">Continúa aprendiendo</h2></div></div>
+      <div class="cont" onclick="openRecipe('camaleon')">
+        <div class="thumb">🍞</div>
+        <div style="flex:1"><b>Pan Camaleón</b><p>El pan estrella del Táchira</p><div class="bar"><i style="width:40%"></i></div></div>
+      </div>
+      <div class="footer-sig"><div class="stamp">“El pan gocho no se apura, se cuida.”</div>Maestro Ronald Varela · Academia Pan Andino</div>
+    </section>
+
+    <!-- RECETAS -->
+    <section class="screen" id="recetas">
+      <div class="section"><p class="eyebrow">El recetario</p><h1 class="h1">Los panes que la diáspora extraña</h1></div>
+      <div class="chips" id="recChips"></div>
+      <div class="rlist" id="rlist"></div>
+      <div class="footer-sig"><div class="stamp">12 recetas tachirenses auténticas</div>Extraídas de La Biblia del Pan Andino</div>
+    </section>
+
+    <!-- TALVINA -->
+    <section class="screen" id="talvina">
+      <div class="tv-hero"><p class="eyebrow">Módulo 2 · El alma del pan</p><h2>La Talvina, día por día</h2><p>El fermento natural tachirense: una masa madre osmotolerante de más de 420 años. La primera vez toma ~3 días (48–72 h).</p></div>
+      <div class="seg"><button class="on" onclick="tvMode('orig',this)">Original · 3 días</button><button onclick="tvMode('express',this)">Express · 6–8 h</button></div>
+      <div id="tvExpress" hidden><div class="note" style="margin-top:14px"><span>⚡</span><span><b>Talvina Express:</b> misma receta (200 g harina · 150 ml agua tibia · 80 g papelón · 1 rama canela · 3 clavos · 3 pepitas guayabita) <b>+ 3 g de levadura fresca</b> (o 1 g seca). Lista en <b>6–8 h</b> en vez de 3 días. Ideal para tu primer pan de práctica.</span></div></div>
+      <div id="tvOrig">
+        <div class="daybar" id="daybar"></div>
+        <div class="dayview" id="dayview"></div>
+        <div class="ready">
+          <h3>✅ Señales de que está lista</h3>
+          <ul><li>Burbujas activas y constantes en la superficie.</li><li>Duplicó su volumen (subió entre 50 % y 100 %).</li><li>La superficie está abombada hacia arriba.</li><li>Olor dulce con nota ácida, tipo guarapo. <b>Nunca a vinagre fuerte.</b></li></ul>
+          <div class="float">🌊 <b>La Prueba de Flotación</b> (la más confiable): echa una cucharada de talvina en un vaso con agua. <b>Flota</b> → lista para hornear. <b>Se hunde</b> → dale más tiempo.</div>
+        </div>
+      </div>
+      <div class="section" style="padding-top:24px"><div class="section-h"><h2 class="h2">🔥 La Talvina Inmortal</h2></div><p class="lead" style="margin:-8px 15px 14px;padding:0 0">Las 5 reglas para mantenerla viva para siempre.</p></div>
+      <div class="rules" id="rules"></div>
+      <div class="section" style="padding-top:24px"><div class="section-h"><h2 class="h2">¿Tu talvina falló?</h2></div></div>
+      <div class="acc" id="tvSos"></div>
+      <div class="footer-sig"></div>
+    </section>
+
+    <!-- CALCULAR -->
+    <section class="screen" id="calcular">
+      <div class="section"><p class="eyebrow">Herramientas</p><h1 class="h1">Calculadoras</h1></div>
+      <div class="calc-tabs">
+        <button class="on" onclick="calcTab('talvina',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1 2.5-4 4.5-4 8a4 4 0 0 0 8 0c0-3.5-3-5.5-4-8z"/></svg>Talvina</button>
+        <button onclick="calcTab('ingr',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a3 3 0 0 0 6 0V3M9 9v12M18 3c-1.5 1-2 3-2 6s.5 4 2 5v7"/></svg>Ingredientes</button>
+        <button onclick="calcTab('costo',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.2c0-1 1.1-1.7 2.5-1.7s2.5.7 2.5 1.7-1.1 1.5-2.5 1.5-2.5.6-2.5 1.6 1.1 1.7 2.5 1.7 2.5-.7 2.5-1.7"/></svg>Costos</button>
+        <button onclick="calcTab('diario',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg>Diario</button>
+      </div>
+
+      <!-- TALVINA CALC -->
+      <div class="calc on" id="c-talvina">
+        <div class="field"><label>¿Cuántos panes quieres hornear? <span class="v" id="tvPanesV">8 panes</span></label><input type="range" id="tvPanes" min="1" max="60" value="8" /></div>
+        <button class="advtoggle" onclick="toggleAdv('tvAdv',this)">⚙️ Ajustes avanzados <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="adv" id="tvAdv"><div class="field" style="margin-bottom:0"><label>Talvina activa por pan <span class="v" id="tvGV">40 g</span></label><input type="range" id="tvG" min="20" max="60" value="40" /></div></div>
+        <div class="result"><div class="rlbl">Talvina activa que necesitas</div><div class="big" id="tvTotal">320 g</div><div class="sub">para tus <span id="tvPanesEcho">8</span> panes · proporción 1 : 1 : 0,8</div></div>
+        <div class="res-row">
+          <div class="box"><small>Harina para el arranque</small><b class="q" id="tvHarina">200 g</b></div>
+          <div class="box"><small>Agua tibia (25–30°C)</small><b class="q" id="tvAgua">150 ml</b></div>
+          <div class="box"><small>Papelón rallado</small><b id="tvPapelon">80 g</b></div>
+          <div class="box"><small>Anticipación</small><b style="font-size:13px">3 días la 1ª vez</b></div>
+        </div>
+        <div class="note" style="margin-left:0;margin-right:0"><span>💡</span><span>Además: <b>1 rama de canela · 3 clavos · 3 pepitas de pimienta guayabita.</b> Ya viva, refréscala <b>4–6 h antes</b> de amasar y guarda 50 g de reserva madre.</span></div>
+      </div>
+
+      <!-- INGREDIENTES CALC -->
+      <div class="calc" id="c-ingr">
+        <div class="field"><label for="igSel">Elige la receta</label><div class="selectwrap"><select id="igSel" onchange="calcIngr()"></select><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></div></div>
+        <div class="field"><label>¿Cuántos panes quieres? <span class="v" id="igPanesV">8 panes</span></label><input type="range" id="igPanes" min="1" max="80" value="8" oninput="calcIngr()" /></div>
+        <div class="subhead" id="igYieldNote"></div>
+        <div class="card" style="padding:6px 15px 12px"><div class="ing-out" id="igOut"></div></div>
+        <div class="callout" id="igSub"></div>
+      </div>
+
+      <!-- COSTOS CALC -->
+      <div class="calc" id="c-costo">
+        <div class="field"><label for="coMoneda">Tu moneda</label><div class="selectwrap"><select id="coMoneda" onchange="calcCosto()"><option value="$">USD ($)</option><option value="€">EUR (€)</option><option value="COL$">Peso colombiano</option><option value="CLP$">Peso chileno</option><option value="S/">Sol (S/)</option><option value="AR$">Peso argentino</option><option value="MX$">Peso mexicano</option><option value="B/.">Balboa (B/.)</option></select><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></div></div>
+        <div class="subhead">1 · Ingredientes de una tanda</div>
+        <div class="grid2">
+          <div class="field"><label>Harina</label><div class="money"><span class="sym" data-sym>$</span><input type="number" id="co_harina" value="2.50" step="0.1" oninput="calcCosto()"></div></div>
+          <div class="field"><label>Mantequilla / grasa</label><div class="money"><span class="sym" data-sym>$</span><input type="number" id="co_gr" value="1.50" step="0.1" oninput="calcCosto()"></div></div>
+          <div class="field"><label>Azúcar / papelón</label><div class="money"><span class="sym" data-sym>$</span><input type="number" id="co_az" value="0.80" step="0.1" oninput="calcCosto()"></div></div>
+          <div class="field"><label>Relleno (queso, etc.)</label><div class="money"><span class="sym" data-sym>$</span><input type="number" id="co_rel" value="1.50" step="0.1" oninput="calcCosto()"></div></div>
+          <div class="field"><label>Huevos / leche</label><div class="money"><span class="sym" data-sym>$</span><input type="number" id="co_hv" value="0.90" step="0.1" oninput="calcCosto()"></div></div>
+          <div class="field"><label>Otros (levadura…)</label><div class="money"><span class="sym" data-sym>$</span><input type="number" id="co_ot" value="0.40" step="0.1" oninput="calcCosto()"></div></div>
+        </div>
+        <div class="subhead">2 · Gastos de la tanda</div>
+        <div class="grid2">
+          <div class="field"><label>Gas / luz</label><div class="money"><span class="sym" data-sym>$</span><input type="number" id="co_gas" value="0.50" step="0.1" oninput="calcCosto()"></div></div>
+          <div class="field"><label>Empaque</label><div class="money"><span class="sym" data-sym>$</span><input type="number" id="co_emp" value="0.60" step="0.1" oninput="calcCosto()"></div></div>
+        </div>
+        <div class="subhead">3 · Tu trabajo (¡nunca lo regales!)</div>
+        <div class="grid2">
+          <div class="field"><label>Horas por tanda <span class="v" id="coHorasV">2,5</span></label><input type="range" id="co_horas" min="0.5" max="8" step="0.5" value="2.5" oninput="calcCosto()"></div>
+          <div class="field"><label>Valor de tu hora</label><div class="money"><span class="sym" data-sym>$</span><input type="number" id="co_hora" value="3.75" step="0.25" oninput="calcCosto()"></div></div>
+        </div>
+        <div class="labor" id="coLabor"></div>
+        <div class="subhead">4 · Precio de venta</div>
+        <div class="field"><label>Panes por tanda <span class="v" id="coPanesV">20</span></label><input type="range" id="co_panes" min="1" max="50" value="20" oninput="calcCosto()"></div>
+        <div class="seg" style="margin:0 0 16px"><button onclick="setMult(3,this)">×3 mínimo</button><button class="on" onclick="setMult(4,this)">×4 recomendado</button><button onclick="setMult(5,this)">×5 premium</button></div>
+
+        <div class="result green"><div class="rlbl">💰 Ganancia estimada al mes</div><div class="big" id="coMes">$0</div><div class="sub">si vendes <span id="coDiaEcho">20</span> panes al día</div></div>
+        <div class="field" style="margin-top:12px"><label>Panes que vendes al día <span class="v" id="coDiaV">20</span></label><input type="range" id="co_dia" min="1" max="120" value="20" oninput="calcCosto()"></div>
+        <div class="res-row">
+          <div class="box"><small>Costo real por pan</small><b id="coPan">$0</b><small style="margin-top:4px;text-transform:none;letter-spacing:0;font-weight:500">incluye 8 % de desperdicio</small></div>
+          <div class="box"><small>Precio sugerido</small><b class="q" id="coPrecio">$0</b></div>
+          <div class="box"><small>Ganancia por pan</small><b class="gr" id="coGanPan">$0</b></div>
+          <div class="box"><small>Tu margen</small><b class="gr" id="coMargen">0%</b></div>
+        </div>
+        <div class="note" style="margin-left:0;margin-right:0"><span>💡</span><span><b>Cobra sin Pena:</b> nunca vendas por debajo de <b>×3</b> (trabajas a pérdida). ×4 es el precio estándar, ×5 para premium/eventos. Y siempre: <b>pago primero, producción después.</b></span></div>
+      </div>
+
+      <!-- CONTROL DIARIO -->
+      <div class="calc" id="c-diario">
+        <div class="cal-head"><button onclick="calMonth(-1)">‹</button><b id="calTitle">Mes</b><button onclick="calMonth(1)">›</button></div>
+        <div class="cal-grid" id="calGrid"></div>
+        <div id="dayForm" hidden>
+          <div class="dayform-card">
+            <b id="dfTitle">Día</b>
+            <div class="field"><label>Ventas del día 🍞</label><div class="money"><span class="sym" data-sym2>$</span><input type="number" id="df_v" step="0.5" placeholder="0"></div></div>
+            <div class="field" style="margin-bottom:6px"><label>Gastos del día 🧾</label><div class="money"><span class="sym" data-sym2>$</span><input type="number" id="df_g" step="0.5" placeholder="0"></div></div>
+            <div class="dayform-actions"><button class="save" onclick="saveDay()">Guardar</button><button class="cancel" onclick="closeDay()">Cancelar</button></div>
+          </div>
+        </div>
+        <div class="result green" style="margin-top:16px"><div class="rlbl">💰 Ganancia neta del mes</div><div class="big" id="diNeta">$0</div><div class="sub" id="diMonthName"></div></div>
+        <div class="res-row">
+          <div class="box"><small>Ventas del mes</small><b class="gr" id="diVentas">$0</b></div>
+          <div class="box"><small>Gastos del mes</small><b class="q" id="diGastos">$0</b></div>
+        </div>
+        <div class="note" style="margin-left:0;margin-right:0"><span>🗓️</span><span>Toca un día para anotar tus <b>ventas y gastos</b>. Los puntos verdes son días con ganancia. Todo se guarda en tu teléfono.</span></div>
+      </div>
+      <div class="footer-sig"></div>
+    </section>
+
+    <!-- MÁS -->
+    <section class="screen" id="mas">
+      <div class="section"><p class="eyebrow">Tu academia</p><h1 class="h1">Todo tu producto</h1></div>
+      <div class="section" style="padding-top:6px"><div class="section-h"><h2 class="h2">📘 La Biblia · 9 módulos</h2></div></div>
+      <div class="blist" id="modulos"></div>
+      <div class="section" style="padding-top:24px"><div class="section-h"><h2 class="h2">🎁 Tus 9 bonos</h2></div></div>
+      <div class="blist" id="bonos"></div>
+      <div class="section" style="padding-top:24px"><div class="section-h"><h2 class="h2">🆘 S.O.S. del horno</h2></div></div>
+      <div class="acc" id="bakeSos"></div>
+      <div class="section" style="padding-top:24px"><div class="section-h"><h2 class="h2">Próximamente</h2><a>Más cursos</a></div></div>
+      <div class="upsell" id="upsell"></div>
+      <div class="section" style="padding-top:24px"><div class="section-h"><h2 class="h2">Mi cuenta</h2></div></div>
+      <div class="blist">
+        <div class="brow"><span class="bic" style="background:var(--ember-tint);color:var(--ember)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><div><b id="acctName">María González</b><p id="acctMail">tucorreo@ejemplo.com</p></div><span class="chev">›</span></div>
+        <div class="brow" onclick="logout()"><span class="bic" style="background:var(--guava-tint);color:var(--guava)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg></span><div><b>Cerrar sesión</b><p>Salir de la app</p></div><span class="chev">›</span></div>
+      </div>
+      <div class="footer-sig"><div class="stamp">panandino.lat</div>Acceso personal y verificado · © Academia Pan Andino</div>
+    </section>
+  </div>
+
+  <!-- RECIPE SHEET -->
+  <div class="sheet" id="sheet">
+    <div class="sheet-hd">
+      <button class="sheet-back" onclick="closeRecipe()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="emoji" id="shEmoji">🥖</div>
+      <div class="sheet-title"><h2 id="shName">Receta</h2><div class="meta" id="shMeta"></div></div>
+    </div>
+    <div class="sheet-body">
+      <div class="tabsm"><button class="on" onclick="shTab('ing',this)">Ingredientes</button><button onclick="shTab('pas',this)">Preparación</button></div>
+      <div id="shIng"></div>
+      <div id="shPas" hidden></div>
+    </div>
+  </div>
+
+  <!-- INFO SHEET (módulos / bonos) -->
+  <div class="sheet" id="sheet2">
+    <div class="sheet-hd" id="sh2hd">
+      <button class="sheet-back" onclick="closeInfo()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="emoji" id="sh2Emoji">📘</div>
+      <div class="sheet-title"><h2 id="sh2Name"></h2><div class="meta" id="sh2Meta"></div></div>
+    </div>
+    <div class="sheet-body" id="sh2Body"></div>
+  </div>
+
+  <!-- TABBAR -->
+  <nav class="tabbar">
+    <button class="on" data-tab="inicio" onclick="go('inicio')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/></svg><span>Inicio</span></button>
+    <button data-tab="recetas" onclick="go('recetas')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/></svg><span>Recetas</span></button>
+    <button data-tab="talvina" onclick="go('talvina')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1 2.5-4 4.5-4 8a4 4 0 0 0 8 0c0-3.5-3-5.5-4-8z"/></svg><span>Talvina</span></button>
+    <button data-tab="calcular" onclick="go('calcular')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M8 15h2M14 11v6"/></svg><span>Calcular</span></button>
+    <button data-tab="mas" onclick="go('mas')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="1.6"/><circle cx="5" cy="12" r="1.6"/><circle cx="5" cy="18" r="1.6"/><path d="M10 6h10M10 12h10M10 18h10"/></svg><span>Más</span></button>
+  </nav>
+  <div class="toast" id="toast"></div>
+</div>
+</div>
+
+<script>
+/* ============ DATOS REALES · La Biblia del Pan Andino ============ */
+const TV=[["Harina de trigo",200,"g"],["Agua tibia (25–30°C)",150,"ml"],["Papelón rallado",80,"g"],["Canela en rama",1,"rama"],["Clavos de olor",3,"u"],["Pimienta guayabita",3,"pepitas"]];
+const TV_ND=[["Harina de trigo",200,"g"],["Agua tibia (25–30°C)",150,"ml"],["Papelón rallado",80,"g"],["Canela en rama",1,"rama"],["Pimienta guayabita",3,"pepitas"]];
+const G=(l,items,scale)=>({l,items,scale:scale!==false});
+
+const RECIPES={
+  camaleon:{name:"Pan Camaleón",emoji:"🍞",cat:"clasicos",time:"≈4 h",temp:"175°C · 20–23 min",yield:"6–8 panes",y:7,
+    groups:[G("La Talvina · 16–24 h antes",TV,false),G("La masa",[["Harina de trigo",1000,"g"],["Leche tibia",160,"ml"],["Azúcar",220,"g"],["Talvina activa",300,"g"],["Mantequilla sin sal",160,"g"],["Huevos",3,"u"],["Sal fina sin yodo",10,"g"],["Agua fría",80,"ml"]])],
+    steps:["Prepara la Talvina 16–24 h antes y confirma que flote en agua.","Mezcla harina + azúcar (volcán); integra los huevos y la leche tibia poco a poco.","Añade la Talvina activa; amasa e incorpora la mantequilla blanda; agrega la sal al final.","Amasa 20–25 min hasta punto de ventana (masa lisa y elástica).","1er reposo hasta doblar: 1–3 h según el clima.","Divide (mediano 150–180 g), forma alargado de 22–25 cm, costura abajo.","2º reposo 30–75 min según clima (prueba del dedo).","Pinta con huevo + leche y haz 4–5 cortes diagonales a 45°.","Hornea a 175°C por 20–23 min hasta dorar parejo (interior 88–92°C).","Enfría en rejilla mínimo 25–30 min antes de cortar."],
+    tips:["Pálido → sube a 180°C o +3 min.","Crudo dentro y oscuro fuera → baja a 165°C y extiende.","Miga gomosa → lo cortaste caliente; espera 25–30 min."]},
+  panqueso:{name:"Pan de Queso Andino",emoji:"🧀",cat:"clasicos",time:"≈3½ h",temp:"185°C · 18–22 min",yield:"6–8 panes",y:7,
+    groups:[G("La Talvina · 16–24 h antes",TV,false),G("La masa",[["Harina de trigo",1000,"g"],["Azúcar",80,"g"],["Talvina activa",300,"g"],["Mantequilla sin sal",120,"g"],["Huevos",3,"u"],["Leche tibia",180,"ml"],["Sal",15,"g"],["Agua fría",80,"ml"]]),G("Para encima",[["Queso blanco rallado grueso",400,"g"]])],
+    steps:["Prepara la Talvina 16–24 h antes.","Mezcla harina + azúcar; integra huevos, leche y Talvina; añade mantequilla y la sal al final.","Amasa 20–25 min (masa un poco más firme).","1er reposo hasta doblar (1–3 h según clima).","Divide (mediano 150–170 g) y forma alargado, costura abajo.","2º reposo 30–75 min.","Justo antes del horno cubre con queso rallado abundante (~50–60 g por pan) y presiona levemente.","Hornea a 185°C por 18–22 min (no abras el horno los primeros 12 min).","Enfría 15–20 min."],
+    tips:["Usa el queso a temperatura ambiente, nunca frío de nevera.","Nunca pongas el queso durante el 2º reposo: aplasta el pan.","Blanco fresco, de mano o llanero. Nunca queso amarillo procesado."]},
+  azucarado:{name:"Pan Azucarado",emoji:"🍥",cat:"dulces",time:"≈4 h",temp:"170°C · 18–20 min",yield:"6–8 panes",y:7,
+    groups:[G("La Talvina · 16–24 h antes",TV,false),G("La masa",[["Harina de trigo",1000,"g"],["Azúcar blanca",220,"g"],["Talvina activa",300,"g"],["Mantequilla sin sal",160,"g"],["Huevos",3,"u"],["Leche tibia",160,"ml"],["Sal fina sin yodo",10,"g"],["Agua fría",80,"ml"]]),G("Para la costra",[["Azúcar gruesa",4,"cdas"]])],
+    steps:["Prepara la Talvina 16–24 h antes.","Mezcla harina + azúcar; integra huevos, leche y Talvina; añade mantequilla y sal al final.","Amasa 20–25 min hasta punto de ventana.","1er reposo hasta doblar (1–3 h según clima).","Divide (mediano 150 g) y forma alargado de 20–25 cm.","2º reposo 30–75 min.","Pinta con huevo, cubre con azúcar gruesa y presiona para que se adhiera.","Hornea a 170°C por 18–20 min hasta ámbar brillante.","Enfría mínimo 25–30 min (la costra quema)."],
+    tips:["Azúcar sin caramelizar → sube a 175°C.","Azúcar quemada → baja a 165°C y vigila desde el min 15.","Costra pegajosa → se empacó sin enfriar."]},
+  trenzado:{name:"Pan Trenzado",emoji:"🥨",cat:"dulces",time:"≈4 h",temp:"172°C · 22–26 min",yield:"≈3 trenzas",y:6,
+    groups:[G("La Talvina · 16–24 h antes",TV,false),G("La masa (igual que el azucarado)",[["Harina de trigo",1000,"g"],["Azúcar blanca",220,"g"],["Talvina activa",300,"g"],["Mantequilla sin sal",160,"g"],["Huevos",3,"u"],["Leche tibia",160,"ml"],["Sal fina sin yodo",10,"g"],["Agua fría",80,"ml"]]),G("Para encima",[["Azúcar gruesa",4,"cdas"],["Huevo para pintar",1,"u"]])],
+    steps:["Prepara la masa igual que el Pan Azucarado.","1er reposo hasta doblar (1,5–3 h según clima).","Pesa la masa y divide en 3 partes exactamente iguales (ej. 1.200 g → 3 × 400 g).","Forma 3 tiras de 30 cm, mismo largo y grosor.","Trenza con tensión pareja y sella los tres extremos.","2º reposo 45–90 min según clima.","Pinta con huevo + leche llegando a todos los surcos; espolvorea azúcar.","Hornea a 172°C por 22–26 min (interior 88–92°C en la parte gruesa).","Enfría sin paño mínimo 30–35 min."],
+    tips:["Se abrió → extremos mal sellados.","Torcida → tensión desigual al trenzar.","Tiras disparejas → divide con báscula."]},
+  pandedios:{name:"Pan de Dios",emoji:"🥥",cat:"dulces",time:"≈4 h",temp:"175°C · 18–20 min",yield:"12 panes",y:12,
+    groups:[G("La Talvina · 16–24 h antes",TV_ND,false),G("La masa",[["Harina todo uso",600,"g"],["Leche tibia",200,"ml"],["Huevos",3,"u"],["Talvina activa",300,"g"],["Azúcar",100,"g"],["Mantequilla sin sal",150,"g"],["Sal fina sin yodo",10,"g"],["Ralladura de limón/naranja",3,"g"]]),G("Relleno de coco",[["Coco rallado",150,"g"],["Yemas",2,"u"],["Azúcar",150,"g"],["Ron (opcional)",20,"ml"]]),G("Cobertura",[["Huevo",1,"u"],["Leche condensada",2,"cdas"],["Coco rallado",100,"g"]])],
+    steps:["Prepara la Talvina 16–24 h antes (esta versión va sin clavos).","Mezcla harina + azúcar + ralladura; integra huevos, leche y Talvina; mantequilla y sal al final.","Amasa 20–25 min (masa rica y algo pegajosa; no agregues harina extra).","1er reposo hasta doblar (1,5–2,5 h).","Prepara el relleno: yemas + azúcar + coco (+ ron); pasta húmeda.","Divide en 12 bolas de 100 g; rellena y sella firme, costura abajo.","Coloca las bolitas JUNTAS (tocándose) en la bandeja.","2º reposo 40–85 min según clima.","Pinta, espolvorea coco y presiona; hornea a 175°C por 18–20 min.","Deja enfriar 10 min y espolvorea azúcar glass tibio."],
+    tips:["Coco quemado → baja a 170°C y cubre con aluminio los últimos 5 min.","Relleno se escapó → sella muy bien los bordes.","Las bolitas deben tocarse para quedar tipo pull-apart."]},
+  piñita:{name:"Piñita Tachirense",emoji:"🍍",cat:"dulces",time:"≈3½ h",temp:"170°C · 20–25 min",yield:"15–20 u",y:17,
+    groups:[G("La Talvina · 16–24 h antes",TV,false),G("La masa",[["Harina todo uso",400,"g"],["Azúcar blanca",80,"g"],["Talvina activa",200,"g"],["Mantequilla sin sal",80,"g"],["Leche tibia",120,"ml"],["Huevos",2,"u"],["Sal fina sin yodo",5,"g"],["Agua fría",30,"ml"]]),G("Para encima",[["Azúcar blanca (abundante)",1,"—"],["Huevo para pintar",1,"u"],["Mantequilla derretida",1,"toque"]])],
+    steps:["Prepara la Talvina 16–24 h antes.","Mezcla harina + azúcar; integra huevos, leche y Talvina; mantequilla y sal al final.","Amasa 20–25 min hasta punto de ventana.","1er reposo hasta doblar (1–2,5 h).","Divide en porciones de 50–60 g y bolea sin costuras.","2º reposo 25–55 min según clima.","Después del reposo, en orden: pinta → cortes de tijera en cruz/estrella → trocito de mantequilla → azúcar abundante.","Hornea a 170°C por 20–25 min (vigila desde el min 18).","Enfría sin paño húmedo 15–20 min."],
+    tips:["Cortes cerrados → los hiciste antes del 2º reposo; hazlos justo antes del horno.","Azúcar disuelta → la cubriste con paño húmedo (nunca).","Aplastadas → 2º reposo excesivo."]},
+  panleche:{name:"Pan de Leche y Bolitas",emoji:"🥛",cat:"dulces",time:"≈4 h",temp:"165–170°C",yield:"4–5 panes / 15–20 bolitas",y:5,
+    groups:[G("La Talvina · 16–24 h antes",TV,false),G("La masa",[["Harina de trigo",1000,"g"],["Azúcar blanca",150,"g"],["Talvina activa",300,"g"],["Mantequilla sin sal",180,"g"],["Huevos",3,"u"],["Leche entera tibia",200,"ml"],["Leche en polvo",30,"g"],["Sal fina sin yodo",10,"g"],["Agua fría",50,"ml"]])],
+    steps:["Prepara la Talvina 16–24 h antes.","Mezcla harina + azúcar + leche en polvo; integra huevos y leche; Talvina; mantequilla y sal al final.","Amasa 20–25 min (masa pegajosa por la leche; NO agregues harina).","1er reposo hasta doblar (1,5–3 h).","Divide: pan alargado 180–220 g o bolitas 50–70 g.","2º reposo según pieza y clima.","Pinta con yema + leche; haz cortes en estrella (bolitas) o espiga (pan), 5 mm.","Hornea: bolitas 165°C 13–15 min · pan 170°C 20–22 min.","Enfría cubierto con paño HÚMEDO para corteza ultra suave."],
+    tips:["El secreto de la miga suave es la leche en polvo: no la omitas.","Muy oscuros → máximo 170°C.","Bolitas pegadas → sepáralas mín. 4 cm."]},
+  acemaRellena:{name:"Acema de Bocadillo y Queso",emoji:"🫓",cat:"acemas",time:"≈4½ h",temp:"170°C · 35–40 min",yield:"8–10 porc",y:9,
+    groups:[G("La Talvina · 16–24 h antes",TV,false),G("La masa",[["Harina de trigo",1000,"g"],["Harina extra",200,"g"],["Azúcar blanca",200,"g"],["Talvina activa",300,"g"],["Mantequilla sin sal",150,"g"],["Huevos",3,"u"],["Leche tibia",150,"ml"],["Sal fina sin yodo",10,"g"],["Canela en polvo",1,"cdta"],["Anís en polvo",0.5,"cdta"],["Agua fría",80,"ml"]]),G("El relleno · 60% bocadillo / 40% queso",[["Bocadillo de guayaba",300,"g"],["Queso blanco rallado",200,"g"]])],
+    steps:["Prepara la Talvina 16–24 h antes.","Mezcla harina + azúcar + canela + anís; integra huevos, leche y Talvina; mantequilla y sal al final.","Amasa 20–25 min hasta membrana traslúcida.","1er reposo hasta doblar (1,5–3 h).","Divide: base 650 g y rejilla 350 g. Extiende la base (disco 35–40 cm) en molde engrasado.","Rellena con bocadillo en láminas + queso, dejando 2 cm libres al borde.","Con la porción de rejilla corta tiras de 2 cm y forma la rejilla cruzada; sella el perímetro.","2º reposo 30–40 min; pinta con huevo + leche.","Hornea a 170°C por 35–40 min (rejilla baja-central).","Enfría en el molde 20–25 min y espera 30–40 min antes de cortar."],
+    tips:["Relleno se escapa → deja 2 cm libres y sella bien.","Rejilla quemada, interior crudo → baja a 165°C y cubre con aluminio los últimos 10 min.","Proporción secreta del relleno: 60% bocadillo, 40% queso."]},
+  acemaEspeciada:{name:"Acema Especiada (sin relleno)",emoji:"🟤",cat:"acemas",time:"≈4 h",temp:"180°C · 20–22 min",yield:"7–8 u",y:7,
+    groups:[G("La Talvina · 16–24 h antes",TV,false),G("La masa",[["Harina de trigo",1000,"g"],["Azúcar blanca",180,"g"],["Talvina activa",300,"g"],["Mantequilla sin sal",150,"g"],["Huevos",3,"u"],["Leche tibia",150,"ml"],["Sal fina sin yodo",10,"g"],["Canela en polvo",1.5,"cdta"],["Anís en polvo",1,"cdta"],["Guayabita molida",0.5,"cdta"],["Nuez moscada",0.25,"cdta"],["Agua fría",80,"ml"]])],
+    steps:["Prepara la Talvina 16–24 h antes.","Mezcla harina + azúcar + todas las especias; integra huevos, leche y Talvina; mantequilla y sal al final.","Amasa 20–25 min hasta punto de ventana.","1er reposo hasta doblar (puede tardar 15–20 min más por las especias).","Divide (mediana 130–150 g) y forma disco achatado de 2–3 cm.","2º reposo 35–80 min según clima.","Pinta con 2 yemas + leche + azúcar disuelta; haz 3–4 cortes diagonales de 1 cm.","Hornea a 180°C por 20–22 min (color naranja-dorado).","Enfría 25–30 min. Almíbar tibio opcional para brillo."],
+    tips:["Pálida → usa 2 yemas y 180°C.","Sabor muy fuerte a especias → respeta las proporciones.","Los cortes deben tener mín. 1 cm para abrir."]},
+  panbocadillo:{name:"Pan de Bocadillo y Queso",emoji:"🌯",cat:"acemas",time:"≈4 h",temp:"175°C · 22–25 min",yield:"4–5 panes",y:4,
+    groups:[G("La Talvina · 16–24 h antes",TV,false),G("La masa",[["Harina de trigo",1000,"g"],["Azúcar blanca",200,"g"],["Talvina activa",300,"g"],["Mantequilla sin sal",150,"g"],["Huevos",3,"u"],["Leche tibia",150,"ml"],["Sal fina sin yodo",10,"g"],["Agua fría",80,"ml"]]),G("El relleno · 60/40",[["Bocadillo de guayaba firme",250,"g"],["Queso blanco",200,"g"]])],
+    steps:["Prepara la Talvina 16–24 h antes.","Haz la masa (mezcla, amasa 20–25 min, 1er reposo hasta doblar).","Divide en porciones de 300–350 g y extiende en rectángulos de 25×15 cm.","Rellena con bocadillo + queso dejando 2 cm libres.","Enrolla desde el lado corto, costura abajo, sella extremos.","2º reposo 40–85 min según clima.","Pinta y haz 4–5 cortes diagonales de 1–1,5 cm.","Hornea a 175°C por 22–25 min (bocadillo rojo-ámbar, no negro).","Enfría sin paño 25–30 min."],
+    tips:["Bocadillo se escapa → sella bien y deja 2 cm de borde.","Si el bocadillo está muy blando, refrigéralo 20 min antes.","Cortes se cierran → hazlos después del reposo."]},
+  criollito:{name:"Criollito Tachirense",emoji:"🥐",cat:"hojaldre",time:"≈4 h",temp:"190°C · 18–20 min",yield:"20–25 u",y:22,
+    groups:[G("La Talvina · 16–24 h antes",TV,false),G("La masa base",[["Harina de trigo",500,"g"],["Agua tibia",280,"ml"],["Talvina activa",150,"g"],["Mantequilla blanda",50,"g"],["Sal",10,"g"],["Azúcar",15,"g"]]),G("El empaste (las 81 capas)",[["Mantequilla FRÍA",150,"g"]]),G("Para encima",[["Huevo para pintar",1,"u"],["Ajonjolí o anís",1,"—"]])],
+    steps:["Prepara la Talvina 16–24 h antes.","Masa base: mezcla y amasa suave 12–15 min; reposa 30 min en nevera.","Golpea la mantequilla fría hasta un cuadrado de 15×15 cm (fría pero maleable).","Encierra la mantequilla en la masa y da 4 vueltas simples, extendiendo siempre en la misma dirección, con 20 min de nevera entre vueltas.","Extiende a 2 cm, corta cuadrados de 4×4 cm.","Pincha cada uno 6–8 veces con tenedor (obligatorio).","2º reposo 30–60 min; pinta con huevo y espolvorea ajonjolí.","Hornea a 190°C por 18–20 min (capas visibles en los costados).","Enfría sin paño mín. 20 min (crujiente cuando está frío)."],
+    tips:["Sin capas → la mantequilla no estaba fría.","Se inflaron como globo → no los pinchaste.","Mantequilla escurriendo → faltaron los descansos de nevera."]},
+  milhojas:{name:"Mil Hojas Andino",emoji:"🧁",cat:"hojaldre",time:"≈5 h",temp:"200°C · 18–20 min",yield:"8–10 porc",y:9,
+    groups:[G("El hojaldre",[["Harina todo uso",500,"g"],["Mantequilla fría en cubos",300,"g"],["Agua muy fría",150,"ml"],["Sal",10,"g"],["Vinagre blanco",1,"cdta"],["Mantequilla para laminar",200,"g"]]),G("La crema pastelera",[["Leche entera",500,"ml"],["Azúcar",100,"g"],["Yemas",4,"u"],["Maicena",40,"g"],["Mantequilla",30,"g"],["Vainilla",1,"cdta"]]),G("El acabado",[["Arequipe",200,"g"],["Azúcar glass",50,"g"]])],
+    steps:["Masa: integra la mantequilla fría en la harina hasta textura arenosa; añade agua fría + vinagre solo hasta unir. No amasar. Refrigera 30 min–1 h.","Crema pastelera: cuece leche, yemas, azúcar y maicena hasta espesar; añade mantequilla y vainilla; refrigera mín. 2 h.","Aplana los 200 g de mantequilla a un cuadrado de 15×15 cm.","Encierra la mantequilla y da 6 vueltas (gira 90° cada vez), con nevera de 30 min cada 2 vueltas.","Extiende a 3 mm y corta 3 rectángulos iguales de 20×10 cm; pínchalos 10–12 veces.","Hornea a 200°C por 18–20 min (con bandeja encima los primeros 8–10 min).","Arma: placa + crema + placa + crema + placa.","Cubre con arequipe y espolvorea azúcar glass.","Refrigera mín. 1 h (ideal toda la noche) antes de cortar con cuchillo de sierra."],
+    tips:["Hojaldre sin capas → mantequilla muy caliente al laminar.","Crema líquida → poca cocción o poca maicena.","Corte sucio → cuchillo de sierra y limpiar entre cortes."]}
+};
+const CATS=[["todos","Todos"],["clasicos","Clásicos"],["dulces","Dulces"],["acemas","Acemas & rellenos"],["hojaldre","Hojaldrados"]];
+
+/* Talvina — proceso real de 3 días */
+const TALVINA_DAYS=[
+  {d:1,t:"El nacimiento",todo:["Mezcla 200 g de harina con 150 ml de agua tibia (25–30°C) sin grumos.","Agrega 80 g de papelón rallado hasta disolver.","Incorpora 1 rama de canela, 3 clavos y 3 pepitas de pimienta guayabita.","Cubre con un paño (NUNCA tapa hermética) en lugar cálido 24–48 h."],ver:"Primeras burbujas (6–12 h)",oler:"De harina a fermentado dulce",text:"Papilla espesa",alerta:"El agua nunca caliente (>30°C mata las levaduras). Nada de tapa: la talvina necesita respirar."},
+  {d:2,t:"Primera alimentación",todo:["Revisa la actividad (ya debe haber burbujas).","Descarta la mitad.","Agrega 100 g de harina + 80 ml de agua tibia y mezcla.","Cubre de nuevo con el paño."],ver:"Burbujas activas, sube y baja",oler:"Guarapo / chicha",text:"Aireada",alerta:"En clima frío (como San Cristóbal) va más lenta: dale calor (horno con la luz encendida, 28°C)."},
+  {d:3,t:"¡Lista para hornear!",todo:["Haz la prueba de flotación: una cucharada en agua; si flota, está lista.","Con dos alimentaciones ya debe estar activa.","Refresca 4–6 h antes de amasar.","Guarda 50 g de reserva madre en la nevera."],ver:"Duplica en 4–6 h, superficie abombada",oler:"Dulce-ácido tipo guarapo",text:"Espumosa",alerta:"Si no flota, dale 1 día más de alimentación. La primera talvina siempre es la más lenta."}
+];
+const RULES=[
+  "Nunca uses más del <b>70 %</b>: deja al menos 30 % como base viva.",
+  "Repón siempre <b>la misma cantidad</b> que usaste (harina : agua, 1 : 1).",
+  "<b>Alimenta cada 3 días</b> aunque no hornees.",
+  "Para pausas largas, <b>nevera a 7–10°C</b> (aguanta hasta 2 semanas).",
+  "Sácala <b>4 h antes</b> de usar: nunca uses talvina fría directa en la masa."
+];
+const TV_SOS=[
+  {p:"No burbujea tras 48–72 h",c:"Clima frío o agua muy caliente que mató las levaduras.",s:"Llévala a 28–30°C (horno con la luz encendida), agrega 1 cucharadita de papelón y espera 12–24 h."},
+  {p:"Huele a vinagre fuerte / muy ácida",c:"Sobrefermentada: tiene hambre.",s:"Descarta el 70 % y aliméntala doble (proporción 1:2:2) durante 3 días. Se recupera en 2–3 ciclos."},
+  {p:"Líquido oscuro en la superficie (hooch)",c:"Le falta comida (ese líquido es alcohol, no es peligroso).",s:"Aliméntala; si es mucho, descarta el líquido y refresca 1:1:1 cada 12 h."},
+  {p:"No sube nada después de alimentar",c:"Talvina débil o temperatura baja.",s:"Ponla en el horno con la luz encendida (28–30°C) 6 h, o añade 5 g de papelón/miel en el próximo refresco."},
+  {p:"Color rosa, naranja, verde o negro",c:"Contaminación seria.",s:"⚠️ Descártala completa y empieza de nuevo con un frasco limpio. No hay rescate posible."}
+];
+const BAKE_SOS=[
+  {p:"Pan quemado abajo, crudo arriba",c:"Bandeja muy baja / exceso de calor de piso.",s:"Sube al carril central (el pan gocho siempre va al centro) o cubre con aluminio los últimos 10 min."},
+  {p:"Pan pálido pese al tiempo",c:"El horno no alcanza la temperatura real.",s:"Precalienta más tiempo o sube el dial. Todo horno doméstico 'miente': calíbralo con un termómetro de horno."},
+  {p:"No subió en el primer reposo",c:"Talvina inactiva o la sal tocó la Talvina al mezclar.",s:"Disuelve talvina fresca en agua tibia (no caliente), intégrala y reposa en ambiente cálido."},
+  {p:"Corteza muy gruesa",c:"Temperatura alta / horneado seco.",s:"Baja 10°C y aumenta 5 min. Para corteza fina y crujiente: rocía agua (vapor) los primeros 8–10 min."},
+  {p:"Miga gomosa por dentro",c:"Cortaste el pan caliente.",s:"Espera siempre 25–30 min de enfriado antes de cortar. Sin termómetro, golpea la base: suena hueco = listo."},
+  {p:"Masa muy pegajosa",c:"Exceso de humedad o harina muy absorbente.",s:"Añade harina de a 1 cucharada (máx. 3), amasando 2 min entre cada una. O mójate las manos en vez de echar agua."}
+];
+const MODULOS=[["1","Fundamentos: lo que nadie te explica"],["2","El alma del pan: La Talvina"],["3","Ingredientes, herramientas y equipos"],["4","Masas, amasado y fermentación"],["5","El horneado perfecto"],["6","Los panes tachirenses: catálogo"],["7","Acabados, decoración y presentación"],["8","Tu negocio de pan andino"],["9","Marketing y ventas para panaderos"]];
+const BONOS=[["La Talvina Inmortal","Manténla viva para siempre"],["Cobra sin Pena","Pon precios sin culpa"],["El Mapa del Pan Gocho","Catálogo de +30 panes"],["Dorado de Vitrina","El brillo que antoja"],["El Corazón del Pan","8 rellenos que enamoran"],["S.O.S. del Panadero","Soluciona cualquier falla"],["Estados que Antojan","Vende por WhatsApp"],["Tu Primer Pan HOY","Empieza sin esperar"],["De Táchira a tu cocina","La guía completa"]];
+const UPSELL=[["Repostería Rentable","🧁"],["Cocina China en Casa","🥡"],["Tortas que se Venden","🎂"],["Freidora de Aire","🍟"]];
+
+/* ============ HELPERS ============ */
+const $=id=>document.getElementById(id);
+function money(sym,n){let v=Math.round(n*100)/100;let s=v.toLocaleString('es',{minimumFractionDigits:(v%1?2:0),maximumFractionDigits:2});return sym+s;}
+function toast(t){const el=$('toast');el.textContent=t;el.classList.add('show');clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('show'),2000);}
+function roundQ(q,u){if(u==='g'||u==='ml')return Math.max(5,Math.round(q/5)*5);if(u==='u')return Math.max(1,Math.ceil(q));return Math.round(q*4)/4;}
+function fmtQ(q,u){if(u==='—'||u==='toque'||u==='rama'||u==='pepitas')return u==='rama'?q+' rama'+(q>1?'s':''):(u==='pepitas'?q+' pepitas':(u==='toque'?'al gusto':'al gusto'));return q+' '+u;}
+
+/* ============ NAV ============ */
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('.tabbar button').forEach(b=>b.classList.toggle('on',b.dataset.tab===id));$('viewport').scrollTop=0;}
+
+/* ============ RECETAS ============ */
+let curCat="todos";
+function renderChips(){$('recChips').innerHTML=CATS.map(c=>`<button class="chip ${c[0]==curCat?'on':''}" onclick="setCat('${c[0]}')">${c[1]}</button>`).join('');}
+function setCat(c){curCat=c;renderChips();renderRecipes();}
+function ingCount(r){return r.groups.reduce((a,g)=>a+g.items.length,0);}
+function renderRecipes(){
+  const items=Object.entries(RECIPES).filter(([k,r])=>curCat=='todos'||r.cat==curCat);
+  $('rlist').innerHTML=items.map(([k,r])=>`<div class="recipe" onclick="openRecipe('${k}')"><div class="rimg"><span>${r.emoji}</span></div><div class="rbody"><b>${r.name}</b><p>Rinde ${r.yield} · ${ingCount(r)} ingredientes</p><div class="meta"><span class="pill a">⏱ ${r.time}</span><span class="pill g">${r.temp}</span></div></div></div>`).join('');
+}
+function openRecipe(k){
+  const r=RECIPES[k];
+  $('shName').textContent=r.name;$('shEmoji').textContent=r.emoji;
+  $('shMeta').innerHTML=`<span class="pill">⏱ ${r.time}</span><span class="pill">🌡 ${r.temp}</span><span class="pill">Rinde ${r.yield}</span>`;
+  $('shIng').innerHTML=r.groups.map(g=>`<div class="grouplbl">${g.l}</div>`+g.items.map(i=>`<div class="ingrow"><span>${i[0]}</span><span class="q">${fmtQ(i[1],i[2])}</span></div>`).join('')).join('')+(r.tips?r.tips.map(t=>`<div class="callout">💡 ${t}</div>`).join(''):'');
+  $('shPas').innerHTML=`<ol class="steps">`+r.steps.map(s=>`<li>${s}</li>`).join('')+`</ol>`;
+  shTab('ing',document.querySelector('.tabsm button'));
+  $('sheet').classList.add('open');
+}
+function closeRecipe(){$('sheet').classList.remove('open');}
+function shTab(t,btn){document.querySelectorAll('.tabsm button').forEach(b=>b.classList.toggle('on',b===btn));$('shIng').hidden=(t!='ing');$('shPas').hidden=(t!='pas');$('sheet').querySelector('.sheet-body').scrollTop=0;}
+
+/* ============ TALVINA ============ */
+let curDay=2;
+function tvMode(m,btn){document.querySelectorAll('#talvina .seg button').forEach(b=>b.classList.toggle('on',b===btn));$('tvOrig').hidden=(m!='orig');$('tvExpress').hidden=(m!='express');}
+function renderDaybar(){$('daybar').innerHTML=TALVINA_DAYS.map(d=>`<div class="day ${d.d==curDay?'on':d.d<curDay?'done':''}" onclick="setDay(${d.d})"><small>Día</small><b>${d.d}</b></div>`).join('');}
+function setDay(n){curDay=n;renderDaybar();renderDay();}
+function renderDay(){
+  const d=TALVINA_DAYS.find(x=>x.d==curDay);
+  $('dayview').innerHTML=`<p class="eyebrow" style="color:var(--gold-deep)">Día ${d.d} de ${TALVINA_DAYS.length}</p><h3>${d.t}</h3><ul class="todo">${d.todo.map(t=>`<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>${t}</span></li>`).join('')}</ul><div class="senses"><div class="sense"><small>👁 Ver</small><span>${d.ver}</span></div><div class="sense"><small>👃 Oler</small><span>${d.oler}</span></div><div class="sense"><small>✋ Textura</small><span>${d.text}</span></div></div>${d.alerta?`<div class="alert">⚠️ ${d.alerta}</div>`:''}`;
+}
+function renderRules(){$('rules').innerHTML=RULES.map((r,i)=>`<div class="rule"><span class="n">${i+1}</span><p>${r}</p></div>`).join('');}
+function accHTML(arr){return arr.map(s=>`<details><summary><span class="dot"></span>${s.p}<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="inner"><b>Causa:</b> ${s.c}<br><b>Solución:</b> ${s.s}</div></details>`).join('');}
+
+/* ============ CALCULADORAS ============ */
+function calcTab(k,btn){document.querySelectorAll('.calc-tabs button').forEach(b=>b.classList.toggle('on',b===btn));document.querySelectorAll('.calc').forEach(c=>c.classList.remove('on'));$('c-'+k).classList.add('on');}
+function toggleAdv(id){$(id).classList.toggle('on');}
+function calcTalvina(){
+  const panes=+$('tvPanes').value,g=+$('tvG').value;
+  $('tvPanesV').textContent=panes+' panes';$('tvGV').textContent=g+' g';$('tvPanesEcho').textContent=panes;
+  const total=panes*g,f=total/300;
+  $('tvTotal').textContent=total+' g';
+  $('tvHarina').textContent=Math.round(200*f)+' g';
+  $('tvAgua').textContent=Math.round(150*f)+' ml';
+  $('tvPapelon').textContent=Math.round(80*f)+' g';
+}
+function fillIngrSelect(){$('igSel').innerHTML=Object.entries(RECIPES).map(([k,r])=>`<option value="${k}">${r.name}</option>`).join('');}
+function calcIngr(){
+  const k=$('igSel').value,r=RECIPES[k],panes=+$('igPanes').value;
+  $('igPanesV').textContent=panes+' panes';
+  const f=panes/r.y;
+  $('igYieldNote').textContent=`Receta base: ${r.yield} · escalada a ${panes} (×${f.toFixed(2)})`;
+  $('igOut').innerHTML=r.groups.map(g=>`<div class="grouplbl">${g.l}${g.scale?'':' · fija'}</div>`+g.items.map(i=>{
+    let q=i[1],u=i[2];
+    if(g.scale){q=roundQ(i[1]*f,u);}
+    return `<div class="ingrow"><span>${i[0]}</span><span class="q">${fmtQ(q,u)}</span></div>`;
+  }).join('')).join('');
+  $('igSub').innerHTML=`🌎 <b>Sustitutos por país (Bono 9):</b> <b>Papelón</b> → chancaca (Chile/Perú), panela (Colombia/España), piloncillo (EE.UU.). <b>Pimienta guayabita</b> → pimienta de Jamaica / allspice. <b>Bocadillo</b> → pasta/ate de guayaba. <b>Harina</b>: sin polvos (Chile), sin preparar (Perú), 000 (Argentina), de fuerza (España), bread flour (EE.UU.) — siempre SIN leudante. <b>La talvina se hace una sola vez</b> (no se multiplica por pan).`;
+}
+let mult=4;
+function setMult(m,btn){mult=m;document.querySelectorAll('#c-costo .seg button').forEach(b=>b.classList.toggle('on',b===btn));calcCosto();}
+function calcCosto(){
+  const sym=$('coMoneda').value;
+  document.querySelectorAll('#c-costo [data-sym]').forEach(e=>e.textContent=sym);
+  const g=id=>+$(id).value||0;
+  const ingr=g('co_harina')+g('co_gr')+g('co_az')+g('co_rel')+g('co_hv')+g('co_ot');
+  const horas=+$('co_horas').value,panes=+$('co_panes').value,dia=+$('co_dia').value;
+  const tiempo=horas*g('co_hora');
+  $('coHorasV').textContent=(''+horas).replace('.',',');$('coPanesV').textContent=panes;$('coDiaV').textContent=dia;$('coDiaEcho').textContent=dia;
+  $('coLabor').innerHTML=`🕐 Tu trabajo: <b>${(''+horas).replace('.',',')} h × ${money(sym,g('co_hora'))} = ${money(sym,tiempo)}</b> en esta tanda`;
+  const subtotal=ingr+g('co_gas')+g('co_emp')+tiempo;
+  const costoReal=subtotal*1.08;
+  const costoPan=costoReal/panes, precio=costoPan*mult, ganPan=precio-costoPan, margen=precio>0?Math.round(ganPan/precio*100):0, ganMes=ganPan*dia*30;
+  $('coPan').textContent=money(sym,costoPan);
+  $('coPrecio').textContent=money(sym,precio);
+  $('coGanPan').textContent=money(sym,ganPan);
+  $('coMargen').textContent=margen+'%';
+  $('coMes').textContent=money(sym,ganMes);
+  if($('c-diario').classList.contains('on'))renderCal();
+}
+
+/* ============ CONTROL DIARIO ============ */
+const MESES=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const WDS=["Lu","Ma","Mi","Ju","Vi","Sá","Do"];
+let calDate=new Date(); calDate.setDate(1);
+let selDay=null;
+function diaKey(y,m,d){return y+"-"+String(m+1).padStart(2,"0")+"-"+String(d).padStart(2,"0");}
+function getDiario(){try{return JSON.parse(localStorage.getItem("pa_diario")||"{}");}catch(e){return {};}}
+function setDiario(o){try{localStorage.setItem("pa_diario",JSON.stringify(o));}catch(e){}}
+function calMonth(delta){calDate.setMonth(calDate.getMonth()+delta);selDay=null;$('dayForm').hidden=true;renderCal();}
+function renderCal(){
+  const y=calDate.getFullYear(),m=calDate.getMonth(),sym=$('coMoneda').value||'$';
+  document.querySelectorAll('[data-sym2]').forEach(e=>e.textContent=sym);
+  $('calTitle').textContent=MESES[m]+" "+y;$('diMonthName').textContent=MESES[m]+" "+y;
+  const data=getDiario(),today=new Date();
+  const startDow=(new Date(y,m,1).getDay()+6)%7, days=new Date(y,m+1,0).getDate();
+  let html=WDS.map(w=>`<div class="wd">${w}</div>`).join('');
+  for(let i=0;i<startDow;i++)html+=`<div class="cal-cell empty"></div>`;
+  let mv=0,mg=0;
+  for(let d=1;d<=days;d++){
+    const e=data[diaKey(y,m,d)];let dot='';
+    if(e){const net=(e.v||0)-(e.g||0);dot=`<span class="dot ${net>=0?'pos':'neg'}"></span>`;mv+=e.v||0;mg+=e.g||0;}
+    const isT=(d===today.getDate()&&m===today.getMonth()&&y===today.getFullYear());
+    html+=`<div class="cal-cell ${isT?'today':''} ${selDay===d?'on':''}" onclick="pickDay(${d})">${d}${dot}</div>`;
+  }
+  $('calGrid').innerHTML=html;
+  $('diVentas').textContent=money(sym,mv);$('diGastos').textContent=money(sym,mg);$('diNeta').textContent=money(sym,mv-mg);
+}
+function pickDay(d){
+  selDay=d;const y=calDate.getFullYear(),m=calDate.getMonth(),e=getDiario()[diaKey(y,m,d)]||{};
+  $('dfTitle').textContent=d+" de "+MESES[m];$('df_v').value=e.v||'';$('df_g').value=e.g||'';
+  $('dayForm').hidden=false;renderCal();$('dayForm').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function saveDay(){
+  if(selDay==null)return;const y=calDate.getFullYear(),m=calDate.getMonth(),o=getDiario();
+  const v=+$('df_v').value||0,g=+$('df_g').value||0;
+  if(v||g)o[diaKey(y,m,selDay)]={v,g};else delete o[diaKey(y,m,selDay)];
+  setDiario(o);$('dayForm').hidden=true;selDay=null;renderCal();toast('Día guardado ✅');
+}
+function closeDay(){$('dayForm').hidden=true;selDay=null;renderCal();}
+
+/* ============ DETALLE MÓDULOS / BONOS ============ */
+const MOD_INFO={
+ 0:{q:"La ciencia detrás del pan gocho: por qué funciona cada ingrediente y cada paso, para diagnosticar en vez de adivinar.",learn:["Gluten y la prueba de la ventana (harina 000, 10–12% proteína)","Fermentación con talvina: alcohólica (25–30°C) vs acética (15–20°C)","La sal: 10 g por kg, nunca yodada ni sobre la talvina","Azúcar (180–250 g/kg), grasas y reacción de Maillard (175–190°C)","Porcentaje de panadero, hidratación 65–70% y masa a 22–26°C"],key:["El agua fría de nevera replica el secreto del Táchira: es temperatura, no minerales","pH ideal 5.5–6.0","No cortes el pan hasta 20–30 min de enfriado"]},
+ 1:{q:"La masa madre osmotolerante tachirense de 420 años: cómo levantarla y mantenerla viva.",learn:["Qué es la osmotolerancia (fermenta masas muy dulces)","Receta: 200 g harina + 150 ml agua tibia + 80 g papelón + canela, clavos y guayabita","Levantarla en ~3 días y la prueba de flotación","Alimentarla 1:1 y guardarla en nevera","Versión Express lista en 6–8 h"],key:["Agua nunca sobre 28°C: mata las levaduras","Nunca tapa hermética: debe respirar","La pimienta guayabita la hace tachirense"]},
+ 2:{q:"Los ingredientes correctos y el kit mínimo para empezar (desde $25).",learn:["Harina 000 SIN leudante (9–11% proteína)","Sal sin yodo 10 g/kg y papelón como combustible","Kit básico: báscula, bowl, raspador, termómetro, brocha","Temperaturas críticas: agua 35°C, masa 26°C, pan 92°C","Con qué sustituir cada ingrediente si escasea"],key:["Los 3 imprescindibles: báscula, raspador y termómetro","Inversión inicial ~$63 si ya tienes horno de gas","El horno de gas de casa sirve: solo calíbralo"]},
+ 3:{q:"El módulo más práctico: la receta base, el amasado y la fermentación para lograr la masa perfecta.",learn:["Receta madre (1 kg harina, 300 g talvina, 200 g azúcar…) y su escalado a 2/3/5 kg","Los 8 pasos en orden; la sal siempre al final","4 técnicas de amasado (básica, francesa, pliegues, máquina)","1er reposo 1.5–2 h; 2º reposo 45–60 min con la prueba del dedo","Fermentación en frío 8–16 h a 4–6°C"],key:["Masa a 25°C al terminar el amasado","La prueba de la ventana es el único indicador confiable","Pesos: 50–70 g pequeño, 100–150 g mediano, 180–220 g grande"]},
+ 4:{q:"Cortes, pintado, temperaturas y tiempos exactos que convierten la masa en pan terminado.",learn:["Precalentar 25–30 min y calibrar tu horno (miente hasta 20°C)","Oven spring y rotar la bandeja 180° a mitad","5 fórmulas de pintado y 7 tipos de cortes (greñado a 45°)","Vapor solo los primeros 10 min","Tabla maestra por pan (camaleón 175°C, queso 185°C…)"],key:["Temperatura interna 88–92°C = listo (cuidado con el falso dorado)","Enfría en rejilla 20–30 min","Almíbar final (100 g azúcar + 100 ml agua) para brillo de vitrina"]},
+ 5:{q:"Las 12 recetas auténticas del pan gocho, cada una con medidas, técnica, secreto y venta.",learn:["Camaleón (la estrella, margen 65%), Azucarado y las 2 acemas","Pan de queso, pan de leche, pan de Dios y piñita","Trenzado, criollito, enrollado y mil hojas (margen 70%)","Tabla de dificultad, margen y popularidad","Paquetes de venta, estacionalidad y versiones sin lactosa"],key:["Practica cada receta mínimo 5 veces antes de venderla","Orden ideal: criollito → camaleón → leche → azucarado → acema → trenzado → mil hojas","La maestría vende más que la variedad mediocre"]},
+ 6:{q:"Cómo hacer que el pan se vea premium para justificar el doble de precio: el ojo compra primero.",learn:["8 baños/acabados (almíbar, papelón, mantequilla, huevo+miel…)","10 decoraciones (ajonjolí, coco, azúcar perlada, chocolate…)","Cortes artísticos (espiga, hoja) enfriando la masa 30 min","3 niveles de empaque y marca (crema, marrón, dorado)","Fotografía con celular: luz 7–9 am o 3–5 pm, ángulo 45°"],key:["Nunca empaques pan caliente ni pongas acabado frío sobre pan frío","El empaque no debe superar 8–10% del precio","Hecho en Táchira es tu diferenciador imbatible"]},
+ 7:{q:"Cómo calcular tus costos reales y fijar precios que de verdad dan ganancia.",learn:["Fórmula: Ingredientes + Gas + Empaque + Tu tiempo + Depreciación + 8% desperdicio","Multiplicadores ×3 mínimo, ×4 recomendado, ×5 premium","Tabla maestra de precios por pan","Cómo subir precios 15–25% sin perder clientes","Paquetes que suben el ticket sin bajar precio"],key:["Nunca vendas por debajo de ×3: trabajas a pérdida","Pago primero, producción después","Margen mínimo saludable: 60%"]},
+ 8:{q:"El sistema para que los clientes te encuentren con Instagram, TikTok, WhatsApp y voz a voz.",learn:["Tu historia de marca en 30 s y en 2 min","IG (3–5 posts/sem), TikTok (1 video/día el primer mes), WhatsApp Business (90% de ventas)","20 tipos de contenido y calendario semanal","Meta Ads $5–10/día solo con 20+ clientes","10 objeciones con respuesta y seguimiento de 5 pasos"],key:["420 años de tradición vende más que pan casero","Meta a 90 días: 20 → 50 → 100 clientes","El 80% de la venta está en el seguimiento"]}
+};
+const BONO_INFO={
+ 0:{q:"Mantén tu talvina viva para siempre: refrescos, respaldos y rescate.",learn:["Las 5 reglas del guarapo inmortal (usa máx. 70%, repón 1:1, alimenta cada 3 días…)","Guardarla en nevera (7–10°C) hasta 2 semanas","Deshidratarla para que dure hasta 12 meses","Copia de seguridad: frasco activo + respaldo + deshidratada","Semáforo verde/ámbar/rojo y rescate de 3 días"],key:["Nunca uses más del 70%: deja base viva","Sácala 4 h antes de usar (nunca fría en la masa)","Agua caliente y sal directa la matan"]},
+ 1:{q:"Pon precios sin culpa y cobra lo que tu pan realmente vale.",learn:["Los 10 mandamientos del precio","Palabras que dan confianza vs. las que hay que evitar","Respuestas exactas al que regatea","Paquetes en vez de descuentos (Desayuno, Familiar, Regalo)","Métodos de pago y cuándo cobrar por adelantado"],key:["Nunca por debajo de ×3; el que negocia no es tu cliente ideal","Precio fijo de catálogo: no negocies por chat","Pago primero, producción después: sin excepción"]},
+ 2:{q:"El catálogo visual de +30 panes tachirenses por familias, temporadas y rentabilidad.",learn:["4 familias: dulces clásicos, especiados, rellenos y decorativos","Calendario: acema en Semana Santa; pan de jamón y trenzados en diciembre","10 combinaciones que suben el ticket","Rankings por rentabilidad, facilidad y potencial en redes","Plan por niveles: 3 → 6 → 9 → 12 panes"],key:["Un pan relleno se vende al doble con solo +20–30% de costo","El aroma de la acema es marketing gratis","Empieza dominando 3 panes"]},
+ 3:{q:"El brillo y el color que enamoran: acabados que separan el pan artesanal del industrial.",learn:["Almíbar clásico (100 g azúcar + 100 ml agua) y de especias","Pintados: huevo entero, huevo+miel, leche condensada, papelón","Cuándo aplicar cada baño (tibio sobre pan tibio)","El brillo como argumento para cobrar premium"],key:["Nunca apliques acabado frío sobre pan frío","El brillo entra por los ojos: es lo que antoja en la foto","Combínalo con las decoraciones del Módulo 7"]},
+ 4:{q:"La guía de rellenos para que no se escapen en el horno y justifiquen precio premium.",learn:["Proporción estrella 60% bocadillo / 40% queso (y sus ajustes)","Cantidades por pieza (acema grande: 60 g bocadillo + 40 g queso)","Sellado: 2 cm de borde libre, dedos húmedos, reposo 10 min","Los 8 rellenos (bocadillo-queso, arequipe, chocolate, crema…)","Los 7 errores de relleno con causa y solución"],key:["Un pan de $1 con bocadillo y queso vale $3","Corta el bocadillo con cuchillo caliente; el queso a temperatura ambiente","El corte con relleno derretido es tu video más viral"]},
+ 5:{q:"Soluciona cualquier falla: masa, fermentación, horneado y talvina.",learn:["Masa pegajosa o dura: cómo corregir sin arruinarla","Por qué no sube y cómo rescatarla","Quemado abajo/crudo arriba: posición y aluminio","Corteza gruesa, pan pálido, miga gomosa","Fallas de la talvina y su rescate"],key:["Todo horno miente: calíbralo con termómetro","Pan gocho siempre al carril central","Nunca cortes caliente: espera 25–30 min"]},
+ 6:{q:"Vende pan solo con tu celular: redes sociales sin presupuesto.",learn:["Perfiles de IG, WhatsApp Business, TikTok y Facebook con marca coherente","Fotografía con luz de ventana (7–9 am / 4–6 pm) y 3 fondos","10 videos virales (amasado, corte de miga, relleno derretido, talvina)","Estrategia por plataforma y calendario de 30 días","Regla 3:1 (3 de valor por 1 de venta)"],key:["El Status de WhatsApp es el que más convierte en Venezuela: siempre con precio","El 80% se cierra en privado","Pregunta a cada cliente: ¿cómo me encontraste?"]},
+ 7:{q:"Presentación, empaque y entrega para cobrar precio premium desde el primer día.",learn:["Los 3 momentos que deciden la venta: ver, recibir, probar","4 niveles de empaque (básico, intermedio, premium, lujo)","Etiqueta con 7 elementos, diseñada gratis en Canva","Presentaciones por ocasión (San Valentín, Madres, bodas, Navidad)","Checklist final de 8 puntos antes de entregar"],key:["Cobra el empaque como parte del producto, nunca como extra","Corporativo: 50 cajas en un pedido; boda $50–100","Noviembre y diciembre pueden valer medio año"]},
+ 8:{q:"Sustitutos exactos de cada ingrediente tachirense en 6 países, con semáforo.",learn:["Papelón = chancaca (Chile/Perú), panela (Colombia/España), piloncillo (EE.UU.)","Guayabita = pimienta de Jamaica / allspice; bocadillo = pasta de guayaba","La harina correcta por país (000, de fuerza, bread flour…)","Lista de compras lista para cada país","Horneado en altura (+2000 m): más líquido, menos levadura, vapor"],key:["En papelón y talvina no se negocia: busca el verde (sustituto fiel)","Ojo Argentina: manteca = mantequilla; usa margarina sin sal","Papelón express: azúcar morena + melaza"]}
+};
+function openInfo(type,i){
+  const isMod=type==='mod', base=isMod?MODULOS[i]:BONOS[i], det=isMod?MOD_INFO[i]:BONO_INFO[i];
+  $('sh2Emoji').textContent=isMod?'📘':'🎁';
+  $('sh2Name').textContent=isMod?base[1]:base[0];
+  $('sh2Meta').innerHTML=`<span class="pill">${isMod?'Módulo '+base[0]+' de 9':'Bono '+(i+1)+' de 9'}</span>`;
+  let body=`<p class="lead" style="margin:0 0 18px">${det?det.q:base[1]}</p>`;
+  if(det){
+    body+=`<div class="grouplbl">${isMod?'Qué vas a aprender':'Qué incluye'}</div><ul class="learn">`+det.learn.map(x=>`<li>${x}</li>`).join('')+`</ul>`;
+    body+=`<div class="grouplbl" style="margin-top:20px">Claves de oro</div>`+det.key.map(x=>`<div class="callout">🔑 ${x}</div>`).join('');
+  }
+  body+=`<div class="callout" style="margin-top:20px;background:var(--gold-tint);border-color:var(--gold)">📎 El contenido completo (video + PDF) vive dentro de tu ${isMod?'módulo':'bono'} en La Biblia del Pan Andino.</div>`;
+  $('sh2Body').innerHTML=body;$('sh2Body').scrollTop=0;$('sheet2').classList.add('open');
+}
+function closeInfo(){$('sheet2').classList.remove('open');}
+
+/* ============ MÁS ============ */
+function renderMas(){
+  $('modulos').innerHTML=MODULOS.map((m,i)=>`<div class="brow" onclick="openInfo('mod',${i})"><span class="bic">${m[0]}</span><div><b>${m[1]}</b><p>Módulo ${m[0]} de 9</p></div><span class="chev">›</span></div>`).join('');
+  $('bonos').innerHTML=BONOS.map((b,i)=>`<div class="brow" onclick="openInfo('bono',${i})"><span class="bic">🎁</span><div><b>${b[0]}</b><p>${b[1]}</p></div><span class="chev">›</span></div>`).join('');
+  $('bakeSos').innerHTML=accHTML(BAKE_SOS);
+  $('upsell').innerHTML=UPSELL.map(u=>`<div class="up"><div class="uimg">${u[1]}<span class="lockbadge">🔒 Próximamente</span></div><div class="ubody"><b>${u[0]}</b><small>Nuevo curso</small><button class="buy">Próximamente</button></div></div>`).join('');
+}
+
+/* ============ SESIÓN ============ */
+let user={name:"María",mail:"tucorreo@ejemplo.com"};
+function applyUser(){
+  const first=(user.name||'').trim().split(' ')[0]||'María';
+  $('chipName').textContent=first;$('avatar').textContent=(first[0]||'M').toUpperCase();
+  $('heroName').textContent=`${first}, tu horno te espera`;
+  $('acctName').textContent=user.name||'—';$('acctMail').textContent=user.mail||'—';
+  let rows='';for(let i=0;i<14;i++){rows+=`<div style="top:${i*8}%;left:-10%;">${user.mail} · Pan Andino · ${user.mail} · Pan Andino</div>`;}
+  $('wm').innerHTML=rows;
+}
+function enter(){$('gate').style.display='none';applyUser();}
+$('gateForm').addEventListener('submit',e=>{e.preventDefault();user.name=$('gName').value||'Panadero';user.mail=$('gMail').value||'correo@ejemplo.com';try{localStorage.setItem('pa_user',JSON.stringify(user));}catch(e){}enter();toast('¡Bienvenido, '+user.name.split(' ')[0]+'! 🥖');});
+$('demoBtn').addEventListener('click',()=>{user={name:"María González",mail:"maria@ejemplo.com"};enter();});
+function logout(){try{localStorage.removeItem('pa_user');}catch(e){}location.reload();}
+
+/* ============ PROTECCIÓN (demo) ============ */
+document.addEventListener('contextmenu',e=>{e.preventDefault();toast('🔒 Contenido protegido');});
+document.addEventListener('dragstart',e=>e.preventDefault());
+
+/* ============ INIT ============ */
+function init(){
+  renderChips();renderRecipes();
+  renderDaybar();renderDay();renderRules();
+  $('tvSos').innerHTML=accHTML(TV_SOS);
+  fillIngrSelect();calcIngr();calcTalvina();calcCosto();renderMas();renderCal();
+  $('tvPanes').addEventListener('input',calcTalvina);
+  $('tvG').addEventListener('input',calcTalvina);
+  try{const s=localStorage.getItem('pa_user');if(s){user=JSON.parse(s);$('gate').style.display='none';applyUser();}}catch(e){}
+}
+init();
+</script>
+
+</body>
+</html>
