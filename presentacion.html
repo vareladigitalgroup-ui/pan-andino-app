@@ -1,0 +1,170 @@
+<title>Pan Andino — Kit de Lanzamiento</title>
+<style>
+:root{
+  --paper:#FBF4E9;--paper-2:#F3E7D2;--surface:#FFFDF8;--ink:#2A211A;--ink-soft:#5C4A3A;--muted:#8C7B66;
+  --line:#E7D8BF;--ember:#B4531F;--ember-deep:#8F3E12;--ember-tint:#F4E1D3;--gold:#B6820F;--gold-tint:#F7E9C9;
+  --green:#2F7A4E;--green-tint:#DEEBE0;--guava:#C0392B;
+  --fdisp:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --fbody:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --fmono:ui-monospace,"Cascadia Code","Segoe UI Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root{
+  --paper:#17110D;--paper-2:#211a13;--surface:#241C15;--ink:#F4E8D6;--ink-soft:#D9C8B2;--muted:#A2907A;
+  --line:#3A2D22;--ember:#E27C3E;--ember-deep:#C25E22;--ember-tint:#3A2418;--gold:#E8B454;--gold-tint:#372B15;
+  --green:#5CB080;--green-tint:#1D2C22;--guava:#E36F5F;}}
+:root[data-theme="light"]{--paper:#FBF4E9;--paper-2:#F3E7D2;--surface:#FFFDF8;--ink:#2A211A;--ink-soft:#5C4A3A;--muted:#8C7B66;--line:#E7D8BF;--ember:#B4531F;--ember-deep:#8F3E12;--ember-tint:#F4E1D3;--gold:#B6820F;--gold-tint:#F7E9C9;--green:#2F7A4E;--green-tint:#DEEBE0;--guava:#C0392B;}
+:root[data-theme="dark"]{--paper:#17110D;--paper-2:#211a13;--surface:#241C15;--ink:#F4E8D6;--ink-soft:#D9C8B2;--muted:#A2907A;--line:#3A2D22;--ember:#E27C3E;--ember-deep:#C25E22;--ember-tint:#3A2418;--gold:#E8B454;--gold-tint:#372B15;--green:#5CB080;--green-tint:#1D2C22;--guava:#E36F5F;}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--fbody);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px 80px}
+.hero{position:relative;margin:0 -20px 0;padding:56px 24px 40px;text-align:center;overflow:hidden;
+  background:radial-gradient(90% 70% at 50% 0%,rgba(206,144,38,.18),transparent 60%),linear-gradient(160deg,#c9721f,#7c3c16);color:#fff}
+.hero .kick{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#ffd98a;font-weight:700;margin:0}
+.hero h1{font-family:var(--fdisp);font-weight:700;font-size:clamp(30px,7vw,46px);line-height:1.02;margin:12px 0 6px;text-wrap:balance}
+.hero p{max-width:44ch;margin:8px auto 0;font-size:15px;color:rgba(255,255,255,.9)}
+.hero .bread{font-size:56px;margin-bottom:6px;filter:drop-shadow(0 6px 12px rgba(0,0,0,.35))}
+.linkbox{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:22px;padding:11px 16px;border-radius:100px;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px)}
+.linkbox b{font-family:var(--fmono);font-size:13px;word-break:break-all}
+.linkbox span{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#ffd98a}
+section{margin-top:44px}
+.eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin:0}
+h2{font-family:var(--fdisp);font-weight:700;font-size:26px;margin:7px 0 4px;line-height:1.1}
+.sub{color:var(--muted);font-size:14px;margin:0 0 18px}
+.hooks{display:grid;gap:11px}
+.hook{display:flex;gap:13px;align-items:flex-start;padding:15px 16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 2px rgba(42,33,26,.05)}
+.hook .no{font-family:var(--fmono);font-weight:700;color:var(--ember);font-size:15px;flex:none;width:26px}
+.hook p{margin:0;font-size:15.5px;line-height:1.4;font-weight:500}
+.hook .tag{display:inline-block;margin-top:6px;font-size:10.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:2px 8px;border-radius:100px}
+.tag.nos{background:var(--gold-tint);color:var(--gold)}
+.tag.neg{background:var(--green-tint);color:var(--green)}
+.script{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(42,33,26,.05)}
+.script-h{padding:14px 18px;background:var(--ember-tint);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.script-h b{font-family:var(--fdisp);font-size:17px}
+.script-h span{font-family:var(--fmono);font-size:12px;color:var(--ember);font-weight:700}
+.beat{display:grid;grid-template-columns:130px 1fr;gap:14px;padding:14px 18px;border-bottom:1px dashed var(--line)}
+.beat:last-child{border-bottom:none}
+.beat .screen{font-size:12px;color:var(--muted);font-weight:600}
+.beat .screen b{display:block;color:var(--ember);font-family:var(--fmono);font-size:10.5px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:3px}
+.beat .say{font-size:15px;line-height:1.45}
+.beat .say em{color:var(--ink-soft);font-style:italic}
+@media(max-width:520px){.beat{grid-template-columns:1fr;gap:5px}}
+.vlist{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.vlist li{display:flex;gap:11px;align-items:flex-start;font-size:15px;line-height:1.45}
+.vlist li svg{flex:none;margin-top:3px;color:var(--green)}
+.obj{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:15px 16px;margin-bottom:10px}
+.obj .q{font-weight:700;font-size:15px;display:flex;gap:8px;align-items:baseline}
+.obj .q span{color:var(--guava)}
+.obj .a{margin:7px 0 0;font-size:14px;color:var(--ink-soft);line-height:1.45}
+.cta{margin-top:44px;text-align:center;padding:34px 24px;border-radius:20px;background:linear-gradient(150deg,var(--ember),var(--ember-deep));color:#fff}
+.cta h2{color:#fff;margin:0 0 8px}
+.cta p{margin:0 auto 18px;max-width:40ch;color:rgba(255,255,255,.9);font-size:15px}
+.cta .btn{display:inline-block;padding:14px 26px;border-radius:100px;background:#fff;color:var(--ember-deep);font-weight:800;text-decoration:none;font-size:15px}
+.foot{text-align:center;color:var(--muted);font-size:12px;margin-top:40px;line-height:1.7}
+.foot .stamp{font-family:var(--fdisp);font-style:italic;color:var(--gold);font-size:15px}
+.divider{height:1px;background:var(--line);margin:0 -20px}
+.pill-note{margin-top:14px;padding:12px 15px;background:var(--gold-tint);border:1px solid var(--line);border-radius:12px;font-size:13px;color:var(--ink-soft);line-height:1.5}
+.pill-note b{color:var(--gold)}
+</style>
+
+<div class="hero">
+  <div class="bread">🥖</div>
+  <p class="kick">Kit de lanzamiento</p>
+  <h1>Pan Andino</h1>
+  <p>Todo lo que necesitas para salir a testear: ganchos, guiones y respuestas — listos para copiar y grabar.</p>
+  <div class="linkbox"><span>App</span><b>vareladigitalgroup-ui.github.io/pan-andino-app</b></div>
+</div>
+
+<div class="wrap">
+
+  <section>
+    <p class="eyebrow">El ángulo</p>
+    <h2>Nostalgia que se convierte en negocio</h2>
+    <p class="sub">Dos emociones venden este producto. Úsalas juntas.</p>
+    <div class="hooks">
+      <div class="hook"><div class="no">A</div><div><p><b>Nostalgia:</b> “Volvé a comer el pan de tu tierra, sin importar en qué país estés.”</p><span class="tag nos">Corazón</span></div></div>
+      <div class="hook"><div class="no">B</div><div><p><b>Negocio:</b> “El pan que la diáspora extraña puede ser TU ingreso.” Afuera un pan venezolano cuesta $3–$5.</p><span class="tag neg">Bolsillo</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Para anuncios y reels</p>
+    <h2>10 ganchos listos 🍞</h2>
+    <p class="sub">Copia, pega y prueba cuál pega más.</p>
+    <div class="hooks">
+      <div class="hook"><div class="no">1</div><div><p>¿Cuánto darías por volver a morder un <b>pan andino calientico</b>? 🥖</p><span class="tag nos">Nostalgia</span></div></div>
+      <div class="hook"><div class="no">2</div><div><p>El pan que hacía tu abuela en el Táchira… ahora en <b>tu cocina</b>, en cualquier país.</p><span class="tag nos">Nostalgia</span></div></div>
+      <div class="hook"><div class="no">3</div><div><p>Afuera un pan venezolano cuesta <b>$3–$5</b>. ¿Y si aprendes a hacerlos TÚ?</p><span class="tag neg">Negocio</span></div></div>
+      <div class="hook"><div class="no">4</div><div><p>Pan, pan, pan 🍞 el olor que te <b>devuelve a casa</b>.</p><span class="tag nos">Nostalgia</span></div></div>
+      <div class="hook"><div class="no">5</div><div><p>No es una receta. Es la <b>talvina</b>: el fermento de 420 años que hace el pan gocho de verdad.</p><span class="tag nos">Mecanismo</span></div></div>
+      <div class="hook"><div class="no">6</div><div><p>¿Extrañas el <b>pan camaleón</b>, la acema, las cucas? Te enseño a hacerlos todos.</p><span class="tag nos">Nostalgia</span></div></div>
+      <div class="hook"><div class="no">7</div><div><p>Con lo que gastas en <b>2 panes</b> afuera, aprendes a hacer 100.</p><span class="tag neg">Negocio</span></div></div>
+      <div class="hook"><div class="no">8</div><div><p>De la nostalgia al ingreso: <b>convierte tu horno en negocio</b> desde el teléfono.</p><span class="tag neg">Negocio</span></div></div>
+      <div class="hook"><div class="no">9</div><div><p>Tu talvina, tus panes, tu marca. <b>Empieza hoy</b>, sin experiencia.</p><span class="tag neg">Negocio</span></div></div>
+      <div class="hook"><div class="no">10</div><div><p>El pan de tu tierra no se compra: <b>se hornea</b>. Yo te enseño cómo.</p><span class="tag nos">Nostalgia</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Guion 1 · para grabar la app</p>
+    <h2>Reel de 20–30 segundos</h2>
+    <p class="sub">Graba la pantalla de la app siguiendo estos pasos. La voz va encima.</p>
+    <div class="script">
+      <div class="script-h"><b>Reel “¿Extrañas el pan de tu tierra?”</b><span>0:00–0:28</span></div>
+      <div class="beat"><div class="screen"><b>Escena 0:00</b>Foto de pan partido, vapor</div><div class="say">“¿Extrañas el pan de tu tierra?” <em>(pausa)</em></div></div>
+      <div class="beat"><div class="screen"><b>App · Inicio</b>Saludo + talvina Día 2/3</div><div class="say">“Con esta app haces los panes tachirenses en tu cocina… en cualquier país.”</div></div>
+      <div class="beat"><div class="screen"><b>App · Recetas</b>Desliza las 12 recetas</div><div class="say">“12 recetas con las cantidades exactas: camaleón, acema, pan de queso…”</div></div>
+      <div class="beat"><div class="screen"><b>App · Talvina</b>Desliza Día 1 → 3</div><div class="say">“El secreto de la talvina, paso a paso, sin fallar.”</div></div>
+      <div class="beat"><div class="screen"><b>App · Costos</b>Sube “ganancia al mes”</div><div class="say">“Y hasta cuánto puedes ganar si los vendes.”</div></div>
+      <div class="beat"><div class="screen"><b>Cierre</b>Logo + link</div><div class="say"><b>“Entra gratis y hazlo hoy. Link abajo.” 🥖</b></div></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Guion 2 · VSL corto</p>
+    <h2>Video de venta de 45–60 segundos</h2>
+    <div class="script">
+      <div class="script-h"><b>VSL “De la nostalgia al negocio”</b><span>0:00–0:55</span></div>
+      <div class="beat"><div class="screen"><b>Gancho</b></div><div class="say">“Si eres venezolano y vives afuera, seguro extrañas el pan de allá… y afuera cuesta hasta 5 dólares.”</div></div>
+      <div class="beat"><div class="screen"><b>Dolor</b></div><div class="say">“Lo intentaste en casa y no te queda igual. Te falta un secreto que ninguna receta de internet te dice.”</div></div>
+      <div class="beat"><div class="screen"><b>Mecanismo</b></div><div class="say">“Ese secreto es la <b>talvina</b>: el fermento tachirense de 420 años. Con él, el pan sí sabe a tu tierra.”</div></div>
+      <div class="beat"><div class="screen"><b>Producto</b></div><div class="say">“Creé una app que te lleva de la mano: la talvina día por día, 12 recetas exactas y un S.O.S. para cuando algo falle.”</div></div>
+      <div class="beat"><div class="screen"><b>Negocio</b></div><div class="say">“Y si quieres, calcula tus costos y véndelos: hay quien vive de esto afuera.”</div></div>
+      <div class="beat"><div class="screen"><b>CTA</b></div><div class="say"><b>“Entra al link, regístrate con tu correo y empieza a hornear hoy.”</b></div></div>
+    </div>
+    <div class="pill-note">💡 <b>Tip de grabación:</b> los momentos que más antojan son <b>el pan partido con vapor</b>, <b>la talvina burbujeando</b> y el <b>relleno derretido</b>. Empieza el video con uno de esos en los primeros 2 segundos.</div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Qué presentar</p>
+    <h2>Qué es la app (en una frase)</h2>
+    <p class="sub">“Tu maestro panadero tachirense, en el bolsillo.”</p>
+    <ul class="vlist">
+      <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>La Talvina día por día</b> — el fermento paso a paso, con la prueba de flotación y cómo mantenerla viva.</span></li>
+      <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>12 recetas tachirenses</b> con cantidades y temperaturas exactas (camaleón, acema, pan de queso, mil hojas…).</span></li>
+      <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Calculadoras que funcionan</b> — talvina, ingredientes que se escalan y costos con tu ganancia al mes.</span></li>
+      <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Control diario</b> — un calendario para llevar tus ventas y gastos.</span></li>
+      <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>9 módulos + 9 bonos</b> — desde los fundamentos hasta cómo venderlo y sustitutos por país.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="eyebrow">Si te dicen que no</p>
+    <h2>Objeciones y respuestas</h2>
+    <div class="obj"><p class="q"><span>“</span>No sé nada de panadería.<span>”</span></p><p class="a">La talvina va día por día y el <b>S.O.S. del Panadero</b> te saca de cualquier apuro. Está hecha para empezar de cero.</p></div>
+    <div class="obj"><p class="q"><span>“</span>No consigo los ingredientes acá.<span>”</span></p><p class="a">La app trae <b>sustitutos por país</b>: papelón = panela / chancaca / piloncillo, guayabita = pimienta de Jamaica, y la harina correcta según donde vivas.</p></div>
+    <div class="obj"><p class="q"><span>“</span>¿Y si me sale mal?<span>”</span></p><p class="a">Para eso está el <b>S.O.S.</b>: cada falla (no sube, quedó crudo, la talvina huele raro) con su causa y su solución.</p></div>
+    <div class="obj"><p class="q"><span>“</span>¿Sirve para vender?<span>”</span></p><p class="a">Sí. Trae la <b>calculadora de costos</b> (×3/×4/×5), el control diario y los módulos de negocio y ventas.</p></div>
+  </section>
+
+  <div class="cta">
+    <h2>Sal a probar 🥖</h2>
+    <p>Manda el link, graba la app con un gancho y mide cuál engancha más.</p>
+    <a class="btn" href="https://vareladigitalgroup-ui.github.io/pan-andino-app/" target="_blank" rel="noopener">Abrir la app →</a>
+  </div>
+
+  <div class="foot">
+    <div class="stamp">“El pan gocho no se apura, se cuida.”</div>
+    Kit de lanzamiento · Academia Pan Andino · panandino.lat
+  </div>
+</div>
