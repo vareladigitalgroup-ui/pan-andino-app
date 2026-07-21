@@ -51,7 +51,10 @@ img{max-width:100%; display:block}
   .device{max-width:410px; height:min(880px,94dvh); border-radius:46px;
     box-shadow:0 0 0 11px #17130f, 0 0 0 13px #2a2320, var(--shadow); outline:1px solid rgba(0,0,0,.2);}
 }
-.scroll{flex:1; overflow-y:auto; -webkit-overflow-scrolling:touch; scroll-behavior:smooth}
+.scroll{flex:1; overflow-y:auto; -webkit-overflow-scrolling:touch; scroll-behavior:smooth; overscroll-behavior:contain}
+.scroll:focus{outline:none}
+@media (prefers-reduced-motion: reduce){ .scroll{scroll-behavior:auto} }
+button,a{touch-action:manipulation}
 
 /* tab bar inferior */
 #tabbar{display:flex; border-top:1px solid var(--line); background:var(--surface);
@@ -63,8 +66,9 @@ img{max-width:100%; display:block}
 
 /* hoja de recetas (grilla) */
 #recgrid{position:absolute; inset:0; z-index:40; background:rgba(0,0,0,.45); display:flex; align-items:flex-end;}
-#recgrid .sheet{background:var(--paper); width:100%; max-height:78%; overflow-y:auto; border-radius:24px 24px 0 0; padding:16px 16px 26px;}
-#recgrid h3{font-size:18px; color:var(--ember-deep); margin:2px 4px 12px; font-family:var(--font-display)}
+#recgrid .sheet{background:var(--paper); width:100%; max-height:78%; overflow-y:auto; border-radius:24px 24px 0 0; padding:16px 16px 26px; overscroll-behavior:contain}
+#recgrid h3{font-size:18px; color:var(--ember-deep); margin:2px 4px 12px; font-family:var(--font-display); display:flex; justify-content:space-between; align-items:center}
+#recgrid .x{background:var(--paper-2); border:1px solid var(--line); border-radius:50%; width:32px; height:32px; font-size:15px; cursor:pointer; color:var(--ink-soft)}
 .tiles{display:grid; grid-template-columns:repeat(2,1fr); gap:10px}
 .tile{position:relative; border-radius:14px; overflow:hidden; border:none; padding:0; cursor:pointer; background:var(--surface); box-shadow:var(--shadow-sm)}
 .tile img{width:100%; aspect-ratio:4/3; object-fit:cover}
@@ -182,7 +186,7 @@ footer .firma{font-family:var(--font-display); font-style:italic; font-size:18px
     <div class="pad">
       <h1>Venezuela Entera en tu Horno</h1>
       <p>Ingresá el código de acceso que llegó a tu correo con la compra.</p>
-      <input id="code" placeholder="TU CÓDIGO" autocomplete="off" onkeydown="if(event.key==='Enter')unlock()">
+      <input id="code" name="codigo" aria-label="Código de acceso" placeholder="TU CÓDIGO…" autocomplete="off" spellcheck="false" autofocus onkeydown="if(event.key==='Enter')unlock()">
       <button onclick="unlock()">Entrar a mi recetario</button>
       <div class="err" id="gerr"></div>
       <small>¿No tenés el código? Revisá el correo de tu compra o escribinos.</small>
@@ -190,11 +194,11 @@ footer .firma{font-family:var(--font-display); font-style:italic; font-size:18px
   </div>
 </div>
 
-<div class="scroll" id="scrollbox">
+<div class="scroll" id="scrollbox" tabindex="0">
 <div class="wrap" id="app" hidden>
 
   <div class="hero">
-    <img src="img/oto1/portada.jpg" alt="Portada">
+    <img src="img/oto1/portada.jpg" alt="Portada del libro" width="848" height="1264">
     <div class="ttl">
       <h1>Venezuela Entera en tu Horno</h1>
       <p>Los 10 panes sagrados de nuestra tierra · Maestro Ronald Varela</p>
@@ -233,7 +237,7 @@ footer .firma{font-family:var(--font-display); font-style:italic; font-size:18px
         <div class="conv"><b>🫙 Conversor exprés</b>
           <div class="row">
             <span style="font-size:14px">La receta pide</span>
-            <input type="number" inputmode="numeric" value="10" min="1" max="60" oninput="convTalvina(this.value)">
+            <input type="number" inputmode="numeric" aria-label="Gramos de levadura de la receta" value="10" min="1" max="60" oninput="convTalvina(this.value)">
             <span style="font-size:14px">g de levadura</span>
           </div>
           <p class="res" id="convres" style="margin:10px 0 0">→ usá <b>150 g de talvina activa</b> y sumá <b>1 hora extra</b> al primer levado.</p>
@@ -289,7 +293,7 @@ footer .firma{font-family:var(--font-display); font-style:italic; font-size:18px
 <!-- ============ GRILLA DE RECETAS ============ -->
 <div id="recgrid" hidden onclick="if(event.target===this)toggleGrid(false)">
   <div class="sheet">
-    <h3>🍞 Los 10 panes sagrados</h3>
+    <h3>🍞 Los 10 panes sagrados <button class="x" aria-label="Cerrar recetas" onclick="toggleGrid(false)">✕</button></h3>
     <div class="tiles" id="tiles"></div>
   </div>
 </div>
@@ -304,21 +308,37 @@ function unlock(){
   if(OK.includes(btoa(v))){ localStorage.setItem('ve_ok','1'); enter(); }
   else document.getElementById('gerr').textContent = "Ese código no es válido. Revisá tu correo de compra.";
 }
-function enter(){ document.getElementById('gate').style.display='none'; document.getElementById('app').hidden=false; document.getElementById('tabbar').hidden=false; }
+function enter(){ document.getElementById('gate').style.display='none'; document.getElementById('app').hidden=false; document.getElementById('tabbar').hidden=false; document.getElementById('scrollbox').focus({preventScroll:true}); }
 if(localStorage.getItem('ve_ok')==='1') enter();
 
-/* tabs + grilla */
+/* ===== NAVEGACIÓN CON HISTORIAL (Atrás/Adelante funcionan) ===== */
 function goTab(id, btn){
   document.querySelectorAll('#tabbar button').forEach(b=>b.classList.remove('on'));
   if(btn) btn.classList.add('on');
-  toggleGrid(false);
-  document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+  if(location.hash !== '#'+id) location.hash = id;          /* crea entrada de historial */
+  else document.getElementById(id)?.scrollIntoView();
 }
 function toggleGrid(show){
-  const g = document.getElementById('recgrid');
-  g.hidden = !show;
-  if(show){ document.querySelectorAll('#tabbar button').forEach(b=>b.classList.remove('on')); document.getElementById('tabrec').classList.add('on'); }
+  if(show){ if(location.hash !== '#panes') location.hash = 'panes'; else route(); }
+  else if(location.hash === '#panes') history.back();       /* cerrar = Atrás */
 }
+function route(){
+  const g = document.getElementById('recgrid');
+  const h = decodeURIComponent(location.hash.slice(1));
+  if(h === 'panes'){
+    g.hidden = false;
+    document.querySelectorAll('#tabbar button').forEach(b=>b.classList.remove('on'));
+    document.getElementById('tabrec').classList.add('on');
+    g.querySelector('.x')?.focus();
+  } else {
+    g.hidden = true;
+    if(h) document.getElementById(h)?.scrollIntoView();
+  }
+}
+window.addEventListener('hashchange', route);
+document.addEventListener('keydown', e=>{
+  if(e.key === 'Escape' && !document.getElementById('recgrid').hidden) history.back();
+});
 function convTalvina(v){
   const g = Math.max(0, parseFloat(v)||0);
   document.getElementById('convres').innerHTML = `→ usá <b>${Math.round(g*15)} g de talvina activa</b> y sumá <b>1 hora extra</b> al primer levado.`;
@@ -434,7 +454,7 @@ document.getElementById('recetas').innerHTML = R.map((x,i)=>`
 
 /* grilla de tiles */
 document.getElementById('tiles').innerHTML = R.map(x=>
-  `<button class="tile" onclick="toggleGrid(false);document.getElementById('${x.id}').scrollIntoView({behavior:'smooth'})">
+  `<button class="tile" onclick="location.hash='${x.id}'">
     <img src="img/oto1/${x.img}" loading="lazy" alt=""><span>${x.n}</span></button>`).join("");
 
 /* nav */
