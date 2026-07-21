@@ -158,6 +158,7 @@ body{font-family:var(--font-body); color:var(--ink); background:var(--paper);
 .recipe:active{transform:scale(.99)}
 .recipe .rimg{width:78px;height:78px;flex:none;border-radius:12px;position:relative;overflow:hidden;background:linear-gradient(150deg,#e6a54b,#93481a)}
 .recipe .rimg span{position:absolute;inset:0;display:grid;place-items:center;font-size:30px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
+.recipe .rimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .recipe .rbody{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
 .recipe .rbody b{font-family:var(--font-display);font-size:16px;line-height:1.12}
 .recipe .rbody p{margin:3px 0 0;font-size:12px;color:var(--muted)}
@@ -170,6 +171,8 @@ body{font-family:var(--font-body); color:var(--ink); background:var(--paper);
 .sheet-hd{position:relative;height:210px;flex:none;background:linear-gradient(155deg,#e6a54b,#c9721f 46%,#7c3c16);color:#fff}
 .sheet-hd::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,11,5,.8),transparent 60%)}
 .sheet-hd .emoji{position:absolute;top:50%;left:50%;transform:translate(-50%,-58%);font-size:74px;filter:drop-shadow(0 6px 12px rgba(0,0,0,.35))}
+.sheet-hd .hdimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sheet-hd .hdshade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02) 35%,rgba(22,10,4,.74))}
 .sheet-back{position:absolute;top:14px;left:14px;z-index:3;width:38px;height:38px;border-radius:50%;border:none;background:rgba(255,255,255,.9);color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow-sm)}
 .sheet-title{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;z-index:2}
 .sheet-title h2{font-family:var(--font-display);font-size:23px;margin:0;text-shadow:0 2px 10px rgba(0,0,0,.4)}
@@ -715,17 +718,22 @@ function applyRoute(){
 window.addEventListener('popstate',applyRoute);
 
 /* ============ RECETAS ============ */
+const RIMG={camaleon:"img/recetas/camaleon.jpg",azucarado:"img/recetas/azucarado.jpg",trenzado:"img/recetas/trenzado.jpg",pandedios:"img/recetas/pandedios.jpg","piñita":"img/recetas/pinita.jpg",acemaRellena:"img/recetas/acemabocadillo.jpg",acemaEspeciada:"img/recetas/acemaespeciada.jpg",panbocadillo:"img/recetas/panbocadillo.jpg",criollito:"img/recetas/criollito.jpg",milhojas:"img/recetas/milhojas.jpg"};
 let curCat="todos";
 function renderChips(){$('recChips').innerHTML=CATS.map(c=>`<button class="chip ${c[0]==curCat?'on':''}" onclick="setCat('${c[0]}')">${c[1]}</button>`).join('');}
 function setCat(c){curCat=c;renderChips();renderRecipes();}
 function ingCount(r){return r.groups.reduce((a,g)=>a+g.items.length,0);}
 function renderRecipes(){
   const items=Object.entries(RECIPES).filter(([k,r])=>curCat=='todos'||r.cat==curCat);
-  $('rlist').innerHTML=items.map(([k,r])=>`<button type="button" class="recipe" onclick="openRecipe('${k}')"><div class="rimg"><span>${r.emoji}</span></div><div class="rbody"><b>${r.name}</b><p>Rinde ${r.yield} · ${ingCount(r)} ingredientes</p><div class="meta"><span class="pill a">⏱ ${r.time}</span><span class="pill g">${r.temp}</span></div></div></button>`).join('');
+  $('rlist').innerHTML=items.map(([k,r])=>`<button type="button" class="recipe" onclick="openRecipe('${k}')"><div class="rimg">${RIMG[k]?`<img src="${RIMG[k]}" alt="" loading="lazy">`:`<span>${r.emoji}</span>`}</div><div class="rbody"><b>${r.name}</b><p>Rinde ${r.yield} · ${ingCount(r)} ingredientes</p><div class="meta"><span class="pill a">⏱ ${r.time}</span><span class="pill g">${r.temp}</span></div></div></button>`).join('');
 }
 function showRecipe(k){
   const r=RECIPES[k];
-  $('shName').textContent=r.name;$('shEmoji').textContent=r.emoji;
+  $('shName').textContent=r.name;
+  const hd=document.querySelector('#sheet .sheet-hd');
+  hd.querySelectorAll('.hdimg,.hdshade').forEach(e=>e.remove());
+  if(RIMG[k]){$('shEmoji').style.display='none';hd.insertAdjacentHTML('afterbegin',`<img class="hdimg" src="${RIMG[k]}" alt=""><div class="hdshade"></div>`);}
+  else{$('shEmoji').style.display='';$('shEmoji').textContent=r.emoji;}
   $('shMeta').innerHTML=`<span class="pill">⏱ ${r.time}</span><span class="pill">🌡 ${r.temp}</span><span class="pill">Rinde ${r.yield}</span>`;
   const rp=REC_PDF[k]?`<a class="pdfbtn" href="https://drive.google.com/file/d/${REC_PDF[k]}/view" target="_blank" rel="noopener">${PDFICON} Ver esta receta en PDF</a>`:'';
   $('shIng').innerHTML=rp+r.groups.map(g=>`<div class="grouplbl">${g.l}</div>`+g.items.map(i=>`<div class="ingrow"><span>${i[0]}</span><span class="q">${fmtQ(i[1],i[2])}</span></div>`).join('')).join('')+(r.tips?r.tips.map(t=>`<div class="callout">💡 ${t}</div>`).join(''):'');
