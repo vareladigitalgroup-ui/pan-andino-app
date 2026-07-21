@@ -83,7 +83,7 @@ body{font-family:var(--font-body); color:var(--ink); background:var(--paper);
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/></svg>");}
 @media (prefers-color-scheme:dark){ .device::after{mix-blend-mode:screen; opacity:.35} }
 :root[data-theme="dark"] .device::after{mix-blend-mode:screen; opacity:.35}
-.watermark{position:absolute; inset:0; z-index:55; pointer-events:none; overflow:hidden; opacity:.05}
+.watermark{position:absolute; inset:0; z-index:55; pointer-events:none; overflow:hidden; opacity:.028}
 .watermark div{position:absolute; white-space:nowrap; font-family:var(--font-mono); font-size:11px; color:var(--ink); transform:rotate(-30deg); letter-spacing:2px;}
 .viewport{flex:1; overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch; scroll-behavior:smooth}
 .viewport::-webkit-scrollbar{width:0}
@@ -353,7 +353,7 @@ select:focus,input:focus{border-color:var(--ember);box-shadow:0 0 0 3px var(--em
 .lul li{font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
 .lp b,.lul li b{color:var(--ink);font-weight:700}
 .lead-intro{font-size:14.5px;line-height:1.5;color:var(--ink);background:var(--ember-tint);border-radius:var(--radius-xs);padding:13px 15px;margin:0 0 6px}
-.pdfbtn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:14px;margin:0 0 18px;border:none;border-radius:13px;background:linear-gradient(150deg,var(--ember),var(--ember-deep));color:#fff;font-weight:800;font-size:14px;cursor:pointer;box-shadow:0 5px 14px rgba(143,62,18,.32);font-family:var(--font-body);letter-spacing:.2px}
+.pdfbtn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:16px;margin:0 0 18px;border:none;border-radius:13px;background:linear-gradient(150deg,var(--ember),var(--ember-deep));color:#fff;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 5px 14px rgba(143,62,18,.32);font-family:var(--font-body);letter-spacing:.2px}
 .pdfbtn:active{transform:scale(.99)}
 .pdfbtn svg{flex:none}
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
@@ -742,7 +742,7 @@ function showRecipe(k){
   if(RIMG[k]){$('shEmoji').style.display='none';hd.insertAdjacentHTML('afterbegin',`<img class="hdimg" src="${RIMG[k]}" alt=""><div class="hdshade"></div>`);}
   else{$('shEmoji').style.display='';$('shEmoji').textContent=r.emoji;}
   $('shMeta').innerHTML=`<span class="pill">⏱ ${r.time}</span><span class="pill">🌡 ${r.temp}</span><span class="pill">Rinde ${r.yield}</span>`;
-  const rp=REC_PDF[k]?`<button type="button" class="pdfbtn" onclick="viewPDF('${REC_PDF[k]}','${r.name}')">${PDFICON} Ver esta receta en PDF</button>`:'';
+  const rp=REC_PDF[k]?`<button type="button" class="pdfbtn" onclick="viewPDF('${REC_PDF[k]}','${r.name}')">${PDFICON} TOCA AQUÍ para ver esta receta en PDF</button>`:'';
   $('shIng').innerHTML=rp+r.groups.map(g=>`<div class="grouplbl">${g.l}</div>`+g.items.map(i=>`<div class="ingrow"><span>${i[0]}</span><span class="q">${fmtQ(i[1],i[2])}</span></div>`).join('')).join('')+(r.tips?r.tips.map(t=>`<div class="callout">💡 ${t}</div>`).join(''):'');
   $('shPas').innerHTML=rp+`<ol class="steps">`+r.steps.map(s=>`<li>${s}</li>`).join('')+`</ol>`;
   shTab('ing',document.querySelector('.tabsm button'));
@@ -920,7 +920,7 @@ function showInfo(type,i){
   $('sh2Name').textContent=isMod?base[1]:base[0];
   $('sh2Meta').innerHTML=`<span class="pill">${isMod?'Módulo '+base[0]+' de 9':'Bono '+(i+1)+' de 9'}</span>`;
   const pid=isMod?MOD_PDF[base[0]]:BONO_PDF[i+1];
-  let body=pid?`<button type="button" class="pdfbtn" onclick="viewPDF('${pid}','${isMod?'Módulo':'Bono'} completo')">${PDFICON} Abrir el ${isMod?'módulo':'bono'} completo en PDF</button>`:'';
+  let body='';
   body+=det?`<p class="lead-intro">${det.q}</p>`:'';
   const lesson=LESSONS[key];
   if(lesson){body+=md2html(lesson);}
@@ -949,7 +949,7 @@ function applyUser(){
   $('heroName').textContent=`${first}, tu horno te espera`;
   $('acctName').textContent=user.name||'—';$('acctMail').textContent=user.mail||'—';
   $('wm').innerHTML='';
-  for(let i=0;i<14;i++){const d=document.createElement('div');d.style.top=(i*8)+'%';d.style.left='-10%';d.textContent=user.mail+' · Pan Andino · '+user.mail+' · Pan Andino';$('wm').appendChild(d);}
+  for(let i=0;i<14;i++){const d=document.createElement('div');d.style.top=(i*8)+'%';d.style.left='-10%';d.textContent=(user.name||'Pan Andino')+' · Pan Andino · acceso personal · '+(user.name||'')+' · Pan Andino';$('wm').appendChild(d);}
 }
 function enter(){$('gate').style.display='none';applyUser();}
 $('gateForm').addEventListener('submit',e=>{e.preventDefault();user.name=$('gName').value||'Panadero';user.mail=$('gMail').value||'correo@ejemplo.com';try{localStorage.setItem('pa_user',JSON.stringify(user));}catch(e){}enter();toast('¡Bienvenido, '+user.name.split(' ')[0]+'! 🥖');});
