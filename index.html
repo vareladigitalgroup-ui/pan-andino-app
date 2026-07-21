@@ -173,6 +173,17 @@ body{font-family:var(--font-body); color:var(--ink); background:var(--paper);
 .sheet-hd .emoji{position:absolute;top:50%;left:50%;transform:translate(-50%,-58%);font-size:74px;filter:drop-shadow(0 6px 12px rgba(0,0,0,.35))}
 .sheet-hd .hdimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .sheet-hd .hdshade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02) 35%,rgba(22,10,4,.74))}
+.oto-card{display:flex;gap:14px;margin:18px 0 6px;padding:14px;border-radius:var(--radius);border:1.5px solid var(--gold);background:linear-gradient(150deg,var(--gold-tint),var(--surface));box-shadow:var(--shadow-sm)}
+.oto-img{width:92px;border-radius:10px;object-fit:cover;aspect-ratio:2/3;flex:none;box-shadow:var(--shadow-sm)}
+.oto-body{flex:1;min-width:0}
+.oto-body b{font-family:var(--font-display);font-size:17px;line-height:1.15;display:block;margin:3px 0 4px}
+.oto-sub{margin:0 0 10px;font-size:12.5px;color:var(--muted);line-height:1.4}
+.oto-row{display:flex;gap:8px}
+.oto-row input{flex:1;min-width:0;padding:10px;font-size:16px;text-transform:uppercase;letter-spacing:.06em;border:1.5px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--ink)}
+.oto-row button{padding:10px 14px;border:none;border-radius:10px;background:linear-gradient(150deg,var(--ember),var(--ember-deep));color:#fff;font-weight:800;cursor:pointer;font-size:15px}
+#otoErr{color:var(--guava);font-size:11.5px;min-height:14px;display:block;margin-top:4px}
+.oto-note{display:block;margin-top:2px;font-size:11px;color:var(--muted);line-height:1.4}
+.oto-open{width:100%;padding:13px;border:none;border-radius:10px;background:linear-gradient(150deg,var(--green),#1E5E3A);color:#fff;font-weight:800;cursor:pointer;font-size:14px}
 #pdfview{position:absolute;inset:0;z-index:70;background:var(--paper);display:none;flex-direction:column}
 #pdfview.open{display:flex}
 .pdfbar{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--surface);flex:none}
@@ -426,6 +437,22 @@ input,select{user-select:auto;-webkit-user-select:auto}
         <button type="button" class="tile" onclick="go('recetas')"><span class="ic gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 5.5v15"/></svg></span><b>12 Recetas</b><small>Panes tachirenses</small></button>
         <button type="button" class="tile" onclick="go('calcular')"><span class="ic green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M8 15h2M14 11v6"/></svg></span><b>Calculadoras</b><small>Talvina · costos · precios</small></button>
         <button type="button" class="tile" onclick="go('mas')"><span class="ic guava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v7l9 4 9-4V7"/></svg></span><b>Vende tu pan</b><small>Convierte tu horno en negocio</small></button>
+      </div>
+
+      <!-- COLECCIÓN · OTO 1 -->
+      <div class="oto-card">
+        <img src="img/oto1/portada-sm.jpg" alt="Venezuela Entera en tu Horno" class="oto-img" loading="lazy">
+        <div class="oto-body">
+          <p class="eyebrow" style="color:var(--gold-deep);margin:0">La colección · Nivel 2</p>
+          <b>Venezuela Entera en tu Horno</b>
+          <p class="oto-sub">Los 10 panes sagrados del país: golfeados, pan de jamón, tequeños, mandocas…</p>
+          <div id="otoLocked">
+            <div class="oto-row"><input id="otoCode" aria-label="Código de compra" placeholder="CÓDIGO DE COMPRA…" autocomplete="off" spellcheck="false" onkeydown="if(event.key==='Enter')otoUnlock()"><button type="button" onclick="otoUnlock()">🔓</button></div>
+            <small id="otoErr"></small>
+            <small class="oto-note">🔒 Se desbloquea con el código que llega a tu correo al comprarlo · Muy pronto disponible</small>
+          </div>
+          <button type="button" class="oto-open" id="otoOpen" hidden onclick="location.href='ve.html'">✅ Desbloqueado · Abrir mi recetario →</button>
+        </div>
       </div>
       <div class="section"><div class="section-h"><h2 class="h2">Continúa aprendiendo</h2></div></div>
       <button type="button" class="cont" onclick="openRecipe('camaleon')">
@@ -879,6 +906,17 @@ const MOD_PDF={1:"1QD-JWhRlrsuK4wf6QW8DwFjCyUOks1MG",2:"1fRs5MCdtj8Fb1hgwiiYKwgx
 const BONO_PDF={1:"1XvTXl8DUaDtqP-gCxf4A2ceVEgoOb-5j",2:"1oH6rS9mkcgUctVSQcG7qu0GrviKtvxed",3:"1DvRwo4qg-CX3FLXL_twiqsgmDVkRO-jq",4:"1xzHKOMwqksQBW23fk2cRLFxSrIbOUTzJ",5:"1inH06vNxugNFQxVt1s0gWt8YSkk7H6fo",6:"15SHIVxDWexLjvnOmTAcnN9SDSwBn1oiz",7:"10ArxAjXGR23cu813aQC1joZjExefw8mb",8:"1hT4ECIAwmxjbfyjnyteBtECH-gqIz45M",9:"1MmdL__9IW6oJiIeKIZC70qr_N5nZZCto"};
 const REC_PDF={camaleon:"1dMAD-DF9_Pi-D4zm3vbFMOEaTAcF8Dbd",panqueso:"1BYkIDrZY7I6LH_y3-4b2D0BIwlagNvsR",azucarado:"1ZkMn81TfB_b18IsYOVQt6yuLiB6RBIQs",trenzado:"1sSmzVBjGh9gzxZmibzexd_eM3YiZd3wQ",pandedios:"1FRm37LNu53eqk4TL6Ig4vju50VYr1hfp","piñita":"1R-d_Z9szjTdRz5-6ucSM9VZG0mRgip-M",panleche:"1rbGwSpMkuzEvRUgP1xdequLR__sj9SUT",acemaRellena:"1TXEnrJ9cZhxjOO_gLjWjoBohBFdl3bJj",acemaEspeciada:"1_3envMZm0LT8VlD4FOI7LK9YJcRAu_5A",panbocadillo:"1Qz-2lJYZaLW5CO-Ntueb3pj6DuTqgo50",criollito:"1YLSqSdemX7d-NeRTUkv6LW5NXlVnuC6T",milhojas:"172-pYKdCLoV55Vm3pEuK5mzsoC3L0gV6"};
 const PDFICON='<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M8 13h5M8 17h8"/></svg>';
+/* ===== COLECCIÓN / OTO desbloqueable ===== */
+const OTO_OK=["VkVORVpVRUxBMjc=","UEFOR09DSE8=","Uk9OQUxEMjQ="];
+function otoUnlock(){
+  const v=($('otoCode').value||'').trim().toUpperCase().replace(/\s+/g,'');
+  let ok=false; try{ok=OTO_OK.includes(btoa(v));}catch(e){}
+  if(ok){try{localStorage.setItem('ve_ok','1');}catch(e){} otoRefresh(); toast('¡Recetario desbloqueado! 🇻🇪🍞');}
+  else $('otoErr').textContent='Código no válido. Revisá el correo de tu compra.';
+}
+function otoRefresh(){let un=false; try{un=localStorage.getItem('ve_ok')==='1';}catch(e){} $('otoLocked').hidden=un; $('otoOpen').hidden=!un;}
+otoRefresh();
+
 function openPDF(id){viewPDF(id,'Documento');}
 function viewPDF(id,title){
   if(!id)return;
