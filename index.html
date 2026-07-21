@@ -718,7 +718,7 @@ function applyRoute(){
 window.addEventListener('popstate',applyRoute);
 
 /* ============ RECETAS ============ */
-const RIMG={camaleon:"img/recetas/camaleon.jpg",azucarado:"img/recetas/azucarado.jpg",trenzado:"img/recetas/trenzado.jpg",pandedios:"img/recetas/pandedios.jpg","piñita":"img/recetas/pinita.jpg",acemaRellena:"img/recetas/acemabocadillo.jpg",acemaEspeciada:"img/recetas/acemaespeciada.jpg",panbocadillo:"img/recetas/panbocadillo.jpg",criollito:"img/recetas/criollito.jpg",milhojas:"img/recetas/milhojas.jpg"};
+const RIMG={camaleon:"img/recetas/camaleon.jpg",panleche:"img/recetas/panleche.jpg",azucarado:"img/recetas/azucarado.jpg",trenzado:"img/recetas/trenzado.jpg",pandedios:"img/recetas/pandedios.jpg","piñita":"img/recetas/pinita.jpg",acemaRellena:"img/recetas/acemabocadillo.jpg",acemaEspeciada:"img/recetas/acemaespeciada.jpg",panbocadillo:"img/recetas/panbocadillo.jpg",criollito:"img/recetas/criollito.jpg",milhojas:"img/recetas/milhojas.jpg"};
 let curCat="todos";
 function renderChips(){$('recChips').innerHTML=CATS.map(c=>`<button class="chip ${c[0]==curCat?'on':''}" onclick="setCat('${c[0]}')">${c[1]}</button>`).join('');}
 function setCat(c){curCat=c;renderChips();renderRecipes();}
