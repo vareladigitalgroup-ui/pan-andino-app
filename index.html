@@ -566,9 +566,9 @@ input,select{user-select:auto;-webkit-user-select:auto}
         <div class="subhead">5 · ¿Cuánto le sumas a tu costo?</div>
         <div class="seg" style="margin:0 0 10px"><button onclick="setMult(1.5,this)">×1,5 justo</button><button class="on" onclick="setMult(2,this)">×2 recomendado</button><button onclick="setMult(3,this)">×3 premium</button></div>
         <div class="result"><div class="rlbl">🏷️ Precio sugerido por pan</div><div class="big" id="coPrecio">$0</div><div class="sub">tu costo real es <span id="coPan">$0</span> · ganas <span id="coGanPan">$0</span> por pan · margen <span id="coMargen">0%</span></div></div>
-        <div class="subhead">6 · ¿Cuántos panes vendes al día?</div>
-        <div class="field"><label for="co_dia">Panes al día <span class="v" id="coDiaV">20</span></label><input type="range" id="co_dia" min="1" max="120" value="20" oninput="calcCosto()"></div>
-        <div class="result green"><div class="rlbl">💰 Esto ganarías al mes</div><div class="big" id="coMes">$0</div><div class="sub">vendiendo <span id="coDiaEcho">20</span> panes al día · a 30 días</div></div>
+        <div class="subhead">6 · ¿Cuántas tandas vendes al día?</div>
+        <div class="field"><label for="co_dia">Tandas al día <span class="v" id="coDiaV">1</span></label><input type="range" id="co_dia" min="1" max="6" value="1" oninput="calcCosto()"></div>
+        <div class="result green"><div class="rlbl">💰 Esto ganarías al mes</div><div class="big" id="coMes">$0</div><div class="sub">vendiendo <span id="coDiaEcho">1 tanda</span> al día = <span id="coPanDia">20</span> panes · a 30 días</div></div>
         <div class="note" style="margin-left:0;margin-right:0"><span>💡</span><span><b>Cobra sin pena:</b> tu costo ya incluye un <b>8 % de desperdicio</b>. No vendas por debajo de <b>×1,5</b> (menos es trabajar a pérdida); <b>×2</b> es un precio sano y <b>×3</b> para premium o eventos. Y siempre: <b>pago primero, producción después.</b></span></div>
       </div>
 
@@ -831,13 +831,13 @@ function calcCosto(){
   document.querySelectorAll('#c-costo [data-sym]').forEach(e=>e.textContent=sym);
   const g=id=>+$(id).value||0;
   const ingr=g('co_harina')+g('co_gr')+g('co_az')+g('co_rel')+g('co_hv')+g('co_ot');
-  const horas=+$('co_horas').value,panes=+$('co_panes').value,dia=+$('co_dia').value;
+  const horas=+$('co_horas').value,panes=+$('co_panes').value,tandasDia=+$('co_dia').value,panesDia=panes*tandasDia;
   const tiempo=horas*g('co_hora');
-  $('coHorasV').textContent=(''+horas).replace('.',',');$('coPanesV').textContent=panes;$('coDiaV').textContent=dia;$('coDiaEcho').textContent=dia;
+  $('coHorasV').textContent=(''+horas).replace('.',',');$('coPanesV').textContent=panes;$('coDiaV').textContent=tandasDia;$('coDiaEcho').textContent=tandasDia+(tandasDia===1?' tanda':' tandas');$('coPanDia').textContent=panesDia;
   $('coLabor').innerHTML=`🕐 Tu trabajo: <b>${(''+horas).replace('.',',')} h × ${money(sym,g('co_hora'))} = ${money(sym,tiempo)}</b> en esta tanda`;
   const subtotal=ingr+g('co_gas')+g('co_emp')+tiempo;
   const costoReal=subtotal*1.08;
-  const costoPan=costoReal/panes, precio=costoPan*mult, ganPan=precio-costoPan, margen=precio>0?Math.round(ganPan/precio*100):0, ganMes=ganPan*dia*30;
+  const costoPan=costoReal/panes, precio=costoPan*mult, ganPan=precio-costoPan, margen=precio>0?Math.round(ganPan/precio*100):0, ganMes=ganPan*panesDia*30;
   $('coPan').textContent=money(sym,costoPan);
   $('coPrecio').textContent=money(sym,precio);
   $('coGanPan').textContent=money(sym,ganPan);
