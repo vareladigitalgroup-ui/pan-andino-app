@@ -655,6 +655,27 @@ tr:last-child td{border-bottom:none}
 @media print{ .tapa.locked .art::after{display:none} }
 
 
+/* ── Calculadora: lo que avisa que el número todavía no es de fiar ── */
+.calc-aviso{margin:0 0 1.4rem;padding:1.05rem 1.15rem;border-radius:.85rem;
+  background:rgba(156,74,38,.075);border-left:3px solid var(--rust);
+  font-size:.98rem;line-height:1.55;color:var(--tinta-2)}
+.calc-fila.sin-tocar{position:relative}
+.calc-fila.sin-tocar input{border-style:dashed;color:var(--tinta-soft)}
+.calc-fila.sin-tocar .calc-nm::after{content:'de ejemplo';display:inline-block;
+  margin-left:.45rem;padding:.1rem .4rem;border-radius:.3rem;
+  background:rgba(156,74,38,.13);color:var(--rust);
+  font-family:var(--ui);font-size:.55rem;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;vertical-align:middle}
+.calc-res.provisional{opacity:.94}
+.calc-prov{margin:-.3rem 0 .9rem;font-family:var(--ui);font-size:.72rem;font-weight:600;
+  color:var(--rust)}
+.calc-sel optgroup{font-family:var(--ui);font-size:.72rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep)}
+.calc-sel option{font-family:var(--body);font-size:1rem;letter-spacing:0;
+  text-transform:none;color:var(--tinta)}
+@media print{ .calc-aviso,.calc-prov{display:none} }
+
+
 /* ── Zona post-compra ──
    Todo esto existe por una razón de psicología, no de diseño: el que
    compró no puede sentir que le trancamos algo suyo. Primero se cierra
