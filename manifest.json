@@ -1,0 +1,16 @@
+{
+  "name": "El Secreto del Pan Gocho",
+  "short_name": "Pan Gocho",
+  "description": "Todo lo que compraste, ordenado. Los módulos, los regalos, el catálogo de panes y las herramientas.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f2ece3",
+  "theme_color": "#3b2416",
+  "lang": "es-VE",
+  "icons": [
+    { "src": "icono-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
