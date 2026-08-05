@@ -886,27 +886,27 @@ svg .trazado{stroke-dasharray:var(--l);stroke-dashoffset:var(--l);
 <!-- La versión del enlace obliga al navegador a bajar los archivos
      nuevos. Sin esto, el que ya abrió la app antes se queda con los
      viejos en caché y ve la app a medias. Se cambia en cada publicación. -->
-<script src="dibujos.js?v=202608052215"></script>
+<script src="dibujos.js?v=202608052330"></script>
 <!-- Los procesos comunes a los 12 panes. Va ANTES de los contenido-*,
      porque las recetas los invocan al construirse. -->
-<script src="procesos.js?v=202608052215"></script>
-<script src="ayuda.js?v=202608052215"></script>
-<script src="contenido-regalo-1.js?v=202608052215"></script>
-<script src="contenido-regalo-2.js?v=202608052215"></script>
-<script src="contenido-regalo-3.js?v=202608052215"></script>
-<script src="contenido-regalo-4.js?v=202608052215"></script>
-<script src="contenido-regalo-5.js?v=202608052215"></script>
-<script src="contenido-modulo-1.js?v=202608052215"></script>
-<script src="contenido-modulo-2.js?v=202608052215"></script>
-<script src="contenido-modulo-3.js?v=202608052215"></script>
-<script src="contenido-modulo-4.js?v=202608052215"></script>
-<script src="contenido-modulo-5.js?v=202608052215"></script>
-<script src="contenido-modulo-6.js?v=202608052215"></script>
-<script src="calculadora.js?v=202608052215"></script>
-<script src="talvina.js?v=202608052215"></script>
-<script src="panes.js?v=202608052215"></script>
-<script src="fichas.js?v=202608052215"></script>
-<script src="contenido-napa.js?v=202608052215"></script>
+<script src="procesos.js?v=202608052330"></script>
+<script src="ayuda.js?v=202608052330"></script>
+<script src="contenido-regalo-1.js?v=202608052330"></script>
+<script src="contenido-regalo-2.js?v=202608052330"></script>
+<script src="contenido-regalo-3.js?v=202608052330"></script>
+<script src="contenido-regalo-4.js?v=202608052330"></script>
+<script src="contenido-regalo-5.js?v=202608052330"></script>
+<script src="contenido-modulo-1.js?v=202608052330"></script>
+<script src="contenido-modulo-2.js?v=202608052330"></script>
+<script src="contenido-modulo-3.js?v=202608052330"></script>
+<script src="contenido-modulo-4.js?v=202608052330"></script>
+<script src="contenido-modulo-5.js?v=202608052330"></script>
+<script src="contenido-modulo-6.js?v=202608052330"></script>
+<script src="calculadora.js?v=202608052330"></script>
+<script src="talvina.js?v=202608052330"></script>
+<script src="panes.js?v=202608052330"></script>
+<script src="fichas.js?v=202608052330"></script>
+<script src="contenido-napa.js?v=202608052330"></script>
 <script>
 /* ══ Catálogo ══ */
 const MODULOS = [
@@ -998,8 +998,8 @@ function pintarInicio(){
     <div class="tools">
       <button class="tool" data-tool="fichas">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg>
-        <div class="t">Las fichas de cocina</div>
-        <div class="s">Diez hojas para imprimir y pegar en la pared</div>
+        <div class="t">Las hojas de cocina</div>
+        <div class="s">Treinta hojas para imprimir y pegar en la pared</div>
       </button>
       <button class="tool" data-tool="talvina">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2h8l-1 5a5 5 0 01-6 0L8 2z"/><path d="M7 9h10v11a2 2 0 01-2 2H9a2 2 0 01-2-2V9z"/><path d="M9 15c1.5-1 4.5-1 6 0"/></svg>
@@ -1428,13 +1428,13 @@ function irTool(id, push){
     <div class="foot"><span>Herramienta</span><span class="mark">Pan Gocho</span></div>`;
   if(id==='fichas'){
     document.getElementById('s-tool').innerHTML = `
-      <div class="d-head"><span class="kick">Herramienta</span><h1>Las fichas de cocina</h1>
+      <div class="d-head"><span class="kick">Herramienta</span><h1>Las hojas de cocina</h1>
         <p class="sub">Lo que necesitas ver, no leer, mientras tienes las manos en la masa.</p></div>
       <div class="orn"><div class="ln"></div><div class="dia"></div><div class="ln"></div></div>
       <div id="fiHost"></div>
       <div class="foot"><span>Herramienta</span><span class="mark">Pan Gocho</span></div>`;
     FICHAS_UI.pintar('fiHost');
-    crumb.innerHTML = 'Inicio › <b>Las fichas de cocina</b>';
+    crumb.innerHTML = 'Inicio › <b>Las hojas de cocina</b>';
     back.classList.add('on'); mostrar(TOOL);
     if(push!==false) history.pushState({t:'tool',id},'','#tool-'+id);
     return;
@@ -1442,16 +1442,23 @@ function irTool(id, push){
   if(id && String(id).startsWith('ficha')){
     const n = +String(id).slice(5);
     const f = FICHAS.find(x=>x.n===n);
+    if(!f) return;
+    /* La numeración es la POSICIÓN dentro de su grupo, no el id
+       interno: el kit usa 101..120 para no chocar con las diez
+       de siempre, pero al lector se le muestra 1..20. */
+    const grupo = FICHAS.filter(x=>x.g===f.g);
+    const pos = grupo.indexOf(f)+1;
+    const nombreGrupo = f.g==='kit' ? 'Kit de cocina' : 'Ficha';
     document.getElementById('s-tool').innerHTML = `
-      <div class="d-head"><span class="kick">Ficha ${String(n).padStart(2,'0')}</span><h1>${esc(f.t)}</h1></div>
+      <div class="d-head"><span class="kick">${nombreGrupo} ${String(pos).padStart(2,'0')}</span><h1>${esc(f.t)}</h1></div>
       <div class="orn"><div class="ln"></div><div class="dia"></div><div class="ln"></div></div>
       <div id="fuHost"></div>
       <button class="btn-print no-print" onclick="window.print()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
         Imprimir esta ficha</button>
-      <div class="foot"><span>Ficha ${n} de 10</span><span class="mark">Pan Gocho</span></div>`;
+      <div class="foot"><span>${nombreGrupo} ${pos} de ${grupo.length}</span><span class="mark">Pan Gocho</span></div>`;
     FICHAS_UI.pintarUna('fuHost', n);
-    crumb.innerHTML = `Las fichas › <b>${esc(f.t)}</b>`;
+    crumb.innerHTML = `Las hojas › <b>${esc(f.t)}</b>`;
     back.classList.add('on'); mostrar(TOOL);
     if(push!==false) history.pushState({t:'tool',id},'','#tool-'+id);
     return;
@@ -1581,15 +1588,27 @@ document.addEventListener('pointerdown', e=>{
 }, {passive:true});
 
 pintarInicio();
-// Enlace directo: #g1 abre el regalo, #g1/5 abre su sección 5
+/* Enlace directo: #g1 abre el regalo, #g1/5 abre su sección 5.
+   Y #o1/CIUDAD abre el upsell YA DESBLOQUEADO: el que pagó llega
+   desde la página de gracias con un clic y no tiene que copiar
+   ningún código a mano. El candado sigue existiendo para el que
+   entra de otra forma. */
 if(location.hash.length>1){
   const h=location.hash.slice(1);
   if(h.startsWith('tool-')){ irTool(h.slice(5),false); }
   else if(h.startsWith('pan-')){ irPan(+h.slice(4),false); }
   else{
     const [id,i]=h.split('/');
-    const o=TODOS().find(x=>x.id===id);
-    if(o){ irLibro(o,false); if(i!==undefined && o.datos) irSeccion(+i,false); }
+    const conCodigo=TODOS().find(x=>x.id===id && x.codigo && i &&
+      String(i).trim().toUpperCase()===x.codigo);
+    if(conCodigo){
+      abrir(conCodigo.id);
+      history.replaceState(null,'','#'+conCodigo.id);   // el código no queda en la barra
+      pintarInicio(); irLibro(conCodigo,false);
+    } else {
+      const o=TODOS().find(x=>x.id===id);
+      if(o){ irLibro(o,false); if(i!==undefined && o.datos) irSeccion(+i,false); }
+    }
   }
 }
 </script>
