@@ -409,12 +409,74 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
 .seq-i{position:relative;border-radius:.6rem;overflow:hidden;background:var(--lino-3);
   box-shadow:0 .35rem .8rem -.3rem rgba(59,36,22,.35);border:1px solid rgba(59,36,22,.1)}
 .seq-i img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
-.seq-i b{position:absolute;top:.4rem;left:.4rem;z-index:2;width:1.5rem;height:1.5rem;
+/* Solo el <b> hijo directo es el globo del numero. Sin el ">", la
+   regla se comia tambien las negritas del pie y las sacaba de la
+   tarjeta convertidas en globo. */
+.seq-i > b{position:absolute;top:.4rem;left:.4rem;z-index:2;width:1.5rem;height:1.5rem;
   border-radius:50%;background:rgba(20,11,4,.72);backdrop-filter:blur(6px);
   display:flex;align-items:center;justify-content:center;
   font-family:var(--serif);font-size:.8rem;font-weight:600;color:var(--gold-lt)}
 .seq-i span{display:block;padding:.5rem .6rem .6rem;font-size:.84rem;line-height:1.35;color:var(--tinta-2)}
+.seq-i span b{font-weight:600;color:var(--tinta)}
 @media print{ .seq-g{grid-template-columns:repeat(3,1fr)} .seq-i{break-inside:avoid} }
+
+
+/* ── Ficha de datos rapidos ──
+   Lo que el panadero necesita saber ANTES de arrancar: cuanto rinde,
+   cuanto trabaja, cuanto espera y a que temperatura. De un vistazo. */
+.ficha{display:grid;gap:.5rem;margin:1.4rem 0;
+  grid-template-columns:repeat(auto-fit,minmax(min(7.5rem,45%),1fr))}
+/* Cada tarjeta estira a la altura de la mas alta y la etiqueta se
+   pega abajo: si no, las etiquetas quedan a distintas alturas y la
+   fila se ve descuidada. */
+.ficha div{background:var(--lino-2);border:1px solid var(--gold-fade);border-radius:.55rem;
+  padding:.65rem .7rem;display:flex;flex-direction:column}
+.ficha .v{font-family:var(--serif);font-size:1.02rem;font-weight:600;line-height:1.2;color:var(--tinta);
+  text-wrap:balance}
+.ficha .l{font-family:var(--ui);font-size:.6rem;font-weight:700;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--gold-deep);margin-top:auto;padding-top:.4rem}
+@media print{ .ficha{grid-template-columns:repeat(3,1fr)} .ficha div{break-inside:avoid} }
+
+
+/* ── Escalado: los gramos para la tanda que quieras ──
+   El curso da todo por kilo de harina. Esto hace la multiplicacion
+   sola, para no obligar a nadie a hacer regla de tres con las manos
+   llenas de masa. */
+.esc{margin:1.5rem 0;border:1px solid var(--gold-fade);border-radius:.7rem;overflow:hidden}
+.esc-h{font-family:var(--ui);font-size:.62rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold-deep);padding:.75rem .85rem .1rem}
+.esc-b{font-family:var(--ui);font-size:.74rem;color:var(--tinta-soft);padding:0 .85rem .7rem;line-height:1.4}
+.esc-t{display:flex;gap:.35rem;padding:0 .85rem .8rem;flex-wrap:wrap}
+.esc-t button{font-family:var(--ui);font-size:.78rem;font-weight:600;padding:.42rem .8rem;
+  border-radius:2rem;border:1px solid var(--gold-fade);background:var(--lino-2);color:var(--tinta-soft);
+  transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease}
+.esc-t button[aria-pressed="true"]{background:var(--gold-deep);color:var(--cream);border-color:var(--gold-deep)}
+.esc table{width:100%;border-collapse:collapse}
+.esc tr{border-top:1px solid var(--gold-fade)}
+.esc td{padding:.55rem .85rem;font-family:var(--ui);font-size:.88rem;color:var(--tinta-2)}
+.esc td.g{text-align:right;font-family:var(--serif);font-weight:600;font-size:1rem;
+  color:var(--tinta);white-space:nowrap}
+@media print{ .esc-t{display:none} .esc{break-inside:avoid} }
+
+
+/* ── Linea de tiempo ──
+   Responde la pregunta que mas se repite: "¿y cuanto tengo que esperar?".
+   El reloj de la izquierda es acumulado desde que empiezas. */
+.lin{margin:1.5rem 0;position:relative;padding-left:5.4rem}
+.lin::before{content:'';position:absolute;left:4.85rem;top:.5rem;bottom:.5rem;width:1px;
+  background:var(--gold-line)}
+.lin li{position:relative;padding:0 0 1.05rem}
+.lin li:last-child{padding-bottom:0}
+.lin .rel{position:absolute;left:-5.4rem;top:.02rem;width:4.1rem;text-align:right;
+  font-family:var(--ui);font-size:.68rem;font-weight:700;color:var(--gold-deep);letter-spacing:.02em;
+  line-height:1.3}
+.lin li::after{content:'';position:absolute;left:-.68rem;top:.34rem;width:7px;height:7px;
+  border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px var(--lino-1,var(--lino-2))}
+.lin .et{font-family:var(--serif);font-size:1.02rem;font-weight:600;line-height:1.25}
+.lin .du{font-family:var(--ui);font-size:.68rem;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--gold-deep);margin-top:.1rem}
+.lin .de{font-family:var(--ui);font-size:.83rem;color:var(--tinta-soft);line-height:1.45;margin-top:.22rem}
+@media print{ .lin li{break-inside:avoid} }
 
 
 /* ── Foto con pie dentro de una seccion ──
@@ -824,24 +886,27 @@ svg .trazado{stroke-dasharray:var(--l);stroke-dashoffset:var(--l);
 <!-- La versión del enlace obliga al navegador a bajar los archivos
      nuevos. Sin esto, el que ya abrió la app antes se queda con los
      viejos en caché y ve la app a medias. Se cambia en cada publicación. -->
-<script src="dibujos.js?v=202608032318"></script>
-<script src="ayuda.js?v=202608032318"></script>
-<script src="contenido-regalo-1.js?v=202608032318"></script>
-<script src="contenido-regalo-2.js?v=202608032318"></script>
-<script src="contenido-regalo-3.js?v=202608032318"></script>
-<script src="contenido-regalo-4.js?v=202608032318"></script>
-<script src="contenido-regalo-5.js?v=202608032318"></script>
-<script src="contenido-modulo-1.js?v=202608032318"></script>
-<script src="contenido-modulo-2.js?v=202608032318"></script>
-<script src="contenido-modulo-3.js?v=202608032318"></script>
-<script src="contenido-modulo-4.js?v=202608032318"></script>
-<script src="contenido-modulo-5.js?v=202608032318"></script>
-<script src="contenido-modulo-6.js?v=202608032318"></script>
-<script src="calculadora.js?v=202608032318"></script>
-<script src="talvina.js?v=202608032318"></script>
-<script src="panes.js?v=202608032318"></script>
-<script src="fichas.js?v=202608032318"></script>
-<script src="contenido-napa.js?v=202608032318"></script>
+<script src="dibujos.js?v=202608052030"></script>
+<!-- Los procesos comunes a los 12 panes. Va ANTES de los contenido-*,
+     porque las recetas los invocan al construirse. -->
+<script src="procesos.js?v=202608052030"></script>
+<script src="ayuda.js?v=202608052030"></script>
+<script src="contenido-regalo-1.js?v=202608052030"></script>
+<script src="contenido-regalo-2.js?v=202608052030"></script>
+<script src="contenido-regalo-3.js?v=202608052030"></script>
+<script src="contenido-regalo-4.js?v=202608052030"></script>
+<script src="contenido-regalo-5.js?v=202608052030"></script>
+<script src="contenido-modulo-1.js?v=202608052030"></script>
+<script src="contenido-modulo-2.js?v=202608052030"></script>
+<script src="contenido-modulo-3.js?v=202608052030"></script>
+<script src="contenido-modulo-4.js?v=202608052030"></script>
+<script src="contenido-modulo-5.js?v=202608052030"></script>
+<script src="contenido-modulo-6.js?v=202608052030"></script>
+<script src="calculadora.js?v=202608052030"></script>
+<script src="talvina.js?v=202608052030"></script>
+<script src="panes.js?v=202608052030"></script>
+<script src="fichas.js?v=202608052030"></script>
+<script src="contenido-napa.js?v=202608052030"></script>
 <script>
 /* ══ Catálogo ══ */
 const MODULOS = [
@@ -1049,6 +1114,75 @@ function bloqueTabla(t){
       `<td data-l="${esc(t.cols[k]||'')}">${esc(c)}</td>`).join('')}</tr>`).join('')}</table></div>`;
 }
 const bloqueNota = n => n?`<div class="note"><div class="t">${esc(n.t)}</div><p>${n.p}</p></div>`:'';
+
+/* ── Los tres bloques de la receta completa ──
+   Ficha (que voy a necesitar), escalado (cuanto de cada cosa) y
+   linea de tiempo (cuanto tengo que esperar). Se dibujan vivos: se
+   ven nitidos en cualquier pantalla y se corrigen sin regenerar nada. */
+
+const bloqueFicha = b => !b.items ? '' :
+  `<div class="ficha">${b.items.map(([l,v])=>
+    `<div><div class="v">${esc(v)}</div><div class="l">${esc(l)}</div></div>`).join('')}</div>`;
+
+/* Los gramos se guardan una sola vez, por kilo de harina, y se
+   multiplican en el navegador. Un solo origen: si cambia la receta,
+   cambian todas las tandas a la vez. */
+let ESC_N = 0;
+function bloqueEscala(b){
+  const id = 'esc'+(++ESC_N);
+  const tandas = b.tandas || [1,2,5,10,20];
+  const datos = JSON.stringify(b.items).replace(/"/g,'&quot;');
+  return `<div class="esc" id="${id}" data-items="${datos}">
+    <div class="esc-h">${esc(b.titulo||'Para la tanda que quieras hacer')}</div>
+    ${b.base?`<div class="esc-b">Una tanda = ${esc(b.base)}</div>`:''}
+    <div class="esc-t" role="group" aria-label="Cuantas tandas">
+      ${tandas.map((n,i)=>`<button type="button" data-x="${n}" aria-pressed="${i===0}">${n} ${n===1?'tanda':'tandas'}</button>`).join('')}
+    </div>
+    <table><tbody>${b.items.map(([n,c,u])=>
+      `<tr><td>${esc(n)}</td><td class="g" data-base="${c}" data-u="${esc(u||'g')}">${fmtCant(c,u)}</td></tr>`
+    ).join('')}</tbody></table></div>`;
+}
+/* Una sola funcion para el dibujado y para el recalculo, para que
+   20 tandas no se vean con otro formato que 1. Arriba de mil salta
+   a kilos y litros: "20 kg" se lee de un vistazo, "20.000 g" no. */
+function fmtCant(v,u){
+  u = u || 'g';
+  if(v>=1000 && u==='g')  return (v/1000).toLocaleString('es',{maximumFractionDigits:2})+' kg';
+  if(v>=1000 && u==='ml') return (v/1000).toLocaleString('es',{maximumFractionDigits:2})+' L';
+  return v.toLocaleString('es',{maximumFractionDigits:1})+' '+u;
+}
+/* Un solo oyente para toda la app, en vez de uno por tabla */
+document.addEventListener('click', ev => {
+  const btn = ev.target.closest('.esc-t button'); if(!btn) return;
+  const caja = btn.closest('.esc'), x = parseFloat(btn.dataset.x);
+  caja.querySelectorAll('.esc-t button').forEach(o=>o.setAttribute('aria-pressed', o===btn));
+  caja.querySelectorAll('td.g').forEach(td=>{
+    td.textContent = fmtCant(parseFloat(td.dataset.base)*x, td.dataset.u);
+  });
+});
+
+/* El reloj de la izquierda es acumulado desde que empiezas: contesta
+   "¿a que hora saco el pan?" sin que nadie tenga que sumar. */
+const reloj = m => (m<60) ? m+' min'
+  : Math.floor(m/60)+' h'+(m%60 ? ' '+String(m%60).padStart(2,'0') : '');
+/* "20–23 min", no "20 min–23 min": la unidad se dice una sola vez
+   cuando los dos extremos la comparten. */
+const tramo = (a,b) => (a===b) ? reloj(a)
+  : (a<60 && b<60) ? a+'–'+b+' min'
+  : reloj(a)+'–'+reloj(b);
+function bloqueLinea(b){
+  let a=0, z=0;
+  const filas = b.items.map(it=>{
+    const desde = tramo(a,z);
+    const dur = tramo(it.min, it.max ?? it.min);
+    a += it.min; z += (it.max ?? it.min);
+    return `<li><span class="rel">${desde}</span><div class="et">${esc(it.n)}</div>
+      <div class="du">${dur}</div>${it.d?`<div class="de">${it.d}</div>`:''}</li>`;
+  }).join('');
+  const total = (a===z) ? reloj(a) : reloj(a)+' a '+reloj(z);
+  return `<ol class="lin">${filas}</ol>
+    <div class="note"><div class="t">De principio a fin</div><p>${total}${b.nota?'. '+b.nota:''}</p></div>`;
+}
 const bloqueTip  = n => n?`<div class="tip"><div class="t">${esc(n.t)}</div><p>${n.p}</p></div>`:'';
 
 
@@ -1073,6 +1207,9 @@ function bloque(b){
     case 'sello':   return (window.DIB && DIB.suelto) ? DIB.suelto(b.img, b.pie) : '';
     case 'rec':   return `<div class="rec"><div class="rec-n">${esc(b.n||'')}</div>
                     <h3>${esc(b.c)}</h3>${b.lede?`<p>${b.lede}</p>`:''}</div>`;
+    case 'ficha': return bloqueFicha(b);
+    case 'escala':return bloqueEscala(b);
+    case 'linea': return bloqueLinea(b);
     default:      return '';
   }
 }

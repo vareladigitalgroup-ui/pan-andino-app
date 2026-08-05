@@ -63,6 +63,7 @@ window.MODULO_3 = {
       { t:'tip', tt:'La piedra, si la tienes', c:'Una piedra de pizza o una bandeja de hierro fundido adentro durante el precalentado acumula masa térmica y simula el piso de un horno profesional. La base del pan mejora notablemente y no cuesta casi nada.' },
 
       { t:'h', c:'El vapor, en horno de casa' },
+      { t:'seq', titulo:"El vapor casero", items:[["form-espanol-3","<b>Una bandeja con agua en el piso del horno.</b> Eso es todo el truco."]] },
       { t:'p', c:'No tienes inyector de vapor y no lo necesitas. El vapor hace dos cosas en los primeros minutos: mantiene la superficie húmeda y flexible para que el pan pueda expandirse al máximo antes de que la corteza se fije, y le da el <b>brillo</b>. Sin vapor, la corteza se fija demasiado pronto y el pan queda chato y mate.' },
       { t:'lista', items:[
         ['El recipiente con agua hirviendo','Una bandeja metálica en la rejilla de abajo durante todo el precalentado. Al meter el pan, media taza de agua hirviendo adentro: vapor inmediato. <b>Aléjate al verter.</b> Retira el recipiente a los 10 minutos.'],
@@ -116,6 +117,7 @@ window.MODULO_3 = {
       ]},
 
       { t:'h', c:'La técnica del corte' },
+      { t:'seq', titulo:"Los cortes, de cerca", items:[["acab-camaleon-1","<b>El ángulo.</b> La cuchilla entra inclinada a 45°, no derecha."],["acab-camaleon-2","<b>Diagonales.</b> Mismo ángulo y misma distancia entre uno y otro."],["acab-acema-1","<b>Longitudinales.</b> Para las acemas: a lo largo y más profundos."]] },
       { t:'ing', titulo:'Los cuatro números', items:[
         ['0,5 – 1 cm','de profundidad. Nunca menos, nunca mucho más',''],
         ['45°','de ángulo respecto a la superficie',''],
@@ -203,6 +205,7 @@ window.MODULO_3 = {
       { t:'tip', tt:'Cuál usar', c:'El golpe para el día a día, el termómetro cuando estás aprendiendo un pan nuevo. Con el tiempo el oído te alcanza y el termómetro queda para las dudas.' },
 
       { t:'h', c:'El falso dorado, el error más peligroso' },
+      { t:'seq', titulo:"Las cuatro pruebas, en la mano", items:[["tec-golpe","<b>El golpe.</b> Nudillos en la base. Si suena hueco, está."],["tec-termometro","<b>El termómetro.</b> Al centro del costado. 88 a 92 °C."],["tec-base","<b>La base.</b> Dorada pareja de lado a lado."]] },
       { t:'p', c:'Cuando la temperatura es demasiado alta, la corteza se dora y oscurece muy rápido, <b>antes de que el interior llegue a punto</b>. El resultado es un pan que se ve perfecto por fuera y está crudo o gomoso por dentro. Es el error que más devoluciones genera cuando ya estás vendiendo.' },
       { t:'pasos', items:[
         'Si el color llega mucho antes del tiempo mínimo de la tabla, sospecha.',

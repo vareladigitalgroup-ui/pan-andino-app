@@ -96,6 +96,7 @@ window.MODULO_2 = {
       { t:'ilustra', items:[['talvina','Frasco de boca ancha'],['bascula','Pesar, no calcular'],['termometro','Máximo 30 °C'],['reloj','Ocho días']] },
 
       { t:'h', c:'Lo que vas a ver, hora por hora' },
+      { t:'seq', titulo:"La talvina, día por día", items:[["talvina-mezcla","<b>Día 1.</b> Harina, agua y papelón recién mezclados. Lisa, sin una burbuja."],["talvina-dia-2","<b>Día 2.</b> Aparecen las primeras burbujas y sube apenas."],["talvina-activa","<b>Ya activa.</b> Subida al doble, abombada y llena de burbujas."]] },
       { t:'p', c:'La activación sigue un orden predecible. Conocerlo te ahorra la angustia de creer que algo salió mal cuando en realidad todo va bien.' },
       { t:'tabla', cols:['Cuándo','Qué ves','Qué significa'], filas:[
         ['Horas 0 a 6','Quieto, no pasa nada','Las levaduras están despertando. Normal. No hagas nada'],
@@ -145,6 +146,7 @@ window.MODULO_2 = {
       { t:'ilustra', items:[['talvina','Que burbujee'],['granos','Que huela a guarapo'],['gota','Que flote']] },
 
       { t:'h', c:'Aprender a leerle el olor' },
+      { t:'seq', titulo:"Cómo se ve cuando está lista", items:[["talvina-activa","<b>Activa.</b> Doblada, con burbujas grandes y cúpula abombada."],["talvina-flotacion","<b>La prueba de flotación.</b> Una cucharada en agua: si flota, está."]] },
       { t:'p', c:'El olfato es la herramienta más vieja y más confiable de la panadería. El olor de tu talvina cambia según su estado, y leerlo bien es de las habilidades más valiosas que vas a desarrollar.' },
       { t:'tabla', cols:['Lo que hueles','Qué significa','Qué hacer'], filas:[
         ['Dulce y cálido, tipo guarapo','En su punto ideal','Úsala ya'],
@@ -200,6 +202,7 @@ window.MODULO_2 = {
       { t:'p', c:'La extiendes finita sobre papel encerado, la dejas secar al aire hasta que se hace escamas, y la guardas en un frasco. <b>Vive así meses.</b> Para revivirla, la mezclas con agua tibia y azúcar y arrancas el ciclo de refrescos.' },
 
       { t:'h', c:'El protocolo de la semana' },
+      { t:'seq', titulo:"El refresco", items:[["talvina-alimentar","<b>Alimentarla.</b> Harina y agua en partes iguales sobre lo que quedó."],["talvina-refresco","<b>Después del refresco.</b> Vuelve a arrancar en unas horas."]] },
       { t:'p', c:'Si vendes, esto deja de ser una costumbre y pasa a ser un horario. Los que lo cumplen tienen fermento potente todos los sábados; los que no, tienen sorpresas el día de mayor pedido.' },
       { t:'tabla', cols:['Día','Qué haces'], filas:[
         ['Lunes','Refresco estándar. Botas el 50%, repones harina y agua. Revisas actividad'],

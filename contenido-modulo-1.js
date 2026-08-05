@@ -182,6 +182,7 @@ window.MODULO_1 = {
       { t:'foto', img:'tec-amasado', pie:'La base de la palma, no los dedos. Empujar con el peso del cuerpo, doblar, girar 90 grados y repetir.' },
 
       { t:'h', c:'1 · El amasado básico tachirense' },
+      { t:'seq', titulo:"El movimiento, de cerca", items:[["tec-amasar-empujar","<b>Empujar.</b> Con el talón de la palma, no con los dedos."],["tec-amasar-doblar","<b>Doblar.</b> La punta de vuelta sobre sí misma."],["tec-amasar-girar","<b>Girar.</b> Un cuarto de vuelta, y otra vez."]] },
       { t:'p', c:'La técnica base y la que da los resultados más parejos para el pan gocho. Usas <b>la base de la palma, no los dedos</b>: empujas la masa hacia adelante con el peso del cuerpo, la doblas sobre sí misma, giras 90 grados y repites. Movimiento continuo, rítmico y firme, nunca agresivo. La presión tiene que trabajar la masa sin destrozar la red de gluten que se está formando.' },
 
       { t:'h', c:'2 · El amasado francés, o claquage' },
@@ -191,6 +192,7 @@ window.MODULO_1 = {
       { t:'ilustra', items:[['pan','Palma, no dedos'],['reloj','10 min y descanso'],['gota','Sin harina extra']] },
 
       { t:'h', c:'3 · Los pliegues' },
+      { t:'seq', titulo:"Cómo se ve la masa según los minutos", items:[["tec-masa-min5","<b>Minuto 5.</b> Rugosa y pegajosa. Es normal, no le eches harina."],["tec-masa-min10","<b>Minuto 10.</b> Entera, ya se despega sola."],["tec-masa-min20","<b>Minuto 20.</b> Lisa y con brillo. Ahí parás."]] },
       { t:'p', c:'No es amasado continuo: estiras y doblas la masa sobre sí misma, la dejas descansar diez minutos, y repites. <b>El gluten se desarrolla solo durante el descanso.</b> Es la técnica de menos esfuerzo y la mejor cuando la masa lleva mucha grasa.' },
 
       { t:'h', c:'4 · La amasadora' },
@@ -206,6 +208,7 @@ window.MODULO_1 = {
     lede:'El primero le da carácter. El segundo decide el volumen. El tercero, el de la nevera, te cambia el negocio.',
     bloques:[
       { t:'h', c:'El primer reposo' },
+      { t:'seq', titulo:"Qué es \"doblar el volumen\"", items:[["tec-ferm-antes","<b>Al empezar.</b> La masa llega a la mitad del bol."],["tec-ferm-doble","<b>Lista.</b> Llegó al doble y asoma por el borde."]] },
       { t:'p', c:'No es tiempo perdido: es donde el pan agarra su carácter. La talvina produce el <b>gas carbónico</b> que infla la masa, genera los <b>ácidos orgánicos</b> que dan el sabor del pan gocho, y <b>fortalece la red de gluten</b> que construiste amasando.' },
       { t:'ing', titulo:'Condiciones', items:[
         ['25–28 °C','temperatura del ambiente',''],
@@ -225,6 +228,7 @@ window.MODULO_1 = {
         ['—','paño húmedo que no toque la masa','']
       ]},
       { t:'h', c:'La prueba del dedo' },
+      { t:'seq', titulo:"La prueba, de cerca", items:[["tec-dedo","<b>La marca tiene que volver despacio.</b> Rápido = le falta. No vuelve = se pasó."],["tec-separacion","<b>4 cm entre pieza y pieza</b>, para que crezcan sin tocarse."]] },
       { t:'pasos', items:[
         'Presiona suavemente la masa con un dedo y mira qué hace la marca.',
         '<b>Vuelve despacio</b> → lista para el horno. Ese es el punto.',

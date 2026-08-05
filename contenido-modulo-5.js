@@ -30,6 +30,7 @@ window.MODULO_5 = {
       ]},
 
       { t:'h', c:'Los tres almíbares' },
+      { t:'seq', titulo:"El brillo, en tres panes distintos", items:[["acab-pinita-1","<b>Almíbar 1:1</b> sobre la piñita, con el pan todavía tibio."],["acab-azucarado-2","<b>Azúcar caramelizada</b> en el azucarado: brillo de costra, no de barniz."],["acab-pandedios-3","<b>Leche condensada y coco</b> en el Pan de Dios: pega y brilla a la vez."]] },
       { t:'ing', titulo:'Almíbar clásico', items:[
         ['100 g','azúcar blanca',''],
         ['100 ml','agua',''],
