@@ -33,6 +33,7 @@ window.MODULO_2 = {
       { t:'ilustra', items:[['harina','Harina 000'],['gota','Agua tibia'],['papelon','Papelón'],['granos','Especias']] },
 
       { t:'h', c:'Talvina contra levadura de sobre' },
+      { t:'seq', titulo:"Las dos, lado a lado", items:[["talvina-vs-levadura","<b>Izquierda: talvina viva.</b> Derecha: levadura de sobre. Una se cría, la otra se compra."]] },
       { t:'p', c:'Parecen intercambiables. No lo son, y la diferencia se ve en el pan terminado.' },
       { t:'tabla', cols:['','Talvina tachirense','Levadura comercial'], filas:[
         ['Qué es','Fermento natural de cepas silvestres','Una sola cepa de laboratorio'],
@@ -241,6 +242,7 @@ window.MODULO_2 = {
       { t:'nota', tt:'Lo que nadie te dice del tiempo', c:'Las 18 a 24 horas no son un capricho de tradición. En ese tiempo las bacterias producen los ácidos y los aromas que hacen que el pan <b>huela a pan gocho</b>. Si le metes levadura para acelerarlo, el pan sube igual — pero no huele igual, y ahí se pierde todo.' },
 
       { t:'h', c:'El momento de incorporarla' },
+      { t:'seq', titulo:"Cómo entra a la masa", items:[["talvina-en-masa","<b>Se vuelca sobre los líquidos</b>, antes que la harina termine de integrarse."]] },
       { t:'p', c:'La talvina es frágil justo en este paso. Agua muy caliente, sal directa o un amasado violento en los primeros minutos la pueden dañar en serio.' },
       { t:'pasos', items:[
         '<b>Confirma que flota.</b> Si no flota, no la uses. No hay excepción a esto.',
@@ -291,6 +293,7 @@ window.MODULO_2 = {
       { t:'nota', tt:'La regla que resume todo', c:'Solo se bota la que tiene <b>colores vivos</b>: rosa, naranja, verde o negro. Todos los demás problemas se resuelven con refrescos y paciencia.' },
 
       { t:'h', c:'Las preguntas que siempre salen' },
+      { t:'seq', titulo:"Cuando se descuidó", items:[["talvina-mala","<b>Líquido oscuro arriba y hundida.</b> No está muerta: tiene hambre. Refrescala dos veces."]] },
       { t:'lista', items:[
         ['¿Cuánto dura una talvina?','Indefinidamente, si la cuidas. Las panaderías del Táchira tienen fermentos con décadas de historia continua.'],
         ['¿Puedo hacer pan si no ha flotado?','Técnicamente sí, pero el resultado es impredecible. No vale la pena arriesgar los ingredientes de una tanda entera.'],

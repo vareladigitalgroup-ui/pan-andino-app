@@ -30,6 +30,7 @@ window.REGALO_1 = {
       { t:'nota', tt:'La vuelta que da la historia', c:'La panadería venezolana la levantaron migrantes que llegaron con un oficio y montaron negocio en un país ajeno. <b>Hoy el venezolano es el que se fue.</b> Y el oficio sigue sirviendo para lo mismo: llegar a un país donde no conoces a nadie y tener algo que la gente quiera comprar.' },
 
       { t:'h', c:'Tu harina no es la misma' },
+      { t:'seq', titulo:"Las harinas, comparadas", items:[["g1-harinas","<b>No todas son iguales.</b> El color y el grano ya te dicen con cuál estás trabajando."]] },
       { t:'p', c:'Si te fuiste de Venezuela, esta es la parte que explica por qué la receta de tu mamá no te sale igual. La harina no se llama igual en todas partes, y lo peor: <b>la que se llama igual no siempre es igual</b>. El trigo americano y canadiense tiene más proteína que el europeo.' },
       { t:'p', c:'La proteína es la que forma el gluten, y el gluten es lo que aguanta el gas. Más proteína, más agua admite y más sube. Por eso la misma receta con la misma cantidad de agua te queda perfecta en Caracas y dura en Madrid.' },
       { t:'tabla', cols:['Dónde estás','Cómo pedirla','Proteína'], filas:[
@@ -161,6 +162,7 @@ window.REGALO_1 = {
   { tipo:'largo', titulo:'La masa sobada: sándwich, hamburguesa y perro',
     lede:'Menos agua, más huevo y más grasa. Se llama sobada porque se pasa por el rodillo diez veces o más.',
     bloques:[
+      { t:'seq', titulo:"El relleno enrollado, paso a paso", items:[["paso-pan-de-jamon-1","<b>1 · La masa estirada</b> en rectángulo parejo."],["paso-pan-de-jamon-2","<b>2 · El relleno repartido</b>, con el borde libre para sellar."],["paso-pan-de-jamon-3","<b>3 · Enrollado apretado</b> desde el borde largo."],["paso-pan-de-jamon-4","<b>4 · La costura pellizcada</b> y sellada a lo largo."],["paso-pan-de-jamon-5","<b>5 · A la bandeja</b>, con la costura hacia abajo."],["paso-pan-de-jamon-6","<b>6 · Horneado</b>, con el corte que muestra la espiral."]] },
       { t:'ing', titulo:'La masa sobada · por kilo de harina', items:[
         ['1.000 g','harina panadera','100%'],
         ['300 g','agua tibia','30%'],
@@ -274,6 +276,7 @@ window.REGALO_1 = {
       { t:'ilustra', items:[['termometro','Mídelo una vez'],['gota','Tres hielos'],['pan','Que suene hueco']] },
 
       { t:'h', c:'Las ocho fallas y su causa real' },
+      { t:'seq', titulo:"Cómo se ve una falla", items:[["g1-fallas","<b>Izquierda: pálido y bajito.</b> Derecha: como tiene que salir. La diferencia se ve de lejos."]] },
       { t:'tabla', cols:['Lo que pasó','Por qué','Qué hacer'], filas:[
         ['No subió','Levadura muerta o sal encima de ella','Sal al borde, nunca al centro'],
         ['Sabe a levadura','Demasiada, o fermentó muy rápido','Bájala según el calor'],
@@ -292,6 +295,7 @@ window.REGALO_1 = {
   { tipo:'largo', hero:'pan-pan-espanol', titulo:'A cuánto lo vendes',
     lede:'Los seis panes no valen lo mismo ni cuestan lo mismo.',
     bloques:[
+      { t:'seq', titulo:"Listo para vender", items:[["g1-precio","<b>En bolsa de papel</b>, que respira y no le suda la corteza."]] },
       { t:'p', c:'La regla de las panaderías es vieja y sigue sirviendo: el precio de venta es <b>tres veces el costo de los ingredientes</b>. Ese múltiplo no es avaricia — cubre la luz del horno, el gas, las bolsas, tu tiempo y lo que se pierde.' },
       { t:'p', c:'La masa magra es la más barata: harina, agua, sal y poco más. La sobada cuesta casi el doble por el huevo y la leche en polvo. <b>Pero la sobada se vende por unidad y la magra por pieza grande</b>, y eso cambia la cuenta.' },
       { t:'tabla', cols:['Pan','Costo','Cómo se vende'], filas:[

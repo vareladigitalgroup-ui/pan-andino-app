@@ -150,6 +150,7 @@ window.MODULO_1 = {
       { t:'ilustra', items:[['bascula','Pesar todo'],['termometro','35–38 °C'],['talvina','Que flote'],['reloj','Y esperar']] },
 
       { t:'h', c:'El mise en place' },
+      { t:'seq', titulo:"Todo pesado antes de empezar", items:[["tec-ingredientes","<b>Cada cosa en su cuenco, pesada.</b> Eso es el mise en place, y es lo que separa al ordenado del que improvisa."],["tec-pesar","<b>La báscula manda.</b> En panadería no hay tazas: hay gramos."]] },
       { t:'pasos', items:[
         '<b>60 minutos antes:</b> saca la mantequilla y los huevos de la nevera. A temperatura ambiente o no se integran.',
         'Tibia la leche a <b>35–38 °C</b>. Más caliente activa el gluten disparejo; más fría no integra.',

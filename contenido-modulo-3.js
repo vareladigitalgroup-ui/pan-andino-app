@@ -154,6 +154,7 @@ window.MODULO_3 = {
       { t:'nota', tt:'Cómo usar esta tabla', c:'Tu horno puede variar <b>hasta 15 o 20 °C</b> respecto a estos números. Las primeras veces, revisa cada 5 minutos hacia el final del tiempo indicado y anota tu ajuste. Después de tres tandas ya tienes tu propia tabla.' },
 
       { t:'h', c:'Dónde va la bandeja' },
+      { t:'seq', titulo:"La bandeja en el horno", items:[["horno-bandeja","<b>Al centro.</b> Es donde el calor es más parejo en un horno de casa."],["horno-dos","<b>Dos bandejas.</b> Hay que rotarlas a mitad de cocción, o una sale distinta de la otra."]] },
       { t:'p', c:'La posición decide el equilibrio entre el calor de arriba y el de abajo. Combinada con el mapa de calor de tu horno, es la diferencia entre una base dorada perfecta y una base quemada o pálida.' },
       { t:'tabla', cols:['Rejilla','Qué hace','Cuándo usarla'], filas:[
         ['Superior','Más calor arriba, dorado intenso en la superficie','Piezas que necesitan más color arriba. Riesgo de quemar si el pintado es oscuro'],
@@ -291,6 +292,7 @@ window.MODULO_3 = {
       { t:'tip', tt:'Lo eficiente al principio', c:'Hornea <b>un solo tipo de pan por tanda</b>. Con experiencia vas a poder mezclar; al arrancar, mezclar solo agrega variables cuando todavía no controlas las básicas.' },
 
       { t:'h', c:'Los registros son el negocio' },
+      { t:'seq', titulo:"Llevar el registro", items:[["neg-registros","<b>Anotá cada tanda:</b> temperatura, tiempo y cómo salió. En tres semanas conocés tu horno."],["horno-dos","<b>Dos bandejas a la vez.</b> Rotalas a mitad de cocción o una sale distinta de la otra."]] },
       { t:'p', c:'El panadero profesional no improvisa: registra, replica y ajusta con datos. Un proceso estandarizado es un proceso que se puede <b>enseñar, delegar y escalar</b>. Uno que vive en tu cabeza, no.' },
       { t:'lista', items:[
         ['Fecha y tanda','Qué día y cuántas piezas.'],
@@ -308,6 +310,7 @@ window.MODULO_3 = {
     lede:'Lo que ves, la causa real, y qué hacer la próxima.',
     bloques:[
       { t:'h', c:'Problemas de color y cocción' },
+      { t:'seq', titulo:"Las dos fallas de color", items:[["horno-fallas","<b>Izquierda: quemado.</b> Derecha: pálido. Casi siempre es la temperatura, no el tiempo."]] },
       { t:'tabla', cols:['Lo que pasó','Por qué','Qué hacer'], filas:[
         ['Muy oscuro afuera, crudo adentro','Temperatura excesiva','Baja 15 °C y extiende el tiempo. Cubre con aluminio si ya está oscuro'],
         ['Pálido y seco','Temperatura baja o poco tiempo','Sube 10 a 15 °C, o extiende 5 a 8 minutos'],

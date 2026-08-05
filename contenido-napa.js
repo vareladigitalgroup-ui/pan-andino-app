@@ -28,6 +28,7 @@ window.NAPA = {
       { t:'ilustra', items:[['harina','Mira la proteína'],['gota','Ajusta el agua'],['bascula','Y anota lo que funcionó']] },
 
       { t:'h', c:'Cuánta agua según lo que conseguiste' },
+      { t:'seq', titulo:"Cómo distinguirlas", items:[["napa-comparar","<b>Más fina y blanca, o más gruesa y cremosa.</b> Se nota entre los dedos."]] },
       { t:'p', c:'Todas las recetas llevan el agua en un rango, no en un número fijo. Ese rango existe justamente para esto: <b>ajustas según la harina que tengas en la mano</b>.' },
       { t:'tabla', cols:['Si conseguiste','Ponle de agua','Ejemplo por kilo'], filas:[
         ['All-purpose / panificable','50 a 53%','500 a 530 ml'],
@@ -43,6 +44,7 @@ window.NAPA = {
   { tipo:'largo', titulo:'Estados Unidos',
     lede:'La buena noticia: aquí la harina es fácil de conseguir y es buena.',
     bloques:[
+      { t:'seq', titulo:"Qué vas a encontrar", items:[["napa-paquetes","<b>Mirá los gramos de proteína</b>, no el nombre del paquete."]] },
       { t:'p', c:'Lo que en Venezuela llamas <b>harina panadera</b> es, en fuerza, la <i>all-purpose flour</i> de aquí. Y lo que aquí venden como <i>bread flour</i> es más fuerte que la venezolana: con esa vas a tener que <b>subir el agua</b>.' },
       { t:'tabla', cols:['Marca','Qué pedir','Proteína'], filas:[
         ['King Arthur','Unbleached Bread Flour','12,7 g'],
@@ -67,6 +69,7 @@ window.NAPA = {
   { tipo:'largo', titulo:'España',
     lede:'Aquí el nombre te confunde más, porque la clasificación es distinta.',
     bloques:[
+      { t:'seq', titulo:"Qué buscar en la góndola", items:[["g1-harinas","<b>Compará el grano y el color.</b> El nombre del paquete cambia según el país; la proteína no."]] },
       { t:'p', c:'En España la harina se clasifica por <b>fuerza (W)</b> además de por proteína, y los nombres no coinciden con los de Venezuela. Lo más importante: <b>la «harina de fuerza» española es más fuerte que la panadera venezolana</b>, no equivalente.' },
       { t:'tabla', cols:['Cómo se llama','Proteína','Para qué sirve'], filas:[
         ['Harina floja o de repostería','9 – 10 g','No sirve para pan'],
@@ -88,6 +91,7 @@ window.NAPA = {
   { tipo:'largo', titulo:'La lista para el mercado',
     lede:'Lo que hay que comprar la primera vez, y cómo se llama cada cosa allá.',
     bloques:[
+      { t:'seq', titulo:"Lo que traés del mercado", items:[["napa-mercado","<b>Harina, papelón, queso, huevos y especias.</b> Con eso arrancás."]] },
       { t:'tabla', cols:['Qué','En EE.UU.','En España'], filas:[
         ['Harina','All-purpose o bread flour','Panificable o de fuerza'],
         ['Papelón','Piloncillo (sección mexicana)','Panela (tienda latina)'],

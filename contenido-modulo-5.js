@@ -132,6 +132,7 @@ window.MODULO_5 = {
       { t:'p', c:'La inversión se recupera en el primer pedido. Un cliente que recibe su pan en una caja bonita con tu logo <b>se siente especial</b>. Y el que se siente especial vuelve, trae amigos y comparte en redes sin que le pagues nada.' },
 
       { t:'h', c:'Los tres niveles' },
+      { t:'seq', titulo:"Los tres empaques", items:[["emp-niveles","<b>Bolsa, caja y tela.</b> El mismo pan sostiene tres precios distintos."]] },
       { t:'tabla', cols:['Nivel','Qué lleva','Para qué'], filas:[
         ['1 · Básico','Bolsa plástica transparente + etiqueta impresa','Venta directa frecuente. Costo mínimo, funcional'],
         ['2 · Intermedio','Bolsa kraft + etiqueta personalizada + cinta','Clientes regulares y ventas de mayor valor. Artesanal y cálido'],
@@ -200,6 +201,7 @@ window.MODULO_5 = {
       { t:'ilustra', items:[['pan','Nombre con origen'],['papelon','Crema, marrón, dorado'],['granos','Siempre igual']] },
 
       { t:'h', c:'La etiqueta es tu mejor vendedor' },
+      { t:'seq', titulo:"La etiqueta", items:[["emp-etiqueta","<b>Papel liso y cordel.</b> No hace falta imprenta para que se vea cuidado."]] },
       { t:'p', c:'Cada pan que sale de tu cocina lleva tu contacto. Y cuando alguien lo regala, <b>el que lo recibe también sabe dónde comprarlo</b>. Es el único vendedor que trabaja gratis y las 24 horas.' },
       { t:'lista', items:[
         ['Nombre de tu panadería','Grande y visible. Es lo que se recuerda.'],
@@ -227,6 +229,7 @@ window.MODULO_5 = {
       { t:'p', c:'Una imagen bien tomada con un celular básico vende más que una foto mediocre con cámara profesional. <b>La luz y el ángulo lo son todo</b>, y las dos cosas son gratis.' },
 
       { t:'h', c:'La regla de oro: luz natural, nunca flash' },
+      { t:'seq', titulo:"Cómo se toma la foto", items:[["foto-que-vende","<b>Al lado de la ventana, con la luz de costado.</b> Con el teléfono alcanza."]] },
       { t:'p', c:'El flash aplana la textura del pan, elimina el brillo del glaseado y hace que la miga parezca artificial. La luz natural revela cada alvéolo, hace brillar el almíbar y da calidez a los colores.' },
       { t:'lista', items:[
         ['Las horas buenas','De 7 a 9 de la mañana y de 3 a 5 de la tarde. La luz es dorada, suave y lateral: exactamente lo que necesita una textura.'],
@@ -263,6 +266,7 @@ window.MODULO_5 = {
       { t:'tip', tt:'El video que más alcance tiene', c:'El pan saliendo del horno con el vapor subiendo. Es el contenido con más alcance orgánico de cualquier panadería, y no requiere edición. <b>Grábalo cada vez que hornees y publícalo siempre.</b>' },
 
       { t:'h', c:'La vitrina: la mitad de las ventas son impulsivas' },
+      { t:'seq', titulo:"La vitrina", items:[["vitrina","<b>Ordenada por tipo y a la altura de los ojos.</b> Lo que no se ve, no se vende."]] },
       { t:'p', c:'El cliente que pasó a ver termina comprando si el display y el olor lo invitan. Dominar la exhibición es <b>duplicar ventas sin bajar precios</b>.' },
       { t:'lista', items:[
         ['La altura correcta','El pan a la altura de los ojos se vende más. Los premium al nivel visual directo, los económicos o de volumen abajo, los especiales arriba como referencia.'],
@@ -278,6 +282,7 @@ window.MODULO_5 = {
   { tipo:'largo', hero:'pan-bolitas-queso-bocadillo', titulo:'Qué salió mal con el acabado',
     lede:'Los errores que arruinan un pan que ya estaba bien horneado.',
     bloques:[
+      { t:'seq', titulo:"Las fallas que se ven de lejos", items:[["horno-fallas","<b>Izquierda: quemado. Derecha: pálido.</b> El acabado no arregla un horneado mal hecho."]] },
       { t:'tabla', cols:['Lo que pasó','Por qué','Qué hacer'], filas:[
         ['El azúcar glas desapareció','Lo pusiste sobre pan caliente','Solo sobre pan frío'],
         ['Burbujas en la corteza','Capa de huevo muy gruesa','Capa fina y pareja'],

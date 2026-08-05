@@ -26,6 +26,7 @@ window.MODULO_6 = {
       { t:'nota', tt:'El cambio de empleado a dueño empieza aquí', c:'Tu pan vale lo que tú decides que vale. <b>Si lo regalas, la gente cree que no vale nada. Si lo cobras bien, la gente cree que es especial.</b> Y tiene razón: es especial.' },
 
       { t:'h', c:'Los costos que siempre se olvidan' },
+      { t:'seq', titulo:"La cuenta, con todo adentro", items:[["neg-costos","<b>Balanza, libreta y calculadora.</b> El precio sale de pesar, no de calcular a ojo."]] },
       { t:'p', c:'La mayoría cobra mal por una razón simple: <b>suma los ingredientes, divide entre los panes que salieron y le pone precio</b>. Pero eso es apenas una parte de lo que cuesta producir cada unidad. Los costos invisibles son los que arruinan el negocio sin que nadie los vea.' },
       { t:'lista', items:[
         ['Los directos, los obvios','Ingredientes de cada pan. Empaque: bolsas, cajas, etiquetas. Gas o electricidad por tanda.'],
@@ -106,6 +107,7 @@ window.MODULO_6 = {
       { t:'nota', tt:'La combinación que funciona', c:'Los que viven de esto no eligen uno solo: combinan dos o tres. El ejemplo probado es <b>WhatsApp + cafeterías + un evento al mes</b> = negocio sólido desde el tercer mes.' },
 
       { t:'h', c:'Adónde puede llegar esto' },
+      { t:'seq', titulo:"El mismo pan, cuatro negocios", items:[["neg-modelos","<b>Suelto, en bolsa, en caja o por bandeja.</b> Cada presentación es un canal distinto."]] },
       { t:'p', c:'Estos cuatro escenarios salen de panaderos venezolanos que aplicaron el sistema. <b>Son conservadores:</b> muchos superan el tercero antes de lo previsto cuando tienen el producto y la estrategia correctos.' },
       { t:'tabla', cols:['Etapa','Producción','Cómo vendes','Al mes'], filas:[
         ['1 · Inicio','20 panes/día, 5 días','WhatsApp, familia y vecinos','$150 – 200'],
@@ -152,6 +154,7 @@ window.MODULO_6 = {
       ]},
 
       { t:'h', c:'Por qué el pago adelantado no se negocia' },
+      { t:'seq', titulo:"El cobro", items:[["neg-cobrar","<b>Se cobra antes de hornear.</b> Así el que no aparece no te deja el pan encima."]] },
       { t:'p', c:'La panadería artesanal <b>produce a pedido</b>: no hay inventario que recolocar si el cliente no aparece. Un pedido sin pago es una producción que asumes tú.' },
       { t:'tabla', cols:['Quién','Cuánto adelanta'], filas:[
         ['Cliente nuevo','100%, siempre'],
@@ -217,6 +220,7 @@ window.MODULO_6 = {
       { t:'ilustra', items:[['pan','Muestra en mano'],['reloj','Seguimiento a 2 días'],['leche','Y el segundo pedido']] },
 
       { t:'h', c:'Cómo entrar a una cafetería' },
+      { t:'seq', titulo:"La entrada a la cafetería", items:[["neg-cafeteria","<b>Bandeja completa, sobre el mostrador.</b> Llevá el producto, no un catálogo."]] },
       { t:'p', c:'No vendas «pan»: <b>vende diferenciación</b>. Las cafeterías ofrecen panes industriales genéricos. Tu pan gocho auténtico es una propuesta de menú distinta, con historia y con identidad. Eso tiene valor y se cobra.' },
       { t:'lista', items:[
         ['El mensaje al dueño','«Mi pan es artesanal, con recetas tachirenses. Te da algo distinto para ofrecer, un producto con identidad que tus clientes van a preguntar dónde lo consigues.»'],
@@ -254,6 +258,7 @@ window.MODULO_6 = {
       { t:'ilustra', items:[['talvina','Tu historia'],['pan','Tu proceso'],['granos','Tu origen']] },
 
       { t:'h', c:'WhatsApp, que es donde se cierra' },
+      { t:'seq', titulo:"La foto que cierra la venta", items:[["neg-whatsapp","<b>La foto del pan real de hoy.</b> No una de archivo: la de la tanda que acabás de sacar."]] },
       { t:'p', c:'En Venezuela WhatsApp no es una app de mensajes: es <b>la infraestructura comercial</b> de millones de negocios. Y la diferencia entre WhatsApp normal y WhatsApp Business es la diferencia entre un negocio informal y uno que genera confianza solo.' },
       { t:'p', c:'Un WhatsApp Business bien configurado <b>trabaja 24 horas</b>. El mensaje de bienvenida convierte mientras duermes.' },
       { t:'lista', items:[
@@ -289,6 +294,7 @@ window.MODULO_6 = {
       ]},
 
       { t:'h', c:'Los números que hay que entender' },
+      { t:'seq', titulo:"Los registros", items:[["neg-registros","<b>Anotar cada tanda.</b> Temperatura, tiempo y resultado. En tres semanas sabés todo."]] },
       { t:'tabla', cols:['Concepto','Qué significa'], filas:[
         ['Bruto contra neto','Bruto es todo lo que entra. Neto es lo que queda. El negocio vive del neto'],
         ['Margen de ganancia','Ganancia ÷ precio × 100. Vendes a $2,00 con costo $0,65 → 67,5%. Busca 60% mínimo'],

@@ -24,6 +24,7 @@ window.REGALO_4 = {
       { t:'tip', tt:'La foto que más vende', c:'El corte transversal limpio mostrando el interior. Se hace con el pan <b>tibio, 8 a 10 minutos después</b> de salir del horno —no recién salido— y con cuchillo de sierra bien afilado, sin arrastrar. Un corte arrastrado aplasta las capas y arruina la foto.' },
 
       { t:'h', c:'El queso, que es la base de todo' },
+      { t:'seq', titulo:"Los quesos", items:[["rell-quesos","<b>Más seco desmenuza, más húmedo suelta agua.</b> Esa es toda la decisión."]] },
       { t:'p', c:'El queso blanco venezolano es el estándar, y no por costumbre: por ciencia del sabor. Su <b>punto de fusión medio</b> es lo que lo hace ideal, porque se derrite completo sin volverse líquido aguado. El queso amarillo y el queso crema no replican ni esa textura ni ese equilibrio de sal.' },
       { t:'p', c:'Y su sal natural crea el contraste exacto con la dulzura del bocadillo de guayaba. <b>Ese equilibrio es lo que hace única a la acema andina</b>, y es lo que no se puede copiar con otro queso.' },
       { t:'tabla', cols:['Para qué','Cómo se corta','Cuánto'], filas:[
@@ -56,6 +57,7 @@ window.REGALO_4 = {
       ]},
 
       { t:'h', c:'Los siete errores del relleno' },
+      { t:'seq', titulo:"Los rellenos, por dentro", items:[["rell-cortados","<b>El corte es la prueba.</b> Si el relleno se ve parejo y no dejó hueco, estuvo bien puesto."]] },
       { t:'tabla', cols:['El error','Por qué pasa','La solución'], filas:[
         ['El relleno se escapa','Exceso, o sellado incorrecto','2 cm de borde libre y sellar con dedos húmedos 30 segundos'],
         ['El relleno se quema','Horno muy alto','Papel aluminio los primeros 12 min. Nunca más de 180 °C con dulces'],
@@ -97,6 +99,7 @@ window.REGALO_4 = {
       { t:'ilustra', items:[['gota','Que caiga sola'],['granos','Ajo sin germen'],['sal','Sal y limón']] },
 
       { t:'h', c:'Cuánto dura y cómo se entrega' },
+      { t:'seq', titulo:"La guasacaca", items:[["rell-guasacaca","<b>Se entrega aparte, nunca adentro.</b> Adentro humedece la miga."]] },
       { t:'lista', items:[
         ['En la nevera','De 2 a 3 días en envase hermético. El aguacate oxida: una capa fina de aceite encima le aguanta mejor el color.'],
         ['Para entregar con un pedido','En envase aparte, <b>nunca sobre el pan</b>. La humedad de la salsa ablanda cualquier masa en minutos.'],
@@ -109,6 +112,7 @@ window.REGALO_4 = {
   { tipo:'largo', hero:'pan-bolitas-queso-bocadillo', titulo:'A cuánto sube el precio cada relleno',
     lede:'El relleno no es un costo: es una palanca de precio.',
     bloques:[
+      { t:'seq', titulo:"La versión premium", items:[["rell-premium","<b>Papel encerado y cordel.</b> El mismo pan, con otro precio."]] },
       { t:'tabla', cols:['Relleno','Qué agrega al precio'], filas:[
         ['Solo queso','La base de comparación'],
         ['Bocadillo y queso','El estándar de identidad tachirense'],

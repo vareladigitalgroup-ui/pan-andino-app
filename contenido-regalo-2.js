@@ -26,6 +26,7 @@ window.REGALO_2 = {
       { t:'ilustra', items:[['harina','Una masa'],['reloj','Congelados crudos'],['horno','Fritos al pedido']] },
 
       { t:'h', c:'Congelar, que es donde está el negocio' },
+      { t:'seq', titulo:"Los dos que se congelan crudos", items:[["paso-tequenos-1","<b>El tequeño.</b> Se arma, se congela crudo y se fríe el día que se vende."],["paso-cachitos-1","<b>El cachito.</b> Igual: el trabajo se hace una vez y se vende toda la semana."]] },
       { t:'p', c:'Esta es la parte que casi nadie aprovecha, y es la que convierte una cocina en una pequeña fábrica.' },
       { t:'tabla', cols:['Qué','Cómo se congela','Cómo se usa'], filas:[
         ['Tequeños','Armados y crudos, separados en bandeja hasta que endurezcan; después a la bolsa','Se fríen congelados, sin descongelar'],

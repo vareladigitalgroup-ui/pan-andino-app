@@ -26,6 +26,7 @@ window.REGALO_3 = {
       { t:'nota', tt:'La ventaja que tienes y no estás usando', c:'El pan tachirense es una <b>marca cultural con cuatro siglos</b> que muy poca gente fuera del Táchira sabe hacer con autenticidad. Estando afuera eso no es un dato de color: <b>es tu diferencia</b>. Nadie más en tu ciudad tiene esa historia.' },
 
       { t:'h', c:'Los cinco lugares donde ya están reunidos' },
+      { t:'seq', titulo:"Donde ya están juntos", items:[["neg-mercado","<b>La feria o el mercadito latino.</b> No hay que convencer a nadie de que le gusta el pan."]] },
       { t:'lista', items:[
         ['Los grupos de venezolanos en Facebook','Casi toda ciudad con diáspora tiene uno o varios, con miles de personas. Se buscan como «Venezolanos en [tu ciudad]». <b>Ahí no vas a vender de entrada: vas a aparecer.</b> Participa dos semanas antes de ofrecer nada.'],
         ['Los grupos de WhatsApp del barrio o del edificio','El canal más subestimado y el que más convierte, porque la gente confía en el vecino de una forma que no confía en un anuncio.'],
@@ -62,6 +63,7 @@ window.REGALO_3 = {
       { t:'nota', tt:'La frase que más rinde', c:'<b>«Cuatro siglos de tradición tachirense»</b> pega infinitamente más fuerte que <b>«pan casero»</b>. La historia auténtica genera confianza al instante y justifica el precio sin que tengas que argumentar nada.' },
 
       { t:'h', c:'Cómo presentarte la primera vez' },
+      { t:'seq', titulo:"La primera entrega", items:[["neg-entrega","<b>La primera vez se regala, no se vende.</b> El pan habla mejor que vos."]] },
       { t:'p', c:'<i>«Hola, soy [tu nombre]. Hago pan gocho tachirense de verdad, con talvina, como se hace en San Cristóbal. Te dejo una muestra. Si te sabe a lo de allá, me avisas.»</i>' },
       { t:'p', c:'Corto, con muestra en la mano, y con una frase que solo le significa algo al que sabe. <b>«Si te sabe a lo de allá» hace todo el trabajo</b>: no estás vendiendo un producto, estás ofreciendo una comprobación.' },
       { t:'lista', items:[
@@ -91,6 +93,7 @@ window.REGALO_3 = {
       { t:'ilustra', items:[['papelon','Caja y cinta'],['granos','Tu sello'],['pan','Y tu número']] },
 
       { t:'h', c:'El mercado que nadie está explotando' },
+      { t:'seq', titulo:"El regalo corporativo", items:[["neg-corporativo","<b>La misma docena, en caja.</b> Cambia el empaque y cambia el precio."]] },
       { t:'p', c:'<b>El pan como regalo corporativo.</b> Empresas que buscan un detalle para clientes o empleados en Navidad, Día de las Madres o aniversarios. Piden 30 o 50 unidades de una vez, pagan bien y no discuten precio. Y casi nadie en tu ciudad lo está ofreciendo.' },
       { t:'lista', items:[
         ['A quién escribirle','Oficinas chicas y medianas, inmobiliarias, consultorios, agencias. Cualquier negocio que le regale algo a sus clientes en diciembre.'],

@@ -24,6 +24,7 @@ window.REGALO_5 = {
       { t:'ilustra', items:[['leche','Leche condensada'],['huevo','Huevos'],['papelon','Caramelo'],['reloj','Nevera']] },
 
       { t:'h', c:'Los tres, de un vistazo' },
+      { t:'seq', titulo:"Los tres postres", items:[["postre-quesillo","<b>Quesillo.</b> El más pedido y el más barato de producir."],["postre-marquesa","<b>Marquesa.</b> Sin horno, y aguanta el traslado."],["postre-tres-leches","<b>Tres leches.</b> El de mayor precio por porción."]] },
       { t:'tabla', cols:['Postre','¿Horno?','Rinde','Cuánto antes se hace'], filas:[
         ['Quesillo','Sí, baño de María','10 a 12 porciones','El día antes'],
         ['Marquesa','No','12 porciones','El día antes, mínimo 2 h'],
@@ -37,6 +38,7 @@ window.REGALO_5 = {
   { tipo:'largo', hero:'postre-quesillo', titulo:'Quesillo',
     lede:'El flan venezolano. El que tiene los huequitos, y esos huequitos son a propósito.',
     bloques:[
+      { t:'seq', titulo:"El quesillo, paso a paso", items:[["post-caramelo","<b>1 · El caramelo</b> cubriendo el fondo del molde, todavía líquido y brillante."],["post-quesillo-desmolde","<b>2 · Desmoldado.</b> El caramelo escurre y aparecen los agujeritos."]] },
       { t:'ing', titulo:'Para un molde de 22 cm', items:[
         ['400 g','leche condensada (1 lata)',''],
         ['400 ml','leche entera',''],
@@ -64,6 +66,7 @@ window.REGALO_5 = {
   { tipo:'largo', hero:'postre-marquesa', titulo:'Marquesa de chocolate',
     lede:'Sin horno. Se cuaja sola en la nevera y es el postre de cumpleaños de toda Venezuela.',
     bloques:[
+      { t:'seq', titulo:"La marquesa, por capas", items:[["post-marquesa-capas","<b>Galleta, crema, galleta.</b> Se arma en capas parejas, sin apurar."]] },
       { t:'ing', titulo:'Para un molde rectangular', items:[
         ['900 ml','leche',''],
         ['4 uds','yemas de huevo',''],
@@ -89,6 +92,7 @@ window.REGALO_5 = {
   { tipo:'largo', hero:'postre-tres-leches', titulo:'Torta tres leches',
     lede:'Un bizcocho que se bebe las tres leches. El truco está en el pinchado.',
     bloques:[
+      { t:'seq', titulo:"El empapado", items:[["post-tresleches","<b>Se pincha y se moja despacio.</b> De a poco, para que absorba parejo."]] },
       { t:'ing', titulo:'El bizcocho y las tres leches', items:[
         ['5 uds','huevos, separados',''],
         ['200 g','azúcar',''],
@@ -118,6 +122,7 @@ window.REGALO_5 = {
   { tipo:'largo', titulo:'A cuánto se venden',
     lede:'Los postres tienen otra lógica de precio que el pan.',
     bloques:[
+      { t:'seq', titulo:"En porción individual", items:[["post-porciones","<b>La porción individual es el negocio.</b> Se vende más y se transporta mejor."]] },
       { t:'tabla', cols:['Postre','Rinde','Cómo se vende'], filas:[
         ['Quesillo','10 a 12 porciones','Entero, en su molde'],
         ['Marquesa','12 porciones','Entera, en molde desechable'],
