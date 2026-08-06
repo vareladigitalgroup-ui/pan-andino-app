@@ -14,9 +14,10 @@
      - hogaza de campo 78% con mezcla de harinas y frío largo
    Fuentes anotadas dentro de cada masa, a la vista del comprador.
 
-   ⚠ SIN FOTOS todavía: se escribió primero el contenido correcto.
-   Las secuencias de formado son lo próximo. No se referenció ninguna
-   imagen que no exista, para que el verificador siga pasando.
+   14 fotos generadas en Higgsfield (28 créditos) con hero-acema.jpg como
+   referencia, para que compartan luz y paleta con el resto de la app.
+   Cada una va donde explica algo, no de adorno: el poolish hundido, el
+   pliegue de la mojada, los hoyos de la focaccia, el ángulo del corte.
    ══════════════════════════════════════════════════════════════ */
 
 window.CIUDAD = {
@@ -61,6 +62,7 @@ window.CIUDAD = {
       { t:'p', c:'Harina, agua, sal y levadura. Nada más. <b>No hay dónde esconderse</b>: si la fermentación está mal, se ve. Por eso es la primera que te piden en cualquier panadería.' },
       { t:'p', c:'El sabor no viene de un ingrediente, viene del <b>poolish</b>: una parte de la harina fermenta aparte toda la noche y llega a la masa con el trabajo hecho.' },
 
+      { t:'seq', titulo:"Cuándo el poolish está listo", items:[["c-magra-poolish","<b>Lleno de burbujas y hundido en el centro.</b> Ese hundimiento es la señal: llegó a su punto máximo."]] },
       { t:'h', c:'El poolish (la noche antes)' },
       { t:'ing', items:[
         ['Harina panadera','330 g'],
@@ -85,6 +87,7 @@ window.CIUDAD = {
         ['Levadura','4,3 g','0,43%']
       ]},
 
+      { t:'seq', titulo:"El formado", items:[["c-magra-formado","<b>Doblada en tres a lo largo y sellada con el canto de la mano.</b> Después se rueda desde el centro hacia afuera."]] },
       { t:'h', c:'El proceso' },
       { t:'pasos', items:[
         '<b>Autólisis.</b> Mezcla harina y agua (sin sal ni levadura) y déjalo 20 a 30 minutos tapado. La harina se hidrata sola y después amasa la mitad de tiempo.',
@@ -100,6 +103,7 @@ window.CIUDAD = {
       { t:'nota', tt:'El vapor sin horno profesional', c:'Una bandeja de metal vacía en el piso del horno mientras precalienta. Cuando metes el pan, le tiras <b>media taza de agua hirviendo</b> y cierras rápido. Eso es lo que hace la corteza fina y brillante. <b>Sin vapor no hay baguette</b>, hay palo de pan.' },
       { t:'tip', tt:'Cuándo está', c:'Corteza dorada oscura, casi al borde de quemarse — ahí está el sabor. Y suena hueca al golpearle la base. Con termómetro: <b>96 a 98 °C adentro</b>.' },
 
+      { t:'seq', titulo:"Cómo se ve una bien hecha", items:[["c-magra-lista","<b>Corteza dorada oscura y los cortes abiertos con cresta.</b> Esa cresta levantada es la señal del ángulo correcto."]] },
       { t:'h', c:'Los ocho productos de esta masa' },
       { t:'tabla', cols:['Producto','Peso','Qué cambia'], filas:[
         ['Baguette','350 g','El formado base'],
@@ -122,6 +126,7 @@ window.CIUDAD = {
       { t:'p', c:'La ciabatta es la masa más mojada de las cuatro, y ahí está todo. <b>Esos huecos grandes y brillantes de adentro son agua</b> que se convirtió en vapor y empujó.' },
       { t:'p', c:'Al principio da miedo: se pega, no toma forma, parece que te equivocaste. <b>No te equivocaste.</b> Así tiene que estar.' },
 
+      { t:'seq', titulo:"El pliegue, que reemplaza al amasado", items:[["c-mojada-pliegue","<b>Mano mojada, agarrás un borde y lo doblás al centro.</b> Cuatro veces, girando el bol."]] },
       { t:'h', c:'La biga (la noche antes)' },
       { t:'p', c:'Igual que el poolish pero más seca. La biga da fuerza; el poolish da extensibilidad. Por eso la ciabatta lleva biga: necesita aguantar tanta agua.' },
       { t:'ing', items:[
@@ -158,9 +163,12 @@ window.CIUDAD = {
         '<b>Reposo: 30 a 40 minutos</b> tapado con un paño.',
         '<b>Horno.</b> 240 °C con vapor los primeros 15 minutos, después 10 más sin vapor.'
       ]},
+      { t:'seq', titulo:"Se corta, no se forma", items:[["c-mojada-corte","<b>Rectángulos con espátula, sin bolear.</b> Cada burbuja que reventás es un hueco que perdés."]] },
       { t:'nota', tt:'Por qué no se amasa', c:'A esta hidratación el amasado tradicional no funciona: la masa no tiene cuerpo para sostenerse. <b>Los pliegues hacen el mismo trabajo</b> — alinean el gluten sin romper las burbujas que ya se formaron.' },
       { t:'tip', tt:'La marca de la buena', c:'Al cortarla, huecos <b>irregulares</b> de distinto tamaño y las paredes brillantes, casi mojadas. Si los huecos son todos iguales y chiquitos, le faltó agua o la manipulaste de más.' },
 
+      { t:'seq', titulo:"La marca de la buena", items:[["c-mojada-miga","<b>Huecos irregulares y paredes brillantes.</b> Si son todos iguales y chiquitos, le faltó agua."]] },
+      { t:'seq', titulo:"Cómo sale", items:[["c-aceite-lista","<b>Bordes dorados y crocantes, superficie brillante.</b> Cuanto más aceite en el fondo, más se fríe la base."]] },
       { t:'h', c:'Los cinco productos de esta masa' },
       { t:'tabla', cols:['Producto','Peso','Qué cambia'], filas:[
         ['Ciabatta','250 g','Rectángulo largo, el corte base'],
@@ -196,6 +204,7 @@ window.CIUDAD = {
         ['Levadura','7 g','0,7%']
       ]},
 
+      { t:'seq', titulo:"Los hoyos, que no son decoración", items:[["c-aceite-hoyos","<b>Dedos aceitados hasta tocar el fondo de la bandeja.</b> Esos hoyos sostienen el aceite y la sal."]] },
       { t:'h', c:'El proceso' },
       { t:'pasos', items:[
         '<b>Mezcla.</b> Todo junto menos el aceite. Revuelve hasta que no quede harina seca.',
@@ -208,6 +217,7 @@ window.CIUDAD = {
         '<b>La salmuera.</b> Bates 50 ml de agua con 30 ml de aceite y sal gruesa, y la echas por encima. Se mete en los hoyos.',
         '<b>Horno.</b> 230 °C, 20 a 25 minutos, hasta que los bordes estén dorados y crocantes.'
       ]},
+      { t:'seq', titulo:"La salmuera", items:[["c-aceite-salmuera","<b>Agua, aceite y sal gruesa batidos, echados por encima.</b> Se mete en los hoyos y ahí se hace la corteza."]] },
       { t:'tip', tt:'El truco de la bandeja', c:'Cuanto más aceite en el fondo, más se fríe la base y más crocante queda. En Génova la bandeja lleva aceite hasta que <b>brilla como un espejo</b>.' },
 
       { t:'h', c:'Los cinco productos de esta masa' },
@@ -247,6 +257,7 @@ window.CIUDAD = {
         ['Agua','780 ml','<b>78%</b>'],
         ['Sal','20 g','2%']
       ]},
+      { t:'seq', titulo:"Las tres harinas", items:[["c-larga-harinas","<b>Panadera, integral y centeno.</b> Las dos oscuras dan sabor; la blanca es la que sostiene."]] },
       { t:'nota', tt:'Por qué esa mezcla', c:'La integral y el centeno traen <b>sabor y color</b> pero no aguantan gas. Por eso son solo el 30%: el 70% de panadera es el esqueleto que sostiene. Si le subes el integral, tienes más sabor y menos altura — es un cambio, no una mejora.' },
 
       { t:'h', c:'El proceso, repartido en dos días' },
@@ -261,9 +272,11 @@ window.CIUDAD = {
         '<b>Día 2 — Horno.</b> Se hornea <b>fría, directo de la nevera</b>. Olla de hierro tapada, precalentada a 250 °C: 20 minutos tapada.',
         '<b>Destapas</b> y bajas a 230 °C otros 25 minutos, hasta corteza oscura.'
       ]},
+      { t:'seq', titulo:"Al canasto, y a la nevera", items:[["c-larga-canasto","<b>Bien enharinado y con el cierre hacia arriba.</b> Ahí duerme 12 a 18 horas."]] },
       { t:'tip', tt:'Por qué la olla tapada', c:'La masa suelta su propia humedad y queda atrapada: es <b>vapor gratis</b>, sin trucos. Es la forma de conseguir corteza de panadería en un horno de casa.' },
       { t:'nota', tt:'La ventaja para vender', c:'El frío te <b>desacopla el amasado del horneado</b>. Amasas cuando puedes y horneas cuando te conviene, hasta tres días después. Para alguien que trabaja en otra cosa, esto es lo que hace posible el negocio.' },
 
+      { t:'seq', titulo:"Vapor gratis", items:[["c-larga-olla","<b>La olla atrapa la humedad que suelta la masa.</b> Así se consigue corteza de panadería en un horno de casa."]] },
       { t:'h', c:'Los cuatro productos de esta masa' },
       { t:'tabla', cols:['Producto','Peso','Qué cambia'], filas:[
         ['Hogaza','900 g','Boule grande, la del mostrador'],
@@ -283,6 +296,7 @@ window.CIUDAD = {
 
       { t:'h', c:'Uno · El vapor, y por qué al principio' },
       { t:'p', c:'El pan hace casi todo su crecimiento en los <b>primeros minutos</b>, mientras el gas empuja hacia arriba. El vapor mantiene la corteza blanda justo en esa ventana, para que la masa siga subiendo en vez de encontrarse una pared.' },
+      { t:'seq', titulo:"La bandeja de abajo", items:[["c-horno-vapor","<b>Bandeja de metal vacía en el piso, agua hirviendo al meter el pan.</b> Nunca sobre vidrio: revienta."]] },
       { t:'nota', tt:'La regla que casi nadie respeta', c:'El vapor va <b>al principio y se saca</b>. Si lo dejas todo el horneado, la humedad queda alrededor del pan después de que terminó de crecer y la corteza no cristaliza: te queda pálida y correosa. <b>Empieza húmedo, termina seco.</b>' },
       { t:'lista', items:[
         '<b>La bandeja.</b> Una bandeja de metal vacía en el piso del horno desde que precalienta. Al meter el pan, media taza de agua hirviendo adentro y cierras rápido.',
@@ -293,6 +307,7 @@ window.CIUDAD = {
 
       { t:'h', c:'Dos · El corte, que no es decoración' },
       { t:'p', c:'El corte decide <b>por dónde se abre el pan</b>. Si no cortas, se rompe por donde puede, casi siempre por un costado y feo. Si cortas bien, se abre por donde vos quisiste y sube más.' },
+      { t:'seq', titulo:"El ángulo del corte", items:[["c-horno-corte","<b>La hoja casi acostada, entre 10° y 25°.</b> Eso es lo que levanta la oreja."]] },
       { t:'tabla', cols:['Qué','El número','Por qué'], filas:[
         ['Profundidad','<b>3 a 6 mm</b>','Más superficial no dirige nada; más profundo desinfla la pieza'],
         ['Ángulo de la hoja','<b>10° a 25°</b>, casi acostada','Es lo que levanta la "oreja", esa cresta que se despega'],
