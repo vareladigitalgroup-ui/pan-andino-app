@@ -237,7 +237,7 @@ window.CIUDAD = {
   { tipo:'largo', titulo:'Masa 4 · La larga (hogaza de campo)',
     lede:'La que se hace sola mientras duermes.',
     bloques:[
-      { t:'p', c:'Esta es la que más impresiona en el mostrador y la que menos trabajo activo lleva. <b>El sabor lo hace el tiempo, no vos.</b> Se arma un día y se hornea al siguiente.' },
+      { t:'p', c:'Esta es la que más impresiona en el mostrador y la que menos trabajo activo lleva. <b>El sabor lo hace el tiempo, no tú.</b> Se arma un día y se hornea al siguiente.' },
       { t:'p', c:'La diferencia con las otras tres son <b>dos cosas</b>: la mezcla de harinas y la noche en la nevera.' },
 
       { t:'h', c:'La masa' },
@@ -299,14 +299,14 @@ window.CIUDAD = {
       { t:'seq', titulo:"La bandeja de abajo", items:[["c-horno-vapor","<b>Bandeja de metal vacía en el piso, agua hirviendo al meter el pan.</b> Nunca sobre vidrio: revienta."]] },
       { t:'nota', tt:'La regla que casi nadie respeta', c:'El vapor va <b>al principio y se saca</b>. Si lo dejas todo el horneado, la humedad queda alrededor del pan después de que terminó de crecer y la corteza no cristaliza: te queda pálida y correosa. <b>Empieza húmedo, termina seco.</b>' },
       { t:'lista', items:[
-        '<b>La bandeja.</b> Una bandeja de metal vacía en el piso del horno desde que precalienta. Al meter el pan, media taza de agua hirviendo adentro y cierras rápido.',
-        '<b>La olla.</b> Para la hogaza: olla de hierro con tapa, precalentada. La masa suelta su propia humedad y queda atrapada. Es vapor gratis y el más parejo de los tres.',
-        '<b>El rociador.</b> El más flojo, pero sirve si no tienes lo otro: tres rociadas a las paredes del horno al meter el pan, y otra vez al minuto.'
+        ['La bandeja','Una bandeja de metal vacía en el piso del horno desde que precalienta. Al meter el pan, media taza de agua hirviendo adentro y cierras rápido.'],
+        ['La olla','Para la hogaza: olla de hierro con tapa, precalentada. La masa suelta su propia humedad y queda atrapada. Es vapor gratis y el más parejo de los tres.'],
+        ['El rociador','El más flojo, pero sirve si no tienes lo otro: tres rociadas a las paredes del horno al meter el pan, y otra vez al minuto.']
       ]},
       { t:'tip', tt:'Cuidado con el vidrio', c:'El agua hirviendo nunca va sobre el vidrio de la puerta ni sobre una bandeja de vidrio: el choque térmico lo revienta. Solo metal, y abajo.' },
 
       { t:'h', c:'Dos · El corte, que no es decoración' },
-      { t:'p', c:'El corte decide <b>por dónde se abre el pan</b>. Si no cortas, se rompe por donde puede, casi siempre por un costado y feo. Si cortas bien, se abre por donde vos quisiste y sube más.' },
+      { t:'p', c:'El corte decide <b>por dónde se abre el pan</b>. Si no cortas, se rompe por donde puede, casi siempre por un costado y feo. Si cortas bien, se abre por donde tú quisiste y sube más.' },
       { t:'seq', titulo:"El ángulo del corte", items:[["c-horno-corte","<b>La hoja casi acostada, entre 10° y 25°.</b> Eso es lo que levanta la oreja."]] },
       { t:'tabla', cols:['Qué','El número','Por qué'], filas:[
         ['Profundidad','<b>3 a 6 mm</b>','Más superficial no dirige nada; más profundo desinfla la pieza'],
@@ -330,9 +330,9 @@ window.CIUDAD = {
 
       { t:'h', c:'Los tres secretos que no están en las recetas' },
       { t:'lista', items:[
-        '<b>El horno miente y siempre para abajo.</b> Precalienta 20 minutos más de lo que crees, aunque la lucecita ya se haya apagado. La lucecita mide el aire; vos necesitas que estén calientes las paredes y la bandeja.',
-        '<b>El pan se sigue cocinando fuera del horno.</b> No lo cortes caliente: la miga todavía está terminando de asentar y si lo abres se apelmaza. <b>Una hora sobre rejilla</b>, nunca sobre un plato — abajo necesita aire o se humedece.',
-        '<b>La masa fría se hornea fría.</b> La hogaza sale de la nevera y va directo al horno. Esperar a que "se temple" es perder la ventaja: <b>la masa fría aguanta más antes de que se le forme la corteza</b>, y por eso crece más.'
+        ['El horno miente y siempre para abajo','Precalienta 20 minutos más de lo que crees, aunque la lucecita ya se haya apagado. La lucecita mide el aire; tú necesitas que estén calientes las paredes y la bandeja.'],
+        ['El pan se sigue cocinando fuera del horno','No lo cortes caliente: la miga todavía está terminando de asentar y si lo abres se apelmaza. <b>Una hora sobre rejilla</b>, nunca sobre un plato — abajo necesita aire o se humedece.'],
+        ['La masa fría se hornea fría','La hogaza sale de la nevera y va directo al horno. Esperar a que "se temple" es perder la ventaja: <b>la masa fría aguanta más antes de que se le forme la corteza</b>, y por eso crece más.']
       ]},
       { t:'ilustra', items:[['horno','Precalienta de más'],['termometro','96 a 98 adentro'],['reloj','Y no lo cortes caliente']] },
       { t:'nota', tt:'De dónde salen estos números', c:'Profundidad de 3 a 6 mm y ángulo de 10° a 25° dirigiendo el 80-90% del crecimiento: medición de <b>Modernist Cuisine</b>. El arranque a 250 °C bajando a 230 °C y la regla de vapor al principio: <b>The Perfect Loaf</b> (hornear con vapor en horno de casa). El umbral de 88 °C de cocido y el rango alto para masas magras: mismas fuentes.' }
@@ -356,10 +356,10 @@ window.CIUDAD = {
 
       { t:'h', c:'Cómo armar la semana con cuatro amasados' },
       { t:'lista', items:[
-        '<b>La larga se arma el día anterior</b> y espera en la nevera. Es la que no compite por tu tiempo.',
-        '<b>La magra pide vapor</b>: hornéala primero, cuando el horno está más caliente.',
-        '<b>La mojada y la del aceite comparten bandeja</b> y temperatura. Van juntas.',
-        '<b>La focaccia va última</b>: es la que perdona un horno que ya bajó.'
+        ['La larga se arma el día anterior','Espera en la nevera mientras tú duermes. Es la única que no compite por tu tiempo.'],
+        ['La magra pide vapor','Hornéala primero, cuando el horno está en su punto más caliente.'],
+        ['La mojada y la del aceite comparten bandeja','Misma bandeja y misma temperatura. Van juntas.'],
+        ['La focaccia va última','Es la que perdona un horno que ya bajó.']
       ]},
       { t:'tip', tt:'Empieza por una', c:'No arranques con las cuatro. <b>Elige la focaccia</b>: no hay que formar nada, perdona el horno y es la que mejor se cobra. Cuando esa te salga sin pensar, sumas la mojada.' },
       { t:'ilustra', items:[['horno','Una horneada'],['tijeras','Doce cortes'],['pan','Doce precios']] }
@@ -379,20 +379,20 @@ window.CIUDAD = {
         ['Con aceite (focaccia)','<b>2 a 3 días</b>','El aceite retiene humedad. La que más aguanta'],
         ['Larga (hogaza)','<b>3 a 4 días</b>','La fermentación larga y la corteza gruesa la protegen']
       ]},
-      { t:'nota', tt:'Nunca en la nevera', c:'La nevera es lo <b>peor</b> que le podés hacer al pan: entre 0 y 8 °C el almidón se endurece más rápido que a temperatura ambiente. Un pan en la nevera envejece en un día lo que en la mesa en tres. <b>O afuera, o congelado.</b> El punto del medio lo mata.' },
+      { t:'nota', tt:'Nunca en la nevera', c:'La nevera es lo <b>peor</b> que le puedes hacer al pan: entre 0 y 8 °C el almidón se endurece más rápido que a temperatura ambiente. Un pan en la nevera envejece en un día lo que en la mesa en tres. <b>O afuera, o congelado.</b> El punto del medio lo mata.' },
 
       { t:'h', c:'Congelar bien' },
       { t:'lista', items:[
-        '<b>Se congela el mismo día</b>, apenas se enfría. No cuando ya empezó a ponerse duro: el frío no revierte, solo detiene.',
-        '<b>Entero, no rebanado</b>, salvo el pan de molde. Menos superficie expuesta es menos hielo.',
-        '<b>Bolsa apretada</b>, sacándole todo el aire.',
-        '<b>Para recuperar:</b> directo del congelador al horno a 200 °C, 10 a 12 minutos. Sale <b>como recién hecho</b>, no "descongelado".'
+        ['Se congela el mismo día','Apenas se enfría, no cuando ya empezó a ponerse duro. El frío no revierte el envejecimiento: solo lo detiene donde lo agarró.'],
+        ['Entero, no rebanado','Salvo el pan de molde. Menos superficie expuesta es menos hielo.'],
+        ['Bolsa apretada','Sacándole todo el aire que puedas antes de cerrar.'],
+        ['Para recuperar','Directo del congelador al horno a 200 °C, 10 a 12 minutos. Sale <b>como recién hecho</b>, no "descongelado".']
       ]},
 
       { t:'h', c:'Qué hacer con el del día anterior' },
       { t:'tabla', cols:['Lo que sobró','En qué se convierte','Cómo se cobra'], filas:[
         ['Baguette dura','Crostini: rebanada fina, aceite, 160 °C hasta dorar','Por bolsa, y no lleva harina nueva'],
-        ['Ciabatta dura','Pan rallado, o cubos para ensalada','Insumo propio: dejás de comprarlo'],
+        ['Ciabatta dura','Pan rallado, o cubos para ensalada','Insumo propio: dejas de comprarlo'],
         ['Focaccia del día anterior','Se recalienta 5 min a 180 °C y vuelve a estar tierna','Al mismo precio'],
         ['Hogaza dura','Tostadas gruesas para picada, o pan rallado','Se vende como producto aparte']
       ]},
@@ -400,12 +400,12 @@ window.CIUDAD = {
 
       { t:'h', c:'Cómo se arranca a vender' },
       { t:'lista', items:[
-        '<b>Una sola masa, tres productos.</b> Focaccia clásica, focaccia rellena y pizza al taglio salen todas de la misma bandeja. Tres precios distintos, un amasado.',
-        '<b>Encargue antes que mostrador.</b> Horneás lo vendido, no lo que esperás vender. Sin sobrante no hay pérdida mientras aprendés cuánto se mueve.',
-        '<b>El pan magro se hornea para la hora.</b> La baguette se vende caliente o no se vende: sacala una hora antes de que pase tu cliente, no a las siete de la mañana.',
-        '<b>La hogaza es la que te compra el que compra caro.</b> Es la que se lleva quien busca pan de verdad, y la que menos trabajo activo te da porque duerme en la nevera.'
+        ['Una sola masa, tres productos','Focaccia clásica, focaccia rellena y pizza al taglio salen todas de la misma bandeja. Tres precios distintos, un amasado.'],
+        ['Encargue antes que mostrador','Horneas lo vendido, no lo que esperas vender. Sin sobrante no hay pérdida mientras aprendes cuánto se mueve.'],
+        ['El pan magro se hornea para la hora','La baguette se vende caliente o no se vende: sácala una hora antes de que pase tu cliente, no a las siete de la mañana.'],
+        ['La hogaza es la que te compra el que compra caro','Es la que se lleva quien busca pan de verdad, y la que menos trabajo activo te da porque duerme en la nevera.']
       ]},
-      { t:'tip', tt:'Antes de poner precio', c:'Sacá el costo real por unidad con la <b>calculadora de costo por pan</b> que ya tenés en Herramientas. Poné lo que pagás vos por la harina donde vivís, no lo que dice ninguna receta.' }
+      { t:'tip', tt:'Antes de poner precio', c:'Saca el costo real por unidad con la <b>calculadora de costo por pan</b> que ya tienes en Herramientas. Pon lo que pagas tú por la harina donde vives, no lo que dice ninguna receta.' }
     ]
   }
 
