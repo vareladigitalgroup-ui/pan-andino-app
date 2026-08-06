@@ -125,6 +125,10 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
              0 .55rem 1.1rem -.45rem rgba(59,36,22,.42);
   transition:transform 260ms var(--ease-out),box-shadow 260ms var(--ease-out)}
 .tapa .art img{width:100%;height:100%;object-fit:cover}
+.tapa .art.sinfoto{background:linear-gradient(158deg,var(--lino-2),var(--lino-3))}
+.art-alt{position:absolute;inset:0;display:grid;place-items:center;padding:1.1rem;
+  text-align:center;font-family:var(--serif);font-size:1.1rem;line-height:1.25;
+  color:var(--tc,var(--gold-deep));border:1px solid var(--gold-fade);border-radius:inherit}
 .tapa .art::after{content:'';position:absolute;inset:0;border-radius:inherit;
   border:1px solid rgba(59,36,22,.13);
   background:linear-gradient(96deg,rgba(255,255,255,.16) 0 6%,rgba(0,0,0,.07) 7%,transparent 16%)}
@@ -657,6 +661,104 @@ tr:last-child td{border-bottom:none}
 .ay-sug button:active{transform:scale(.95)}
 .ay-sug button:hover{background:var(--cream);border-color:var(--gold-line)}
 
+/* ══ Ronald 24/7 ══ Todo se mide en 390px primero: el hilo ocupa el
+   alto que sobra bajo la barra de arriba, y la caja de escribir queda
+   pegada abajo sin taparle nada al último mensaje. */
+.ro-wrap{padding:.4rem 0 2rem;animation:ayIn 420ms var(--ease-out) both}
+.ro-prog{height:3px;border-radius:2px;background:var(--lino-3);overflow:hidden;margin-bottom:1.5rem}
+.ro-prog-b{height:100%;background:var(--gold-deep);border-radius:2px;
+  transition:width 340ms var(--ease-out)}
+.ro-paso{font-family:var(--ui);font-size:.62rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold-deep);margin-bottom:.5rem}
+.ro-q{font-family:var(--serif);font-size:clamp(1.5rem,6vw,1.9rem);font-weight:600;
+  line-height:1.18;margin-bottom:.4rem}
+.ro-qs{font-size:1rem;line-height:1.5;color:var(--tinta-soft);margin-bottom:1.4rem}
+.ro-ops{display:flex;flex-direction:column;gap:.55rem}
+.ro-op{position:relative;display:block;width:100%;text-align:left;padding:.95rem 2.6rem .95rem 1.05rem;
+  border-radius:.8rem;border:1px solid var(--gold-fade);background:var(--lino);
+  transition:transform 150ms var(--ease-out),background-color 150ms ease,border-color 150ms ease}
+.ro-op:active{transform:scale(.985)}
+.ro-op:hover{background:var(--cream);border-color:var(--gold-line)}
+.ro-op.on{background:var(--cream);border-color:var(--gold-deep);box-shadow:inset 0 0 0 1px var(--gold-deep)}
+.ro-op-t{display:block;font-size:1.02rem;color:var(--tinta);line-height:1.3}
+.ro-op-s{display:block;font-family:var(--ui);font-size:.78rem;color:var(--tinta-soft);margin-top:.18rem}
+.ro-tick{position:absolute;right:1rem;top:50%;width:1.15rem;height:1.15rem;margin-top:-.575rem;
+  border-radius:50%;border:1.5px solid var(--gold-fade);transition:all 160ms var(--ease-out)}
+.ro-op.on .ro-tick{background:var(--gold-deep);border-color:var(--gold-deep)}
+.ro-op.on .ro-tick::after{content:'';position:absolute;left:.3rem;top:.15rem;width:.28rem;height:.55rem;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg)}
+.ro-libre{width:100%;padding:.9rem 1.05rem;border-radius:.8rem;border:1px solid var(--gold-fade);
+  background:var(--lino);font-family:var(--body);font-size:1.05rem;color:var(--tinta)}
+.ro-libre::placeholder{color:var(--tinta-soft);opacity:.65}
+.ro-libre:focus{outline:2px solid var(--gold-deep);outline-offset:1px}
+.ro-extra{margin-top:.9rem;font-size:.95rem}
+.ro-nav{display:flex;gap:.6rem;margin-top:1.6rem}
+.ro-atras{flex:none;padding:.9rem 1.2rem;border-radius:.7rem;border:1px solid var(--gold-fade);
+  background:transparent;font-family:var(--ui);font-size:.9rem;color:var(--tinta-soft)}
+.ro-sig{flex:1;padding:.9rem;border-radius:.7rem;background:var(--gold-deep);color:#fff;
+  font-family:var(--ui);font-size:1rem;font-weight:600;
+  transition:transform 150ms var(--ease-out),opacity 150ms ease}
+.ro-sig:active{transform:scale(.98)}
+.ro-sig:disabled{opacity:.32;pointer-events:none}
+
+/* La pantalla del chat es la única que NO scrollea entera: el hilo
+   scrollea por dentro y la caja de escribir queda fija abajo. Por eso
+   se le quita el respiro de 5rem que llevan las demás. */
+.screen.charla{padding-bottom:1.2rem}
+.ro-chat{display:flex;flex-direction:column;
+  height:calc(100dvh - var(--nav-h) - env(safe-area-inset-top) - 2.6rem)}
+.ro-cab{display:flex;align-items:center;gap:.7rem;padding-bottom:.85rem;
+  border-bottom:1px solid var(--gold-fade)}
+.ro-av{flex:none;width:2.6rem;height:2.6rem;border-radius:50%;overflow:hidden;background:var(--gold-deep);
+  display:grid;place-items:center}
+.ro-av img{width:100%;height:100%;object-fit:cover}
+.ro-av-l{font-family:var(--serif);font-size:1.2rem;color:var(--cream)}
+.ro-cab-t{flex:1;min-width:0}
+.ro-cab-t .t{font-family:var(--serif);font-size:1.15rem;font-weight:600;line-height:1.1}
+.ro-cab-t .s{font-family:var(--ui);font-size:.72rem;color:var(--tinta-soft);margin-top:.1rem}
+.ro-editar{flex:none;padding:.38rem .7rem;border-radius:2rem;border:1px solid var(--gold-fade);
+  background:var(--lino);font-family:var(--ui);font-size:.72rem;color:var(--tinta-2)}
+.ro-editar:active{transform:scale(.95)}
+.ro-hilo{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:1rem .1rem .3rem;
+  display:flex;flex-direction:column;gap:.8rem;
+  scrollbar-width:thin;scrollbar-color:var(--gold-fade) transparent}
+.ro-hilo::-webkit-scrollbar{width:5px}
+.ro-hilo::-webkit-scrollbar-thumb{background:var(--gold-fade);border-radius:3px}
+.ro-hilo::-webkit-scrollbar-track{background:transparent}
+.ro-b{max-width:88%;padding:.85rem 1rem;border-radius:1rem;font-size:1rem;line-height:1.55;
+  animation:ayIn 320ms var(--ease-out) both}
+.ro-b.el{align-self:flex-end;background:var(--tinta);color:var(--cream);border-bottom-right-radius:.3rem}
+.ro-b.ro{align-self:flex-start;background:var(--lino-2);border:1px solid var(--gold-fade);
+  border-bottom-left-radius:.3rem}
+.ro-b p+p{margin-top:.7rem}
+.ro-b ul,.ro-b ol{margin:.6rem 0 .2rem 1.15rem}
+.ro-b li{margin-bottom:.35rem}
+.ro-b b{color:var(--gold-deep)}
+.ro-b.el b{color:var(--gold-lt)}
+.ro-f{margin-top:.7rem;padding-top:.55rem;border-top:1px solid var(--gold-fade);
+  font-family:var(--ui);font-size:.68rem;color:var(--tinta-soft);line-height:1.4}
+.ro-b.pensando{display:flex;gap:.3rem;padding:1rem}
+.ro-b.pensando span{width:.42rem;height:.42rem;border-radius:50%;background:var(--gold-deep);
+  animation:roPunto 1.1s infinite ease-in-out}
+.ro-b.pensando span:nth-child(2){animation-delay:.16s}
+.ro-b.pensando span:nth-child(3){animation-delay:.32s}
+@keyframes roPunto{0%,60%,100%{opacity:.25;transform:translateY(0)}30%{opacity:1;transform:translateY(-.22rem)}}
+.ro-sug{display:flex;gap:.4rem;overflow-x:auto;padding:.7rem .1rem .2rem;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.ro-sug::-webkit-scrollbar{display:none}
+.ro-sug button{flex:none;padding:.45rem .8rem;border-radius:2rem;border:1px solid var(--gold-fade);
+  background:var(--lino);font-family:var(--ui);font-size:.76rem;color:var(--tinta-2);white-space:nowrap}
+.ro-sug button:active{transform:scale(.95)}
+.ro-barra{display:flex;gap:.5rem;padding-top:.6rem}
+.ro-barra input{flex:1;min-width:0;padding:.85rem 1rem;border-radius:2rem;border:1px solid var(--gold-fade);
+  background:var(--lino);font-family:var(--body);font-size:1.02rem;color:var(--tinta)}
+.ro-barra input::placeholder{color:var(--tinta-soft);opacity:.65}
+.ro-barra input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.ro-barra button{flex:none;width:2.9rem;height:2.9rem;border-radius:50%;background:var(--gold-deep);
+  color:#fff;display:grid;place-items:center;transition:transform 150ms var(--ease-out)}
+.ro-barra button svg{width:1.15rem;height:1.15rem}
+.ro-barra button:active{transform:scale(.92)}
+
 .ay-pregunta{margin:1.8rem 0 .3rem;font-family:var(--ui);font-size:.62rem;font-weight:700;
   letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
 .ay-eco{font-family:var(--serif);font-size:1.3rem;line-height:1.25;margin-bottom:1.3rem}
@@ -886,27 +988,28 @@ svg .trazado{stroke-dasharray:var(--l);stroke-dashoffset:var(--l);
 <!-- La versión del enlace obliga al navegador a bajar los archivos
      nuevos. Sin esto, el que ya abrió la app antes se queda con los
      viejos en caché y ve la app a medias. Se cambia en cada publicación. -->
-<script src="dibujos.js?v=202608060015"></script>
+<script src="dibujos.js?v=202608060130"></script>
 <!-- Los procesos comunes a los 12 panes. Va ANTES de los contenido-*,
      porque las recetas los invocan al construirse. -->
-<script src="procesos.js?v=202608060015"></script>
-<script src="ayuda.js?v=202608060015"></script>
-<script src="contenido-regalo-1.js?v=202608060015"></script>
-<script src="contenido-regalo-2.js?v=202608060015"></script>
-<script src="contenido-regalo-3.js?v=202608060015"></script>
-<script src="contenido-regalo-4.js?v=202608060015"></script>
-<script src="contenido-regalo-5.js?v=202608060015"></script>
-<script src="contenido-modulo-1.js?v=202608060015"></script>
-<script src="contenido-modulo-2.js?v=202608060015"></script>
-<script src="contenido-modulo-3.js?v=202608060015"></script>
-<script src="contenido-modulo-4.js?v=202608060015"></script>
-<script src="contenido-modulo-5.js?v=202608060015"></script>
-<script src="contenido-modulo-6.js?v=202608060015"></script>
-<script src="calculadora.js?v=202608060015"></script>
-<script src="talvina.js?v=202608060015"></script>
-<script src="panes.js?v=202608060015"></script>
-<script src="fichas.js?v=202608060015"></script>
-<script src="contenido-napa.js?v=202608060015"></script>
+<script src="procesos.js?v=202608060130"></script>
+<script src="ayuda.js?v=202608060130"></script>
+<script src="contenido-regalo-1.js?v=202608060130"></script>
+<script src="contenido-regalo-2.js?v=202608060130"></script>
+<script src="contenido-regalo-3.js?v=202608060130"></script>
+<script src="contenido-regalo-4.js?v=202608060130"></script>
+<script src="contenido-regalo-5.js?v=202608060130"></script>
+<script src="contenido-modulo-1.js?v=202608060130"></script>
+<script src="contenido-modulo-2.js?v=202608060130"></script>
+<script src="contenido-modulo-3.js?v=202608060130"></script>
+<script src="contenido-modulo-4.js?v=202608060130"></script>
+<script src="contenido-modulo-5.js?v=202608060130"></script>
+<script src="contenido-modulo-6.js?v=202608060130"></script>
+<script src="calculadora.js?v=202608060130"></script>
+<script src="talvina.js?v=202608060130"></script>
+<script src="panes.js?v=202608060130"></script>
+<script src="fichas.js?v=202608060130"></script>
+<script src="contenido-napa.js?v=202608060130"></script>
+<script src="ronald.js?v=202608060130"></script>
 <script>
 /* ══ Catálogo ══ */
 const MODULOS = [
@@ -928,20 +1031,33 @@ const REGALOS = [
    Toda la copia de esta zona existe para que eso quede clarísimo: el
    comprador no puede sentir ni por un segundo que le estamos trancando
    algo que ya pagó. Por eso el meta dice "No viene con tu compra". */
-const UPSELL = [
-  {id:'o1',col:'#7a5230', n:'El Pan de tu Ciudad', img:'mockup-oto1',
-   meta:'No viene con tu compra', codigo:'CIUDAD', datos:window.NAPA,
-   gancho:'El front te enseñó a hacer el pan de tu tierra. Este te enseña a venderlo donde vives ahora.',
-   precio:'$27'}
-];
-
 /* Adónde manda el botón de "quiero conocerlo": la página de
    Impultienda. Mientras esté vacío el botón no se pinta, para no
    dejar un botón muerto. */
 const URL_OTO1 = '';
+const URL_OTO2 = '';
 
+const UPSELL = [
+  {id:'o1',col:'#7a5230', n:'El Pan de tu Ciudad', img:'mockup-oto1',
+   meta:'No viene con tu compra', codigo:'CIUDAD', datos:window.NAPA,
+   gancho:'El front te enseñó a hacer el pan de tu tierra. Este te enseña a venderlo donde vives ahora.',
+   precio:'$27', url:URL_OTO1, kick:'Curso aparte',
+   aclara:'<b>Esto no venía con tu compra, y no te falta nada.</b> Lo que pagaste está '+
+     'completo y abierto en la pantalla anterior. Este es otro curso, para otro momento: '+
+     'el que quieras dar cuando ya estés horneando bien y quieras vender en serio donde vives.'},
 
-
+  /* Ronald NO es un libro: es un chat. Por eso lleva `chat:true` y no
+     `datos`. Todo lo demás (candado, código, enlace directo desde la
+     página de gracias) funciona igual que el otro. */
+  {id:'o2',col:'#3f6357', n:'Ronald 24/7', img:'mockup-oto2', chat:true,
+   meta:'No viene con tu compra', codigo:'RONALD',
+   gancho:'El curso te enseña el método. Ronald se sienta contigo, mira TU horno y TU harina, y te dice qué hacer con lo que tienes.',
+   precio:'$17', url:URL_OTO2, kick:'Acompañamiento',
+   aclara:'<b>Esto no venía con tu compra, y no te falta nada.</b> Todas las recetas '+
+     'están abiertas en la pantalla anterior y ahí se quedan. Esto es otra cosa: alguien '+
+     'a quien preguntarle un domingo a las seis de la mañana, cuando la masa no sube y '+
+     'no hay a quién llamar.'}
+];
 
 const LOCK_KEY = 'pangocho.desbloqueados';
 const abiertos = () => { try{return JSON.parse(localStorage.getItem(LOCK_KEY))||[]}catch(e){return []} };
@@ -952,6 +1068,17 @@ const esc = s => String(s??'');
 const CHEV = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>';
 const CANDADO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>';
 
+/* Una tapa sin foto no puede verse como un error del navegador: se
+   convierte en una portada tipográfica con el color del producto.
+   Deja de hacer falta el día que exista la imagen. */
+function sinTapa(img){
+  const a = img.closest('.art'); if(!a) return;
+  const n = img.closest('.tapa')?.querySelector('.name')?.textContent || '';
+  a.classList.add('sinfoto');
+  img.replaceWith(Object.assign(document.createElement('span'),
+    {className:'art-alt', textContent:n}));
+}
+
 function tapa(o, kicker, i, locked){
   /* La línea de abajo no puede repetir el kicker: "MÓDULO 1" arriba y
      "Módulo 1" abajo desperdicia el renglón. Cuando el meta repite,
@@ -961,7 +1088,8 @@ function tapa(o, kicker, i, locked){
     ? (/^Módulo /.test(o.meta) ? `${n} secciones` : `${esc(o.meta)} · ${n} secciones`)
     : esc(o.meta);
   return `<button class="tapa${locked?' locked':''}" data-go="${o.id}" style="animation-delay:${i*45}ms">
-    <div class="art"><img src="img/${o.img}.jpg" alt="" loading="lazy">
+    <div class="art"${o.col?` style="--tc:${o.col}"`:''}><img src="img/${o.img}.jpg" alt="" loading="lazy"
+      onerror="sinTapa(this)">
       ${locked?`<span class="candado">${CANDADO}</span>`:''}</div>
     <div class="cap"><span class="kicker"${o.col?` style="color:${o.col}"`:''}>${kicker}</span>
       <span class="name">${esc(o.n)}</span><span class="meta">${meta}</span></div>
@@ -1049,10 +1177,10 @@ function pintarInicio(){
     </div>
 
     <div class="sec-h"><i class="sec-i" style="--sec-col:#7a5230">${DIB.D.puerta}</i><h2>Si algún día quieres seguir</h2><div class="rule"></div></div>
-    <p class="lead">Esto de abajo <b>es un curso aparte</b>, no es parte de lo que compraste.
+    <p class="lead">Esto de abajo <b>va aparte</b>, no es parte de lo que compraste.
     Está aquí para que sepas que existe, no para apurarte. Con lo de arriba ya puedes hornear
     y vender.</p>
-    <div class="shelf">${UPSELL.map((o,i)=>tapa(o,'Curso aparte',i,!abierto.includes(o.id))).join('')}</div>
+    <div class="shelf">${UPSELL.map((o,i)=>tapa(o,o.kick||'Curso aparte',i,!abierto.includes(o.id))).join('')}</div>
   </section>
 
   <div class="foot"><span>Tu panadería</span><span class="mark">Pan Gocho</span></div>`;
@@ -1375,19 +1503,15 @@ function pintarCandado(o){
   document.getElementById('s-libro').innerHTML = `
     <div class="s-hero"><img src="img/${o.img}.jpg" alt=""
       onerror="this.closest('.s-hero').remove()"></div>
-    <div class="d-head"><span class="kick">Curso aparte</span><h1>${esc(o.n)}</h1>
+    <div class="d-head"><span class="kick">${esc(o.kick||'Curso aparte')}</span><h1>${esc(o.n)}</h1>
       ${o.gancho?`<p class="sub">${esc(o.gancho)}</p>`:''}</div>
     <div class="orn"><div class="ln"></div><div class="dia"></div><div class="ln"></div></div>
 
-    <div class="aclara">
-      <b>Esto no venía con tu compra, y no te falta nada.</b> Lo que pagaste está
-      completo y abierto en la pantalla anterior. Este es otro curso, para otro momento:
-      el que quieras dar cuando ya estés horneando bien y quieras vender en serio donde vives.
-    </div>
+    <div class="aclara">${o.aclara||''}</div>
 
-    ${URL_OTO1 ? `<div class="oferta">
+    ${o.url ? `<div class="oferta">
       <div class="k">Si te interesa</div>
-      <a class="btn-oferta" href="${URL_OTO1}" target="_blank" rel="noopener">
+      <a class="btn-oferta" href="${o.url}" target="_blank" rel="noopener">
         Quiero saber de qué se trata${o.precio?` · ${esc(o.precio)}`:''}</a>
       <p class="nota-oferta">Se paga una vez y queda abierto para siempre, igual que este.</p>
     </div>` : ''}
@@ -1395,13 +1519,13 @@ function pintarCandado(o){
     <div class="lock">
       <div class="ic">${CANDADO}</div>
       <div class="t">¿Ya lo compraste?</div>
-      <div class="s">Escribe aquí el código que te llegó por correo <b>al comprar este curso</b>
+      <div class="s">Escribe aquí el código que te llegó por correo <b>al comprar esto</b>
         y se abre de una vez.</div>
       <input id="cod" type="text" inputmode="text" autocomplete="off" placeholder="CÓDIGO" maxlength="20">
       <button id="btnCod">Abrir</button>
       <div class="err" id="errCod"></div>
     </div>
-    <div class="foot"><span>Curso aparte</span><span class="mark">Pan Gocho</span></div>`;
+    <div class="foot"><span>${esc(o.kick||'Curso aparte')}</span><span class="mark">Pan Gocho</span></div>`;
 
   const inp=document.getElementById('cod'), err=document.getElementById('errCod');
   const probar=()=>{
@@ -1411,6 +1535,18 @@ function pintarCandado(o){
   document.getElementById('btnCod').onclick=probar;
   inp.onkeydown=e=>{ if(e.key==='Enter') probar(); };
   inp.oninput=()=>{ err.textContent=''; };
+}
+
+/* ══ Ronald 24/7 ══
+   No lleva d-head ni ornamento: la cabecera con la cara y el nombre
+   ya está adentro del chat, y arriba el migajón dice dónde estás.
+   Meterle otro título sería robarle alto al hilo en un teléfono. */
+function pintarRonald(o){
+  document.getElementById('s-libro').innerHTML = `<div id="roHost"></div>`;
+  if(window.RONALD) RONALD.pintar('roHost');
+  else document.getElementById('roHost').innerHTML =
+    `<div class="empty"><div class="t">No cargó</div>
+     <div class="s">Recarga la pantalla. Si sigue igual, escríbeme al correo de la compra.</div></div>`;
 }
 
 
@@ -1530,7 +1666,12 @@ function irLibro(o, push){
   libroActual=o;
   pintarAcento(o);
   const bloqueado = UPSELL.includes(o) && !abiertos().includes(o.id);
-  bloqueado ? pintarCandado(o) : pintarLibro(o);
+  /* La única pantalla que no scrollea entera es la del chat, y solo
+     cuando ya está abierto: el candado sí es una página normal. */
+  LIBRO.classList.toggle('charla', !!o.chat && !bloqueado);
+  if(bloqueado)      pintarCandado(o);
+  else if(o.chat)    pintarRonald(o);
+  else               pintarLibro(o);
   crumb.innerHTML=`Inicio › <b>${esc(o.n)}</b>`;
   back.classList.add('on');
   mostrar(LIBRO);
