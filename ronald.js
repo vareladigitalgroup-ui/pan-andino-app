@@ -161,7 +161,10 @@ function pintarTexto(t){
     const neg = s => s.replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');
     if(lista) return '<ul>'+lineas.map(x=>'<li>'+neg(x.replace(/^[-•*]\s+/,''))+'</li>').join('')+'</ul>';
     if(num)   return '<ol>'+lineas.map(x=>'<li>'+neg(x.replace(/^\d+[.)]\s+/,''))+'</li>').join('')+'</ol>';
-    return '<p>'+neg(lineas.join('<br>'))+'</p>';
+    /* Un párrafo por línea. El modelo a veces separa con un solo salto
+       y con <br> los párrafos quedan pegados y no se pueden leer en un
+       teléfono. Aquí siempre respiran igual. */
+    return lineas.map(x=>'<p>'+neg(x)+'</p>').join('');
   }).join('');
 }
 
