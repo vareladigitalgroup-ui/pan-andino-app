@@ -988,28 +988,29 @@ svg .trazado{stroke-dasharray:var(--l);stroke-dashoffset:var(--l);
 <!-- La versión del enlace obliga al navegador a bajar los archivos
      nuevos. Sin esto, el que ya abrió la app antes se queda con los
      viejos en caché y ve la app a medias. Se cambia en cada publicación. -->
-<script src="dibujos.js?v=202608060410"></script>
+<script src="dibujos.js?v=202608061520"></script>
 <!-- Los procesos comunes a los 12 panes. Va ANTES de los contenido-*,
      porque las recetas los invocan al construirse. -->
-<script src="procesos.js?v=202608060410"></script>
-<script src="ayuda.js?v=202608060410"></script>
-<script src="contenido-regalo-1.js?v=202608060410"></script>
-<script src="contenido-regalo-2.js?v=202608060410"></script>
-<script src="contenido-regalo-3.js?v=202608060410"></script>
-<script src="contenido-regalo-4.js?v=202608060410"></script>
-<script src="contenido-regalo-5.js?v=202608060410"></script>
-<script src="contenido-modulo-1.js?v=202608060410"></script>
-<script src="contenido-modulo-2.js?v=202608060410"></script>
-<script src="contenido-modulo-3.js?v=202608060410"></script>
-<script src="contenido-modulo-4.js?v=202608060410"></script>
-<script src="contenido-modulo-5.js?v=202608060410"></script>
-<script src="contenido-modulo-6.js?v=202608060410"></script>
-<script src="calculadora.js?v=202608060410"></script>
-<script src="talvina.js?v=202608060410"></script>
-<script src="panes.js?v=202608060410"></script>
-<script src="fichas.js?v=202608060410"></script>
-<script src="contenido-napa.js?v=202608060410"></script>
-<script src="ronald.js?v=202608060410"></script>
+<script src="procesos.js?v=202608061520"></script>
+<script src="ayuda.js?v=202608061520"></script>
+<script src="contenido-regalo-1.js?v=202608061520"></script>
+<script src="contenido-regalo-2.js?v=202608061520"></script>
+<script src="contenido-regalo-3.js?v=202608061520"></script>
+<script src="contenido-regalo-4.js?v=202608061520"></script>
+<script src="contenido-regalo-5.js?v=202608061520"></script>
+<script src="contenido-modulo-1.js?v=202608061520"></script>
+<script src="contenido-modulo-2.js?v=202608061520"></script>
+<script src="contenido-modulo-3.js?v=202608061520"></script>
+<script src="contenido-modulo-4.js?v=202608061520"></script>
+<script src="contenido-modulo-5.js?v=202608061520"></script>
+<script src="contenido-modulo-6.js?v=202608061520"></script>
+<script src="calculadora.js?v=202608061520"></script>
+<script src="talvina.js?v=202608061520"></script>
+<script src="panes.js?v=202608061520"></script>
+<script src="fichas.js?v=202608061520"></script>
+<script src="contenido-napa.js?v=202608061520"></script>
+<script src="contenido-ciudad.js?v=202608061520"></script>
+<script src="ronald.js?v=202608061520"></script>
 <script>
 /* ══ Catálogo ══ */
 const MODULOS = [
@@ -1038,8 +1039,13 @@ const URL_OTO1 = '';
 const URL_OTO2 = '';
 
 const UPSELL = [
+  /* El libro son las 4 masas (contenido-ciudad.js). La ñapa —la guía de la
+     harina— es el REGALO que la página de oferta promete sin anunciar, así
+     que va adentro, al final: se concatena abajo, cuando los dos cargaron.
+     Hasta el 6-ago esto apuntaba a window.NAPA y el comprador de $27 recibía
+     solo el regalo. */
   {id:'o1',col:'#7a5230', n:'El Pan de tu Ciudad', img:'mockup-oto1',
-   meta:'No viene con tu compra', codigo:'CIUDAD', datos:window.NAPA,
+   meta:'No viene con tu compra', codigo:'CIUDAD', datos:window.CIUDAD,
    gancho:'El front te enseñó a hacer el pan de tu tierra. Este te enseña a venderlo donde vives ahora.',
    precio:'$27', url:URL_OTO1, kick:'Curso aparte',
    aclara:'<b>Esto no venía con tu compra, y no te falta nada.</b> Lo que pagaste está '+
@@ -1065,6 +1071,14 @@ const UPSELL = [
 /* Se cablea aparte y no dentro del objeto: si ronald.js no cargara,
    el catálogo entero se caería con él y la app quedaría en blanco. */
 if(window.RONALD) UPSELL.find(o=>o.id==='o2').verificar = RONALD.verificar;
+
+/* La ñapa se pega al final del libro, no es un producto aparte: es el
+   "regalo que no anuncio acá" de la página de oferta. Se hace una sola vez
+   aunque el archivo se reevalúe. */
+if(window.CIUDAD && window.NAPA && !CIUDAD._conNapa){
+  CIUDAD.secciones = CIUDAD.secciones.concat(NAPA.secciones);
+  CIUDAD._conNapa = true;
+}
 
 const LOCK_KEY = 'pangocho.desbloqueados';
 const abiertos = () => { try{return JSON.parse(localStorage.getItem(LOCK_KEY))||[]}catch(e){return []} };
