@@ -29,7 +29,28 @@ const API = 'https://ronald-24-7.vareladigital-group.workers.dev';
 
 const K_FICHA = 'pangocho.ficha';
 const K_CHAT  = 'pangocho.chat';
+const K_COD   = 'pangocho.codigo.o2';
 const MAX_HIST = 20;          // lo que se guarda; al servidor van las últimas 8
+
+/* ══ El candado de verdad ══
+   El código NO está en este archivo ni en el index.html. Antes sí, y
+   cualquiera que abriera "ver código fuente" entraba gratis y gastaba
+   los créditos de Gemini. Ahora el código vive como secreto del worker:
+   la app se lo manda para que él diga si sirve, y lo guarda para
+   acompañar cada pregunta. Sin código, el worker no responde nada. */
+const codigoGuardado = () => { try{ return localStorage.getItem(K_COD)||'' }catch(e){ return '' } };
+
+async function verificar(codigo){
+  const c = String(codigo||'').trim().toUpperCase();
+  if(!c) return false;
+  try{
+    const rs = await fetch(API, { method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ accion:'verificar', codigo:c }) });
+    if(!rs.ok) return false;
+    localStorage.setItem(K_COD, c);
+    return true;
+  }catch(e){ return 'sin-red'; }   // no es "código malo": es que no hay internet
+}
 
 /* ══ Las siete preguntas ══════════════════════════════════════
    El orden no es casual: arranca por el horno porque es lo que más
@@ -357,6 +378,7 @@ function pintarChat(host, ficha, arranque){
         method:'POST', headers:{'Content-Type':'application/json'},
         body: JSON.stringify({
           pregunta: q,
+          codigo: codigoGuardado(),
           perfil: aTexto(ficha),
           historial: chat.slice(-8).map(m=>({rol:m.rol, texto:m.texto}))
         })
@@ -367,7 +389,9 @@ function pintarChat(host, ficha, arranque){
          responder". Los demás ("origen no permitido", "solo POST") son
          conversación entre máquinas y no se le muestran a nadie. */
       if(!rs.ok || !d.respuesta)
-        throw new Error([429,502].includes(rs.status) && d.error ? d.error
+        throw new Error(rs.status===401
+          ? 'Se me perdió tu código. Vuelve a la pantalla anterior y escríbelo otra vez.'
+          : [429,502].includes(rs.status) && d.error ? d.error
           : 'No pude responder ahorita. Prueba de nuevo en un minuto.');
       chat.push({rol:'ronald', texto:d.respuesta, fuentes:d.fuentes||[]});
     }catch(e){
@@ -405,5 +429,5 @@ function pintar(hostId){
   else  pintarFicha(host, nueva => pintarChat(host, nueva, true));
 }
 
-return { pintar, hayFicha: ()=>!!leerFicha() };
+return { pintar, verificar, hayFicha: ()=>!!leerFicha() };
 })();

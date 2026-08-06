@@ -988,28 +988,28 @@ svg .trazado{stroke-dasharray:var(--l);stroke-dashoffset:var(--l);
 <!-- La versión del enlace obliga al navegador a bajar los archivos
      nuevos. Sin esto, el que ya abrió la app antes se queda con los
      viejos en caché y ve la app a medias. Se cambia en cada publicación. -->
-<script src="dibujos.js?v=202608060215"></script>
+<script src="dibujos.js?v=202608060410"></script>
 <!-- Los procesos comunes a los 12 panes. Va ANTES de los contenido-*,
      porque las recetas los invocan al construirse. -->
-<script src="procesos.js?v=202608060215"></script>
-<script src="ayuda.js?v=202608060215"></script>
-<script src="contenido-regalo-1.js?v=202608060215"></script>
-<script src="contenido-regalo-2.js?v=202608060215"></script>
-<script src="contenido-regalo-3.js?v=202608060215"></script>
-<script src="contenido-regalo-4.js?v=202608060215"></script>
-<script src="contenido-regalo-5.js?v=202608060215"></script>
-<script src="contenido-modulo-1.js?v=202608060215"></script>
-<script src="contenido-modulo-2.js?v=202608060215"></script>
-<script src="contenido-modulo-3.js?v=202608060215"></script>
-<script src="contenido-modulo-4.js?v=202608060215"></script>
-<script src="contenido-modulo-5.js?v=202608060215"></script>
-<script src="contenido-modulo-6.js?v=202608060215"></script>
-<script src="calculadora.js?v=202608060215"></script>
-<script src="talvina.js?v=202608060215"></script>
-<script src="panes.js?v=202608060215"></script>
-<script src="fichas.js?v=202608060215"></script>
-<script src="contenido-napa.js?v=202608060215"></script>
-<script src="ronald.js?v=202608060215"></script>
+<script src="procesos.js?v=202608060410"></script>
+<script src="ayuda.js?v=202608060410"></script>
+<script src="contenido-regalo-1.js?v=202608060410"></script>
+<script src="contenido-regalo-2.js?v=202608060410"></script>
+<script src="contenido-regalo-3.js?v=202608060410"></script>
+<script src="contenido-regalo-4.js?v=202608060410"></script>
+<script src="contenido-regalo-5.js?v=202608060410"></script>
+<script src="contenido-modulo-1.js?v=202608060410"></script>
+<script src="contenido-modulo-2.js?v=202608060410"></script>
+<script src="contenido-modulo-3.js?v=202608060410"></script>
+<script src="contenido-modulo-4.js?v=202608060410"></script>
+<script src="contenido-modulo-5.js?v=202608060410"></script>
+<script src="contenido-modulo-6.js?v=202608060410"></script>
+<script src="calculadora.js?v=202608060410"></script>
+<script src="talvina.js?v=202608060410"></script>
+<script src="panes.js?v=202608060410"></script>
+<script src="fichas.js?v=202608060410"></script>
+<script src="contenido-napa.js?v=202608060410"></script>
+<script src="ronald.js?v=202608060410"></script>
 <script>
 /* ══ Catálogo ══ */
 const MODULOS = [
@@ -1049,8 +1049,11 @@ const UPSELL = [
   /* Ronald NO es un libro: es un chat. Por eso lleva `chat:true` y no
      `datos`. Todo lo demás (candado, código, enlace directo desde la
      página de gracias) funciona igual que el otro. */
+  /* Sin `codigo`: el de Ronald NO puede estar escrito acá. Lo valida el
+     worker, que lo guarda como secreto. `verificar` se cablea abajo,
+     cuando ronald.js ya cargó. */
   {id:'o2',col:'#3f6357', n:'Ronald 24/7', img:'mockup-oto2', chat:true,
-   meta:'No viene con tu compra', codigo:'RONALD',
+   meta:'No viene con tu compra',
    gancho:'El curso te enseña el método. Ronald se sienta contigo, mira TU horno y TU harina, y te dice qué hacer con lo que tienes.',
    precio:'$17', url:URL_OTO2, kick:'Acompañamiento',
    aclara:'<b>Esto no venía con tu compra, y no te falta nada.</b> Todas las recetas '+
@@ -1058,6 +1061,10 @@ const UPSELL = [
      'a quien preguntarle un domingo a las seis de la mañana, cuando la masa no sube y '+
      'no hay a quién llamar.'}
 ];
+
+/* Se cablea aparte y no dentro del objeto: si ronald.js no cargara,
+   el catálogo entero se caería con él y la app quedaría en blanco. */
+if(window.RONALD) UPSELL.find(o=>o.id==='o2').verificar = RONALD.verificar;
 
 const LOCK_KEY = 'pangocho.desbloqueados';
 const abiertos = () => { try{return JSON.parse(localStorage.getItem(LOCK_KEY))||[]}catch(e){return []} };
@@ -1527,12 +1534,32 @@ function pintarCandado(o){
     </div>
     <div class="foot"><span>${esc(o.kick||'Curso aparte')}</span><span class="mark">Pan Gocho</span></div>`;
 
-  const inp=document.getElementById('cod'), err=document.getElementById('errCod');
-  const probar=()=>{
-    if(inp.value.trim().toUpperCase()===o.codigo){ abrir(o.id); pintarInicio(); irLibro(o); }
+  const inp=document.getElementById('cod'), err=document.getElementById('errCod'),
+        btn=document.getElementById('btnCod');
+  const probar=async ()=>{
+    const v=inp.value.trim().toUpperCase();
+    /* Dos candados distintos, a propósito:
+
+       · Los libros (o1) comparan contra un código escrito aquí. No da
+         para más: el texto del libro viaja al navegador con la app,
+         así que esconder el código sería teatro.
+       · Ronald (o2) NO trae su código: se lo pregunta al worker, que
+         lo tiene como secreto. Ahí sí importa, porque cada pregunta
+         cuesta plata y el que no pagó no puede gastarla. */
+    if(o.verificar){
+      btn.disabled=true; err.textContent='Revisando…';
+      const r=await o.verificar(v);
+      btn.disabled=false;
+      if(r===true){ abrir(o.id); pintarInicio(); irLibro(o); return; }
+      err.textContent = r==='sin-red'
+        ? 'No pude revisarlo, revisa tu internet y prueba otra vez.'
+        : 'Ese código no es. Búscalo en el correo de la compra.';
+      inp.select(); return;
+    }
+    if(v===o.codigo){ abrir(o.id); pintarInicio(); irLibro(o); }
     else { err.textContent='Ese código no es. Búscalo en el correo de la compra de este curso.'; inp.select(); }
   };
-  document.getElementById('btnCod').onclick=probar;
+  btn.onclick=probar;
   inp.onkeydown=e=>{ if(e.key==='Enter') probar(); };
   inp.oninput=()=>{ err.textContent=''; };
 }
@@ -1740,16 +1767,22 @@ if(location.hash.length>1){
   else if(h.startsWith('pan-')){ irPan(+h.slice(4),false); }
   else{
     const [id,i]=h.split('/');
-    const conCodigo=TODOS().find(x=>x.id===id && x.codigo && i &&
-      String(i).trim().toUpperCase()===x.codigo);
-    if(conCodigo){
-      abrir(conCodigo.id);
-      history.replaceState(null,'','#'+conCodigo.id);   // el código no queda en la barra
-      pintarInicio(); irLibro(conCodigo,false);
-    } else {
-      const o=TODOS().find(x=>x.id===id);
-      if(o){ irLibro(o,false); if(i!==undefined && o.datos) irSeccion(+i,false); }
+    const o=TODOS().find(x=>x.id===id);
+    const cod=i ? String(i).trim().toUpperCase() : '';
+    const abrirYa=()=>{
+      abrir(o.id);
+      history.replaceState(null,'','#'+o.id);   // el código no queda en la barra
+      pintarInicio(); irLibro(o,false);
+    };
+    if(o && cod && o.verificar){
+      /* Ronald: el código lo confirma el worker, así que hay que
+         esperar. Mientras tanto se pinta el candado — si el código
+         sirve, se reemplaza solo en menos de un segundo. */
+      irLibro(o,false);
+      o.verificar(cod).then(r=>{ if(r===true) abrirYa(); });
     }
+    else if(o && cod && o.codigo && cod===o.codigo){ abrirYa(); }
+    else if(o){ irLibro(o,false); if(i!==undefined && o.datos) irSeccion(+i,false); }
   }
 }
 </script>
