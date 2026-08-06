@@ -45,7 +45,7 @@ window.FICHAS = [
   { n:116, g:'kit', img:'kit-16', t:'Qué salió mal · la talvina',     d:'Cuando no sube, cuando huele raro, cuando suelta líquido.' },
   { n:117, g:'kit', img:'kit-17', t:'El mapa de las familias',        d:'Los panes agrupados por masa y técnica, de un vistazo.' },
   { n:118, g:'kit', img:'kit-18', t:'La harina según tu país',        d:'Qué buscar en la góndola, estés donde estés.' },
-  { n:119, g:'kit', img:'kit-19', t:'Mi menú de la semana',           d:'Qué horneás cada día, para no improvisar el domingo.' },
+  { n:119, g:'kit', img:'kit-19', t:'Mi menú de la semana',           d:'Qué horneas cada día, para no improvisar el domingo.' },
   { n:120, g:'kit', img:'kit-20', t:'La lista del mercado',           d:'Para llevar al mercado y no volver sin nada.' }
 ];
 

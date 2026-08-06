@@ -3,7 +3,7 @@
    Fuente: MÓDULOS 8 y 9 del curso (82 KB entre los dos) fundidos con
    los BONOS 2, 7 y 8, que repetían el mismo contenido.
    ⚠ La versión anterior estaba escrita en VOSEO ARGENTINO ("vos
-   decidís", "si lo cobrás", "tenés"). Reescrita completa en el
+   decides", "si lo cobras", "tienes"). Reescrita completa en el
    español del comprador venezolano: se tutea. */
 
 window.MODULO_6 = {
@@ -220,7 +220,7 @@ window.MODULO_6 = {
       { t:'ilustra', items:[['pan','Muestra en mano'],['reloj','Seguimiento a 2 días'],['leche','Y el segundo pedido']] },
 
       { t:'h', c:'Cómo entrar a una cafetería' },
-      { t:'seq', titulo:"La entrada a la cafetería", items:[["neg-cafeteria","<b>Bandeja completa, sobre el mostrador.</b> Llevá el producto, no un catálogo."]] },
+      { t:'seq', titulo:"La entrada a la cafetería", items:[["neg-cafeteria","<b>Bandeja completa, sobre el mostrador.</b> Lleva el producto, no un catálogo."]] },
       { t:'p', c:'No vendas «pan»: <b>vende diferenciación</b>. Las cafeterías ofrecen panes industriales genéricos. Tu pan gocho auténtico es una propuesta de menú distinta, con historia y con identidad. Eso tiene valor y se cobra.' },
       { t:'lista', items:[
         ['El mensaje al dueño','«Mi pan es artesanal, con recetas tachirenses. Te da algo distinto para ofrecer, un producto con identidad que tus clientes van a preguntar dónde lo consigues.»'],
@@ -258,7 +258,7 @@ window.MODULO_6 = {
       { t:'ilustra', items:[['talvina','Tu historia'],['pan','Tu proceso'],['granos','Tu origen']] },
 
       { t:'h', c:'WhatsApp, que es donde se cierra' },
-      { t:'seq', titulo:"La foto que cierra la venta", items:[["neg-whatsapp","<b>La foto del pan real de hoy.</b> No una de archivo: la de la tanda que acabás de sacar."]] },
+      { t:'seq', titulo:"La foto que cierra la venta", items:[["neg-whatsapp","<b>La foto del pan real de hoy.</b> No una de archivo: la de la tanda que acabas de sacar."]] },
       { t:'p', c:'En Venezuela WhatsApp no es una app de mensajes: es <b>la infraestructura comercial</b> de millones de negocios. Y la diferencia entre WhatsApp normal y WhatsApp Business es la diferencia entre un negocio informal y uno que genera confianza solo.' },
       { t:'p', c:'Un WhatsApp Business bien configurado <b>trabaja 24 horas</b>. El mensaje de bienvenida convierte mientras duermes.' },
       { t:'lista', items:[
@@ -294,7 +294,7 @@ window.MODULO_6 = {
       ]},
 
       { t:'h', c:'Los números que hay que entender' },
-      { t:'seq', titulo:"Los registros", items:[["neg-registros","<b>Anotar cada tanda.</b> Temperatura, tiempo y resultado. En tres semanas sabés todo."]] },
+      { t:'seq', titulo:"Los registros", items:[["neg-registros","<b>Anotar cada tanda.</b> Temperatura, tiempo y resultado. En tres semanas sabes todo."]] },
       { t:'tabla', cols:['Concepto','Qué significa'], filas:[
         ['Bruto contra neto','Bruto es todo lo que entra. Neto es lo que queda. El negocio vive del neto'],
         ['Margen de ganancia','Ganancia ÷ precio × 100. Vendes a $2,00 con costo $0,65 → 67,5%. Busca 60% mínimo'],

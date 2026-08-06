@@ -292,7 +292,7 @@ window.MODULO_3 = {
       { t:'tip', tt:'Lo eficiente al principio', c:'Hornea <b>un solo tipo de pan por tanda</b>. Con experiencia vas a poder mezclar; al arrancar, mezclar solo agrega variables cuando todavía no controlas las básicas.' },
 
       { t:'h', c:'Los registros son el negocio' },
-      { t:'seq', titulo:"Llevar el registro", items:[["neg-registros","<b>Anotá cada tanda:</b> temperatura, tiempo y cómo salió. En tres semanas conocés tu horno."],["horno-dos","<b>Dos bandejas a la vez.</b> Rotalas a mitad de cocción o una sale distinta de la otra."]] },
+      { t:'seq', titulo:"Llevar el registro", items:[["neg-registros","<b>Anota cada tanda:</b> temperatura, tiempo y cómo salió. En tres semanas conoces tu horno."],["horno-dos","<b>Dos bandejas a la vez.</b> Rotalas a mitad de cocción o una sale distinta de la otra."]] },
       { t:'p', c:'El panadero profesional no improvisa: registra, replica y ajusta con datos. Un proceso estandarizado es un proceso que se puede <b>enseñar, delegar y escalar</b>. Uno que vive en tu cabeza, no.' },
       { t:'lista', items:[
         ['Fecha y tanda','Qué día y cuántas piezas.'],

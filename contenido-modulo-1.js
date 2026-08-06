@@ -193,7 +193,7 @@ window.MODULO_1 = {
       { t:'ilustra', items:[['pan','Palma, no dedos'],['reloj','10 min y descanso'],['gota','Sin harina extra']] },
 
       { t:'h', c:'3 · Los pliegues' },
-      { t:'seq', titulo:"Cómo se ve la masa según los minutos", items:[["tec-masa-min5","<b>Minuto 5.</b> Rugosa y pegajosa. Es normal, no le eches harina."],["tec-masa-min10","<b>Minuto 10.</b> Entera, ya se despega sola."],["tec-masa-min20","<b>Minuto 20.</b> Lisa y con brillo. Ahí parás."]] },
+      { t:'seq', titulo:"Cómo se ve la masa según los minutos", items:[["tec-masa-min5","<b>Minuto 5.</b> Rugosa y pegajosa. Es normal, no le eches harina."],["tec-masa-min10","<b>Minuto 10.</b> Entera, ya se despega sola."],["tec-masa-min20","<b>Minuto 20.</b> Lisa y con brillo. Ahí paras."]] },
       { t:'p', c:'No es amasado continuo: estiras y doblas la masa sobre sí misma, la dejas descansar diez minutos, y repites. <b>El gluten se desarrolla solo durante el descanso.</b> Es la técnica de menos esfuerzo y la mejor cuando la masa lleva mucha grasa.' },
 
       { t:'h', c:'4 · La amasadora' },

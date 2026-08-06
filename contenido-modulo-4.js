@@ -27,13 +27,13 @@ window.MODULO_4 = {
       {"t":"p","c":"Estas no son recetas sacadas de internet. Son las que se aprenden trabajando dentro de las panaderías de La Concordia, y la diferencia con una receta de blog es la profundidad: no solo <b>el qué</b>, también <b>el porqué</b> de cada ingrediente y cada número."},
       {"t":"lista","items":[["Todas parten de la misma masa base","La del Módulo 1. Lo que cambia son las proporciones, el formado y el acabado. Por eso conviene dominar esa antes que ninguna."],["Todo por kilo de harina","Multiplica directo para producción mayor. No hay que recalcular nada ni hacer regla de tres."],["Anota cada práctica","Temperatura del ambiente, tiempo de fermentación, temperatura del horno y resultado visual. En tres prácticas ya sabes cómo se comporta tu cocina."]]},
       {"t":"h","c":"Cada pan tiene su propia receta, completa y aparte"},
-      {"t":"p","c":"Ninguna receta te manda a otra a buscar un dato. Cada pan trae <b>lo suyo entero</b>: los gramos, cuánto tarda, el proceso movimiento por movimiento, cómo saber que ya está y cuánto dura. Abrís la del pan que vas a hacer y no necesitás nada más."},
+      {"t":"p","c":"Ninguna receta te manda a otra a buscar un dato. Cada pan trae <b>lo suyo entero</b>: los gramos, cuánto tarda, el proceso movimiento por movimiento, cómo saber que ya está y cuánto dura. Abres la del pan que vas a hacer y no necesitas nada más."},
       {"t":"h","c":"Aun así, hay familias — y conviene saberlas"},
       {"t":"p","c":"Los panes que comparten masa y técnica van juntos, porque cuando dominas uno de la familia los otros salen casi solos. Así están repartidas las doce tachirenses del curso. Las otras cuatro — golfeado, quesadilla andina, pan de banquete y pan español — son <b>investigadas aparte</b>, porque el curso no las trae:"},
       {"t":"tabla","cols":["La familia","Qué trae","Qué se aprende"],"filas":[["La del camaleón","Camaleón, azucarado, trenzado","El formado alargado y los cortes"],["Las acemas","Acema tachirense, acema de bocadillo y queso","Las especias y el relleno enrollado"],["Queso y leche","Pan de queso, pan de leche","El bolleo y las masas enriquecidas"],["Los de vitrina","Pan de Dios, piñita, bocadillo enrollado","Las coberturas y los acabados que venden"],["Los hojaldrados","Criollito, mil hojas","El laminado. Van al final"]]},
       {"t":"ilustra","items":[["bascula","Por kilo de harina"],["pan","Dieciséis recetas aparte"],["reloj","De simple a complejo"]]},
       {"t":"h","c":"Cuál conviene aprender primero"},
-      { t:'seq', titulo:"De lo simple a lo complejo", items:[["tec-bolleo-3","<b>Empezás acá:</b> una bola lisa y tensa. El bolleo es la base de todo."],["form-camaleon-4","<b>Después el formado alargado</b>, que es donde nace la tensión."],["tec-lamin-4","<b>Y al final el laminado</b>, que es el techo de la técnica."]] },
+      { t:'seq', titulo:"De lo simple a lo complejo", items:[["tec-bolleo-3","<b>Empiezas acá:</b> una bola lisa y tensa. El bolleo es la base de todo."],["form-camaleon-4","<b>Después el formado alargado</b>, que es donde nace la tensión."],["tec-lamin-4","<b>Y al final el laminado</b>, que es el techo de la técnica."]] },
       {"t":"p","c":"El orden no es capricho: va construyendo habilidad. Cada pan te deja una técnica que el siguiente necesita."},
       {"t":"pasos","items":["<b>Pan de leche</b> — para dominar el bolleo, que es la base de todo formado.","<b>Camaleón</b> — el formado alargado y los cortes en diagonal.","<b>Pan de queso</b> — cómo se maneja una masa muy enriquecida sin que se ponga pesada.","<b>Azucarado</b> — la costra y el momento exacto de las coberturas.","<b>Acema</b> — las especias, y cómo cambian la fermentación además del sabor.","<b>Trenzado</b> — la técnica que impresiona al cliente.","<b>Mil hojas</b> y después el <b>criollito</b> — los dos laminados, al final. No son para principiantes y no tiene sentido apurarlos."]},
       {"t":"h","c":"Los tres rankings que importan para el negocio"},
@@ -84,7 +84,7 @@ window.MODULO_4 = {
       { t:'tip', tt:'Por qué el agua va fría', c:'No es un capricho de la receta. <b>Amasar genera calor por fricción</b>, y el agua fría es lo que mantiene la masa en su rango bueno de 24 a 26 °C. Si la masa se calienta de más, fermenta antes de tiempo y el pan sale con la miga apretada.' },
 
       { t:'h', c:'Cuánto tarda y cuánto de eso es esperar' },
-      { t:'linea', nota:'De ese total, solo <b>45 minutos</b> son de trabajo tuyo. Las 2 h 30 restantes son la masa trabajando sola: podés hacer otra cosa.', items:[
+      { t:'linea', nota:'De ese total, solo <b>45 minutos</b> son de trabajo tuyo. Las 2 h 30 restantes son la masa trabajando sola: puedes hacer otra cosa.', items:[
         { n:'Amasar', min:20, max:20, d:'Hasta la ventana de gluten. La masa debe terminar entre <b>24 y 26 °C</b>.' },
         { n:'Primera fermentación', min:60, max:90, d:'Tapada, hasta <b>doblar el volumen</b>. Manda la masa, no el reloj.' },
         { n:'Desgasificar y dividir', min:10, max:10, d:'Sacar el gas parejo y pesar las piezas de 150 g.' },
@@ -92,11 +92,11 @@ window.MODULO_4 = {
         { n:'Formar', min:10, max:10, d:'Aplanar, estirar, doblar, enrollar y sellar. Piezas de 22 a 25 cm.' },
         { n:'Segunda fermentación', min:45, max:45, d:'Separadas <b>4 cm como mínimo</b>, cubiertas con paño húmedo que no toque la masa.' },
         { n:'Pintar y cortar', min:5, max:5, d:'Huevo con leche, y los 4 o 5 cortes diagonales.' },
-        { n:'Hornear', min:20, max:23, d:'A <b>175 °C</b> la pieza de 150 g. Precalentá el horno 30 min antes: ese tiempo no suma porque corre en paralelo al segundo reposo.' }
+        { n:'Hornear', min:20, max:23, d:'A <b>175 °C</b> la pieza de 150 g. Precalienta el horno 30 min antes: ese tiempo no suma porque corre en paralelo al segundo reposo.' }
       ]},
 
       { t:'seq', titulo:'El camaleón de un vistazo', items:[
-        ['paso-camaleon-1','<b>Amasar, 20 min.</b> Listo cuando estirás un trozo y se hace una lámina traslúcida sin romperse.'],
+        ['paso-camaleon-1','<b>Amasar, 20 min.</b> Listo cuando estiras un trozo y se hace una lámina traslúcida sin romperse.'],
         ['paso-camaleon-2','<b>Primera fermentación, 60 a 90 min.</b> Tapada, hasta doblar el volumen.'],
         ['paso-camaleon-3','<b>Formar piezas de 22 a 25 cm</b>, de grosor parejo y con la costura hacia abajo.'],
         ['paso-camaleon-4','<b>Segunda fermentación, 45 min.</b> Separadas 4 cm. Crecen hasta el 60–80% de su tamaño final.'],
@@ -105,7 +105,7 @@ window.MODULO_4 = {
       ]},
 
       { t:'h', c:'El proceso, movimiento por movimiento' },
-      { t:'p', c:'Lo de arriba es el mapa. Esto es el detalle: <b>si nunca amasaste, seguí esto al pie de la letra</b> y te va a salir. Cada paso dice qué hacen las manos, cuánto dura y en qué se nota que ya está.' },
+      { t:'p', c:'Lo de arriba es el mapa. Esto es el detalle: <b>si nunca amasaste, sigue esto al pie de la letra</b> y te va a salir. Cada paso dice qué hacen las manos, cuánto dura y en qué se nota que ya está.' },
 
       ...PROCESOS.armar({
         pieza: '150 g',
@@ -113,11 +113,11 @@ window.MODULO_4 = {
           titulo: 'Formar el camaleón — 10 minutos',
           p: 'Acá nace la forma. El objetivo de todo este movimiento es uno solo: <b>crear tensión en la superficie</b>. Esa tensión es la que hace que el pan crezca hacia arriba en el horno en vez de desparramarse.',
           pasos: [
-            '<b>Aplaná</b> la bola con la palma hasta hacer un disco parejo. No presiones los bordes.',
-            '<b>Estirá con los dedos</b> hasta formar un rectángulo de grosor uniforme. <b>Sin rodillo</b>: el rodillo aplasta el gas que querés conservar.',
-            '<b>Doblá los bordes largos hacia el centro</b>, como si cerraras un tríptico. Eso arma la estructura de adentro.',
-            '<b>Enrollá</b> de un extremo al otro, con presión suave pero continua. Acá es donde se genera la tensión.',
-            '<b>Sellá la costura</b> pellizcando firme a lo largo, y dejá la costura <b>hacia abajo</b> en la bandeja.',
+            '<b>Aplana</b> la bola con la palma hasta hacer un disco parejo. No presiones los bordes.',
+            '<b>Estira con los dedos</b> hasta formar un rectángulo de grosor uniforme. <b>Sin rodillo</b>: el rodillo aplasta el gas que quieres conservar.',
+            '<b>Dobla los bordes largos hacia el centro</b>, como si cerraras un tríptico. Eso arma la estructura de adentro.',
+            '<b>Enrolla</b> de un extremo al otro, con presión suave pero continua. Acá es donde se genera la tensión.',
+            '<b>Sella la costura</b> pellizcando firme a lo largo, y deja la costura <b>hacia abajo</b> en la bandeja.',
             'Largo final: <b>22 a 25 cm</b>, con el <b>grosor igual de punta a punta</b>. Si un extremo es más fino, ese extremo se quema mientras el centro todavía está crudo.'
           ],
           seqTitulo: 'El formado del camaleón, movimiento por movimiento',
@@ -126,15 +126,15 @@ window.MODULO_4 = {
             ['form-camaleon-2','<b>2 · Estirar.</b> Con los dedos, hasta un rectángulo parejo. Sin rodillo.'],
             ['form-camaleon-3','<b>3 · Doblar.</b> Los bordes largos al centro, como un tríptico.'],
             ['form-camaleon-4','<b>4 · Enrollar.</b> De punta a punta, presión suave y continua. Acá nace la tensión.'],
-            ['form-camaleon-5','<b>5 · Sellar.</b> Pellizcá la costura a lo largo, y va hacia abajo en la bandeja.']
+            ['form-camaleon-5','<b>5 · Sellar.</b> Pellizca la costura a lo largo, y va hacia abajo en la bandeja.']
           ]
         },
         acabado: {
           titulo: 'Pintar y cortar — 5 minutos',
           pasos: [
-            'Batí <b>un huevo con una cucharada de leche</b>.',
-            'Pintá con <b>brocha suave</b>, cubriendo toda la superficie. Ese pintado es el que da el brillo dorado.',
-            'Hacé <b>4 o 5 cortes diagonales</b> a <b>45°</b>, de <b>1 cm exacto</b> de profundidad. Cuchilla o cuchillo bien filoso, de un movimiento decidido.'
+            'Bate <b>un huevo con una cucharada de leche</b>.',
+            'Pinta con <b>brocha suave</b>, cubriendo toda la superficie. Ese pintado es el que da el brillo dorado.',
+            'Haz <b>4 o 5 cortes diagonales</b> a <b>45°</b>, de <b>1 cm exacto</b> de profundidad. Cuchilla o cuchillo bien filoso, de un movimiento decidido.'
           ],
           seqTitulo: 'Los cortes',
           seq: [
@@ -203,11 +203,11 @@ window.MODULO_4 = {
           titulo: 'Formar — 10 minutos',
           p: 'Exactamente el mismo formado del camaleón. El objetivo es <b>crear tensión en la superficie</b>: eso hace que crezca hacia arriba en vez de desparramarse.',
           pasos: [
-            '<b>Aplaná</b> la bola con la palma hasta hacer un disco parejo.',
-            '<b>Estirá con los dedos</b> hasta un rectángulo de grosor uniforme. Sin rodillo.',
-            '<b>Doblá los bordes largos hacia el centro</b>, como un tríptico.',
-            '<b>Enrollá</b> de punta a punta con presión suave y continua.',
-            '<b>Sellá la costura</b> y dejala hacia abajo. Largo final de <b>22 a 25 cm</b>, parejo.'
+            '<b>Aplana</b> la bola con la palma hasta hacer un disco parejo.',
+            '<b>Estira con los dedos</b> hasta un rectángulo de grosor uniforme. Sin rodillo.',
+            '<b>Dobla los bordes largos hacia el centro</b>, como un tríptico.',
+            '<b>Enrolla</b> de punta a punta con presión suave y continua.',
+            '<b>Sella la costura</b> y déjala hacia abajo. Largo final de <b>22 a 25 cm</b>, parejo.'
           ],
           seqTitulo: 'El formado, movimiento por movimiento',
           seq: [
@@ -222,9 +222,9 @@ window.MODULO_4 = {
           titulo: 'Pintar y azucarar — 5 minutos',
           p: 'Todo el pan está en este paso, y todo depende del <b>orden y del momento</b>.',
           pasos: [
-            'Batí un huevo con una cucharada de leche y <b>pintá toda la superficie</b> con brocha suave.',
+            'Bate un huevo con una cucharada de leche y <b>pinta toda la superficie</b> con brocha suave.',
             '<b>El azúcar va DESPUÉS del pintado, justo antes de entrar al horno.</b> Nunca antes del segundo reposo.',
-            'Espolvoreá generoso. El huevo es el pegamento: si pintaste poco, el azúcar se cae.',
+            'Espolvorea generoso. El huevo es el pegamento: si pintaste poco, el azúcar se cae.',
             'Al horno de inmediato.'
           ],
           seqTitulo: 'La costra',
@@ -232,7 +232,7 @@ window.MODULO_4 = {
             ['acab-azucarado-1','<b>El azúcar, encima del huevo fresco.</b> Gruesa, generosa, justo antes del horno.'],
             ['acab-azucarado-2','<b>Así sale.</b> Caramelizada y crocante, con la miga blanda debajo.']
           ],
-          nota: ['Los tres errores, y su causa exacta','<b>El azúcar se cae:</b> pintaste poco huevo, o lo aplicaste tarde. <b>Costra quemada:</b> temperatura muy alta, o usaste azúcar fina. <b>No carameliza:</b> lo pusiste sobre masa seca. Si lo echás antes del segundo reposo, el azúcar chupa humedad, se disuelve y desaparece.']
+          nota: ['Los tres errores, y su causa exacta','<b>El azúcar se cae:</b> pintaste poco huevo, o lo aplicaste tarde. <b>Costra quemada:</b> temperatura muy alta, o usaste azúcar fina. <b>No carameliza:</b> lo pusiste sobre masa seca. Si lo echas antes del segundo reposo, el azúcar chupa humedad, se disuelve y desaparece.']
         },
         horno: { temp:175, min:20, max:23 }
       }),
@@ -258,7 +258,7 @@ window.MODULO_4 = {
         ['Dificultad','Media alta']
       ]},
 
-      { t:'p', c:'Una vez que dominás la trenza no parás de hacerla, porque el efecto en el cliente es inmediato: <i>«¿cómo hiciste eso?»</i>. Es el <b>segundo pan más rentable del catálogo</b>, con 67% de margen, y lo único que cambia respecto del camaleón es el formado.' },
+      { t:'p', c:'Una vez que dominas la trenza no paras de hacerla, porque el efecto en el cliente es inmediato: <i>«¿cómo hiciste eso?»</i>. Es el <b>segundo pan más rentable del catálogo</b>, con 67% de margen, y lo único que cambia respecto del camaleón es el formado.' },
 
       { t:'escala', titulo:'Los gramos, para la tanda que vayas a hacer',
         base:'1 kg de harina · 2.080 g de masa · 10 trenzas de 200 g',
@@ -294,12 +294,12 @@ window.MODULO_4 = {
           titulo: 'Trenzar — 15 minutos',
           p: 'Acá está todo el pan. Y el secreto es uno solo, y es contraintuitivo: <b>se empieza por el centro</b>, no por una punta.',
           pasos: [
-            'Estirá cada tira <b>rodando con las palmas</b> sobre la mesa, hasta <b>35 a 40 cm</b> de largo. Con las palmas abiertas, no con los dedos.',
-            'Poné las tres tiras paralelas y juntalas por el medio.',
-            '<b>Empezá a trenzar desde el CENTRO hacia un extremo.</b> Si empezás por una punta, un lado te queda más apretado que el otro y se nota.',
-            'Cuando llegues a la punta, <b>dá vuelta la pieza</b> y trenzá la otra mitad desde el centro hacia el otro extremo.',
+            'Estira cada tira <b>rodando con las palmas</b> sobre la mesa, hasta <b>35 a 40 cm</b> de largo. Con las palmas abiertas, no con los dedos.',
+            'Pon las tres tiras paralelas y juntalas por el medio.',
+            '<b>Empieza a trenzar desde el CENTRO hacia un extremo.</b> Si empiezas por una punta, un lado te queda más apretado que el otro y se nota.',
+            'Cuando llegues a la punta, <b>voltea la pieza</b> y trenza la otra mitad desde el centro hacia el otro extremo.',
             '<b>Tensión media:</b> ni floja (se aplasta) ni excesiva (rompe el gluten).',
-            '<b>Sellá los dos extremos:</b> pellizcá firme y doblá hacia abajo. Presionalos contra la bandeja para que el peso los mantenga cerrados. <b>Un extremo mal sellado se abre en el horno</b> y perdés la trenza.'
+            '<b>Sella los dos extremos:</b> pellizca firme y dobla hacia abajo. Presionalos contra la bandeja para que el peso los mantenga cerrados. <b>Un extremo mal sellado se abre en el horno</b> y pierdes la trenza.'
           ],
           seqTitulo: 'La trenza, movimiento por movimiento',
           seq: [
@@ -308,7 +308,7 @@ window.MODULO_4 = {
             ['form-trenza-3','<b>3 · La trenza terminada.</b> Pareja de punta a punta.'],
             ['form-trenza-4','<b>4 · Sellar los extremos.</b> Pellizcar y doblar hacia abajo.']
           ],
-          nota: ['Por qué desde el centro','Porque si arrancás de una punta, la tensión se te va acumulando hacia el otro lado: terminás con una mitad apretada y otra floja. <b>Desde el centro, las dos mitades salen iguales.</b>']
+          nota: ['Por qué desde el centro','Porque si arrancas de una punta, la tensión se te va acumulando hacia el otro lado: terminas con una mitad apretada y otra floja. <b>Desde el centro, las dos mitades salen iguales.</b>']
         },
         acabado: {
           titulo: 'Pintar — 5 minutos',
@@ -319,7 +319,7 @@ window.MODULO_4 = {
           ],
           seqTitulo: 'El pintado',
           seq: [
-            ['acab-trenza-1','<b>Hasta el fondo de los surcos.</b> Lo que no pintás, sale pálido.']
+            ['acab-trenza-1','<b>Hasta el fondo de los surcos.</b> Lo que no pintas, sale pálido.']
           ]
         },
         horno: { temp:175, min:22, max:26 }
@@ -348,7 +348,7 @@ window.MODULO_4 = {
         ['Dificultad','Media']
       ]},
 
-      { t:'p', c:'Parte de una masa muy parecida al camaleón, pero <b>las especias lo transforman</b>. Y no solo el sabor: las especias también modifican la fermentación, <b>acelerándola un poco</b>. Si hacés acema con los tiempos exactos del camaleón, se te pasa.' },
+      { t:'p', c:'Parte de una masa muy parecida al camaleón, pero <b>las especias lo transforman</b>. Y no solo el sabor: las especias también modifican la fermentación, <b>acelerándola un poco</b>. Si haces acema con los tiempos exactos del camaleón, se te pasa.' },
       { t:'p', c:'Los clientes que piden acema son otros — son de fiestas, fechas especiales y regalos. Por eso <b>justifica un precio 15 a 20% superior al camaleón</b> sin que nadie discuta.' },
 
       { t:'escala', titulo:'Los gramos, para la tanda que vayas a hacer',
@@ -369,10 +369,10 @@ window.MODULO_4 = {
         ]},
 
       { t:'h', c:'Cuánto tarda y cuánto de eso es esperar' },
-      { t:'linea', nota:'Ojo con la primera fermentación: <b>las especias la aceleran</b>. Mirá la masa a los 50 minutos, no a los 60.', items:[
+      { t:'linea', nota:'Ojo con la primera fermentación: <b>las especias la aceleran</b>. Mira la masa a los 50 minutos, no a los 60.', items:[
         { n:'Mezclar las especias', min:2, max:2, d:'En la harina, <b>antes</b> de amasar.' },
         { n:'Amasar', min:20, max:20, d:'Hasta la ventana de gluten, entre <b>24 y 26 °C</b>.' },
-        { n:'Primera fermentación', min:60, max:90, d:'Tapada, hasta doblar. <b>Empezá a mirarla a los 50.</b>' },
+        { n:'Primera fermentación', min:60, max:90, d:'Tapada, hasta doblar. <b>Empieza a mirarla a los 50.</b>' },
         { n:'Desgasificar y dividir', min:10, max:10, d:'Piezas de 150 g, con báscula.' },
         { n:'Reposo de preformado', min:10, max:15, d:'Las bolas descansan cubiertas.' },
         { n:'Formar el óvalo', min:10, max:10, d:'De 15 a 18 cm, con altura generosa.' },
@@ -387,25 +387,25 @@ window.MODULO_4 = {
           { t:'h', c:'Antes de amasar · Las especias van en la harina' },
           { t:'p', c:'Este paso va <b>antes que todo</b>, y no se puede recuperar después.' },
           { t:'pasos', items:[
-            'Pesá las tres especias: <b>8 g de canela, 3 g de anís estrellado molido y 2 g de pimienta guayabita molida</b> por kilo de harina.',
-            '<b>Mezclalas con la harina seca</b>, revolviendo bien antes de agregar cualquier líquido.',
-            '<b>Nunca las eches sobre la masa ya formada.</b> Si lo hacés, quedan en vetas oscuras y se ven en la miga cortada.'
+            'Pesa las tres especias: <b>8 g de canela, 3 g de anís estrellado molido y 2 g de pimienta guayabita molida</b> por kilo de harina.',
+            '<b>Mézclalas con la harina seca</b>, revolviendo bien antes de agregar cualquier líquido.',
+            '<b>Nunca las eches sobre la masa ya formada.</b> Si lo haces, quedan en vetas oscuras y se ven en la miga cortada.'
           ]},
           { t:'seq', titulo:'Las tres especias', items:[
             ['trasamasado-especias','<b>Canela, anís estrellado y guayabita.</b> Pesadas y en la harina seca, antes de amasar.']
           ]}
         ],
         trasFermentar1: [
-          { t:'nota', tt:'Las especias aceleran la fermentación', c:'No es un detalle de sabor: la acema <b>fermenta más rápido que el camaleón</b>. Empezá a mirarla a los 50 minutos. Si le das los 90 de costumbre, se te pasa y colapsa en el horno.' }
+          { t:'nota', tt:'Las especias aceleran la fermentación', c:'No es un detalle de sabor: la acema <b>fermenta más rápido que el camaleón</b>. Empieza a mirarla a los 50 minutos. Si le das los 90 de costumbre, se te pasa y colapsa en el horno.' }
         ],
         formado: {
           titulo: 'Formar el óvalo — 10 minutos',
           p: 'La acema no es alargada como el camaleón: es <b>oval, más corta y más alta</b>. Esa forma es la que la hace reconocible en el mostrador.',
           pasos: [
-            '<b>Aplaná</b> la bola con la palma en un disco parejo.',
-            '<b>Enrollá desde un borde</b>, pero cerrando hacia adentro para que quede corta y rechoncha, no larga.',
-            'Sellá la costura y <b>rodá poco</b>: el largo final es de <b>15 a 18 cm</b> nada más.',
-            '<b>Buscá altura, no largo.</b> Si te queda del largo de un camaleón, la aplastaste de más.'
+            '<b>Aplana</b> la bola con la palma en un disco parejo.',
+            '<b>Enrolla desde un borde</b>, pero cerrando hacia adentro para que quede corta y rechoncha, no larga.',
+            'Sella la costura y <b>rueda poco</b>: el largo final es de <b>15 a 18 cm</b> nada más.',
+            '<b>Busca altura, no largo.</b> Si te queda del largo de un camaleón, la aplastaste de más.'
           ],
           seqTitulo: 'La forma oval',
           seq: [
@@ -415,8 +415,8 @@ window.MODULO_4 = {
         acabado: {
           titulo: 'Pintar y cortar — 5 minutos',
           pasos: [
-            'Pintá con huevo batido y una cucharada de leche.',
-            'Hacé <b>2 o 3 cortes paralelos a lo LARGO</b> de la pieza — no en diagonal como el camaleón.',
+            'Pinta con huevo batido y una cucharada de leche.',
+            'Haz <b>2 o 3 cortes paralelos a lo LARGO</b> de la pieza — no en diagonal como el camaleón.',
             '<b>Más profundos que en el camaleón</b>, porque la pieza es más alta y necesita por dónde abrir.'
           ],
           seqTitulo: 'Los cortes de la acema',
@@ -427,7 +427,7 @@ window.MODULO_4 = {
         horno: { temp:175, min:22, max:25 }
       }),
 
-      { t:'tip', tt:'El truco de venta que no cuesta nada', c:'Si horneás acema y dejás la ventana abierta, los vecinos vienen solos a preguntar qué es. <b>Ese olor es publicidad gratis</b>, y es el único producto del catálogo que se vende antes de existir.' },
+      { t:'tip', tt:'El truco de venta que no cuesta nada', c:'Si horneas acema y dejas la ventana abierta, los vecinos vienen solos a preguntar qué es. <b>Ese olor es publicidad gratis</b>, y es el único producto del catálogo que se vende antes de existir.' },
       { t:'ilustra', items:[['canela','Canela'],['anis','Anís estrellado'],['granos','Guayabita']] }
     ]
   },
@@ -476,7 +476,7 @@ window.MODULO_4 = {
       { t:'linea', nota:'El relleno agrega 10 minutos de trabajo, no de espera.', items:[
         { n:'Mezclar las especias', min:2, max:2, d:'En la harina, antes de amasar.' },
         { n:'Amasar', min:20, max:20, d:'Hasta la ventana de gluten.' },
-        { n:'Primera fermentación', min:60, max:90, d:'Tapada, hasta doblar. Miralá a los 50: las especias la aceleran.' },
+        { n:'Primera fermentación', min:60, max:90, d:'Tapada, hasta doblar. Míralas a los 50: las especias la aceleran.' },
         { n:'Desgasificar y dividir', min:10, max:10, d:'Piezas de 150 g de masa, con báscula.' },
         { n:'Reposo de preformado', min:10, max:15, d:'Cubiertas.' },
         { n:'Estirar, rellenar y enrollar', min:20, max:20, d:'El paso que decide la pieza.' },
@@ -490,8 +490,8 @@ window.MODULO_4 = {
         antesAmasado: [
           { t:'h', c:'Antes de amasar · Las especias van en la harina' },
           { t:'pasos', items:[
-            'Pesá <b>8 g de canela, 3 g de anís estrellado molido y 2 g de pimienta guayabita</b> por kilo de harina.',
-            '<b>Mezclalas con la harina seca</b> antes de agregar cualquier líquido. Sobre la masa ya hecha quedan en vetas.'
+            'Pesa <b>8 g de canela, 3 g de anís estrellado molido y 2 g de pimienta guayabita</b> por kilo de harina.',
+            '<b>Mézclalas con la harina seca</b> antes de agregar cualquier líquido. Sobre la masa ya hecha quedan en vetas.'
           ]},
           { t:'seq', titulo:'Las tres especias', items:[
             ['trasamasado-especias','<b>Canela, anís estrellado y guayabita.</b> En la harina seca, antes de amasar.']
@@ -499,13 +499,13 @@ window.MODULO_4 = {
         ],
         formado: {
           titulo: 'Estirar, rellenar y enrollar — 20 minutos',
-          p: 'Todo el pan se decide acá, y sobre todo en el último movimiento: <b>el sellado de la costura</b>. Si se abre en el horno, perdés la pieza entera.',
+          p: 'Todo el pan se decide acá, y sobre todo en el último movimiento: <b>el sellado de la costura</b>. Si se abre en el horno, pierdes la pieza entera.',
           pasos: [
-            'Estirá la masa en un <b>rectángulo de 20 × 15 cm</b>.',
-            'Poné las láminas de bocadillo de <b>3 mm</b> encima, <b>dejando 2 cm de borde libre</b> en todo el contorno. Ese borde es lo que después sella.',
-            'Repartí el queso <b>sobre el bocadillo</b>, no al lado.',
-            '<b>Enrollá apretado desde el borde largo.</b> Apretado de verdad: los huecos de aire adentro se convierten en agujeros en la miga.',
-            '<b>Pellizcá la costura con fuerza</b>, a lo largo de toda la pieza.',
+            'Estira la masa en un <b>rectángulo de 20 × 15 cm</b>.',
+            'Pon las láminas de bocadillo de <b>3 mm</b> encima, <b>dejando 2 cm de borde libre</b> en todo el contorno. Ese borde es lo que después sella.',
+            'Reparte el queso <b>sobre el bocadillo</b>, no al lado.',
+            '<b>Enrolla apretado desde el borde largo.</b> Apretado de verdad: los huecos de aire adentro se convierten en agujeros en la miga.',
+            '<b>Pellizca la costura con fuerza</b>, a lo largo de toda la pieza.',
             'A la bandeja <b>con la costura hacia abajo</b>. El peso de la pieza la mantiene cerrada.'
           ],
           seqTitulo: 'El relleno enrollado, paso a paso',
@@ -514,9 +514,9 @@ window.MODULO_4 = {
             ['tec-relleno-2','<b>2 · El bocadillo.</b> Láminas de 3 mm, con 2 cm de borde libre.'],
             ['tec-relleno-3','<b>3 · El queso.</b> Encima del bocadillo, repartido.'],
             ['tec-relleno-4','<b>4 · Enrollar.</b> Apretado, desde el borde largo.'],
-            ['tec-relleno-5','<b>5 · Sellar.</b> Pellizcá fuerte. Acá se gana o se pierde la pieza.']
+            ['tec-relleno-5','<b>5 · Sellar.</b> Pellizca fuerte. Acá se gana o se pierde la pieza.']
           ],
-          nota: ['Si el relleno se escapa, no fue el horno','<b>Fue la costura.</b> Es el único motivo. Volvé a pellizcar más firme y asegurate de haber dejado los 2 cm de borde libre: sin borde limpio no hay nada que sellar.']
+          nota: ['Si el relleno se escapa, no fue el horno','<b>Fue la costura.</b> Es el único motivo. Vuelve a pellizcar más firme y asegurate de haber dejado los 2 cm de borde libre: sin borde limpio no hay nada que sellar.']
         },
         acabado: {
           titulo: 'Pintar — 5 minutos',
@@ -568,7 +568,7 @@ window.MODULO_4 = {
           ['Queso blanco rallado grueso, para la masa',200,'g'],
           ['Queso amarillo tipo Gouda, para gratinar',150,'g']
         ]},
-      { t:'nota', tt:'Son dos quesos distintos y no son intercambiables', c:'El <b>queso blanco va adentro</b> y aporta sabor y humedad. El <b>amarillo va encima</b> y aporta el dorado y la costra gratinada. Si usás uno solo para las dos cosas, perdés una de las dos.' },
+      { t:'nota', tt:'Son dos quesos distintos y no son intercambiables', c:'El <b>queso blanco va adentro</b> y aporta sabor y humedad. El <b>amarillo va encima</b> y aporta el dorado y la costra gratinada. Si usás uno solo para las dos cosas, pierdes una de las dos.' },
 
       { t:'h', c:'Cuánto tarda y cuánto de eso es esperar' },
       { t:'linea', nota:'El gratinado no suma tiempo: ocurre dentro de los últimos 5 minutos del horneado.', items:[
@@ -588,8 +588,8 @@ window.MODULO_4 = {
           { t:'h', c:'Al terminar de amasar · El queso va adentro' },
           { t:'p', c:'El momento importa tanto como la cantidad. <b>Va en el último minuto del amasado</b>, no antes.' },
           { t:'pasos', items:[
-            'Agregá los <b>200 g de queso blanco rallado grueso</b> cuando ya tengas la ventana de gluten.',
-            '<b>Integrá con movimientos envolventes</b>, no amasando fuerte. Si seguís amasando, el queso corta las hebras de gluten que te costaron 20 minutos.',
+            'Agrega los <b>200 g de queso blanco rallado grueso</b> cuando ya tengas la ventana de gluten.',
+            '<b>Integra con movimientos envolventes</b>, no amasando fuerte. Si sigues amasando, el queso corta las hebras de gluten que te costaron 20 minutos.',
             '<b>El queso no puede estar frío.</b> A temperatura ambiente: el queso de nevera enfría la masa y te frena la fermentación.'
           ]},
           { t:'seq', titulo:'El queso de adentro', items:[
@@ -600,9 +600,9 @@ window.MODULO_4 = {
           titulo: 'Bolear — 10 minutos',
           p: 'Este pan es redondo, y el bolleo es todo el formado. El objetivo es una <b>bola de superficie lisa y tensa</b> pero relajada por dentro.',
           pasos: [
-            'Poné la porción en la mesa y <b>ahuecá la mano encima</b>, como una cúpula.',
-            'Hacé <b>movimientos circulares</b> con presión hacia abajo. La masa gira debajo de tu palma y se va tensando sola.',
-            'Parás cuando la superficie está <b>lisa y tensa</b>, sin arrugas ni pliegues.',
+            'Pon la porción en la mesa y <b>ahueca la mano encima</b>, como una cúpula.',
+            'Haz <b>movimientos circulares</b> con presión hacia abajo. La masa gira debajo de tu palma y se va tensando sola.',
+            'Paras cuando la superficie está <b>lisa y tensa</b>, sin arrugas ni pliegues.',
             '<b>Ni mucha ni poca tensión:</b> demasiada tensión te da un pan duro; poca tensión te da un pan aplastado.'
           ],
           seqTitulo: 'El bolleo, movimiento por movimiento',
@@ -616,8 +616,8 @@ window.MODULO_4 = {
           titulo: 'Preparar el gratinado — 2 minutos',
           p: 'El queso de encima <b>no se pone ahora</b>: se ralla ahora y se pone dentro del horno, a falta de 5 minutos.',
           pasos: [
-            'Rallá los <b>150 g de queso amarillo</b> y dejalo a mano, al lado del horno.',
-            '<b>A falta de 5 minutos</b> para terminar el horneado, abrí, repartilo encima y subí a <b>200 °C</b>.',
+            'Ralla los <b>150 g de queso amarillo</b> y déjalo a mano, al lado del horno.',
+            '<b>A falta de 5 minutos</b> para terminar el horneado, abre, repartilo encima y sube a <b>200 °C</b>.',
             'Antes de esos 5 minutos se quema. Después, no alcanza a gratinar.'
           ],
           seqTitulo: 'El gratinado',
@@ -628,11 +628,11 @@ window.MODULO_4 = {
           nota: ['Nunca pases de 210 °C','El queso pasa de gratinado a quemado en cuestión de minutos, y no hay marcha atrás. <b>Ese es el único punto donde este pan se arruina</b>, y siempre es por descuido, no por técnica.']
         },
         horno: { temp:180, min:18, max:22, extra:[
-          '<b>A falta de 5 minutos:</b> abrí, repartí el queso amarillo y subí a <b>200 °C</b> para el gratinado.'
+          '<b>A falta de 5 minutos:</b> abre, reparte el queso amarillo y sube a <b>200 °C</b> para el gratinado.'
         ]}
       }),
 
-      { t:'nota', tt:'Este va aparte en el horno', c:'Necesita bastante más temperatura que los panes dulces. <b>Mezclarlo en la misma tanda con pan de leche o camaleón compromete a uno de los dos</b>, sin excepción. Horneá una sola clase de pan por tanda hasta que tengas experiencia.' },
+      { t:'nota', tt:'Este va aparte en el horno', c:'Necesita bastante más temperatura que los panes dulces. <b>Mezclarlo en la misma tanda con pan de leche o camaleón compromete a uno de los dos</b>, sin excepción. Hornea una sola clase de pan por tanda hasta que tengas experiencia.' },
       { t:'tip', tt:'Variaciones que venden', c:'Queso más jamón en cuadritos. Queso más pimentón asado. Queso más ajo asado. Las tres funcionan y las tres se cobran más caro que el simple.' }
     ]
   },
@@ -655,7 +655,7 @@ window.MODULO_4 = {
       ]},
 
       { t:'p', c:'Su mercado es específico y muy fiel: familias con niños chiquitos, adultos mayores con dificultad para masticar, y el mercado de regalos. <b>El pan de leche en una caja bonita es el detalle perfecto para llevar de visita.</b>' },
-      { t:'nota', tt:'Empezá por este', c:'Es el pan que enseña <b>el bolleo</b>, que es la base de todo formado del catálogo. Si dominás esta bola, el pan de queso te sale solo y el resto de los formados se vuelven fáciles. Por eso va primero en el orden de aprendizaje.' },
+      { t:'nota', tt:'Empieza por este', c:'Es el pan que enseña <b>el bolleo</b>, que es la base de todo formado del catálogo. Si dominas esta bola, el pan de queso te sale solo y el resto de los formados se vuelven fáciles. Por eso va primero en el orden de aprendizaje.' },
 
       { t:'escala', titulo:'Los gramos, para la tanda que vayas a hacer',
         base:'1 kg de harina · 2.070 g de masa · 25 piezas de 80 g',
@@ -691,8 +691,8 @@ window.MODULO_4 = {
         antesAmasado: [
           { t:'h', c:'Antes de amasar · La leche en polvo va a los secos' },
           { t:'pasos', items:[
-            'Mezclá los <b>30 g de leche en polvo</b> con la harina seca, antes de agregar líquidos.',
-            'Acordate: <b>los 200 ml de líquido son TODOS de leche</b>. En este pan no entra agua.'
+            'Mezcla los <b>30 g de leche en polvo</b> con la harina seca, antes de agregar líquidos.',
+            'Acuérdate: <b>los 200 ml de líquido son TODOS de leche</b>. En este pan no entra agua.'
           ]},
           { t:'seq', titulo:'Los secos', items:[
             ['trasamasado-lechepolvo','<b>Leche en polvo con la harina.</b> Es el suavizante natural de la miga.']
@@ -702,9 +702,9 @@ window.MODULO_4 = {
           titulo: 'Bolear — 10 minutos',
           p: 'Todo el pan es esta bola. Y tiene un punto exacto de tensión: <b>tenso, pero sin exceso</b>.',
           pasos: [
-            'Poné la porción en la mesa y <b>ahuecá la mano encima</b>, como una cúpula.',
-            'Hacé <b>movimientos circulares</b> con presión hacia abajo. La masa gira sola bajo la palma y se tensa.',
-            'Parás cuando la bola está <b>perfectamente redonda, lisa y tensa</b>.',
+            'Pon la porción en la mesa y <b>ahueca la mano encima</b>, como una cúpula.',
+            'Haz <b>movimientos circulares</b> con presión hacia abajo. La masa gira sola bajo la palma y se tensa.',
+            'Paras cuando la bola está <b>perfectamente redonda, lisa y tensa</b>.',
             '<b>Sin pasarte de tensión:</b> demasiada tensión endurece la miga, y la miga tierna es todo el producto acá.'
           ],
           seqTitulo: 'El bolleo, movimiento por movimiento',
@@ -764,7 +764,7 @@ window.MODULO_4 = {
         ]},
 
       { t:'h', c:'Cuánto tarda y cuánto de eso es esperar' },
-      { t:'linea', nota:'Tostá el coco al principio: tiene que estar frío cuando lo uses.', items:[
+      { t:'linea', nota:'Tosta el coco al principio: tiene que estar frío cuando lo uses.', items:[
         { n:'Tostar el coco', min:4, max:4, d:'Sartén seca, moviendo constante. Y dejarlo enfriar.' },
         { n:'Amasar', min:20, max:20, d:'Hasta la ventana de gluten.' },
         { n:'Primera fermentación', min:60, max:90, d:'Tapada, hasta doblar el volumen.' },
@@ -779,13 +779,13 @@ window.MODULO_4 = {
       ...PROCESOS.armar({
         pieza: '70 g',
         antesAmasado: [
-          { t:'h', c:'Antes de empezar · Tostá el coco' },
+          { t:'h', c:'Antes de empezar · Tosta el coco' },
           { t:'p', c:'El coco se tuesta <b>antes</b>, no en el horno con el pan. Y tiene que estar frío cuando lo uses.' },
           { t:'pasos', items:[
             '<b>Coco rallado SECO, nunca fresco.</b> El seco tiene menos humedad y tuesta parejo; el fresco se quema en los bordes antes de dorarse en el centro.',
             'Sartén <b>seca</b>, sin nada de grasa, a fuego medio.',
             '<b>Moviendo constantemente, 3 a 4 minutos</b>, hasta que esté dorado parejo.',
-            '<b>Sacalo del calor de inmediato</b> y pasalo a un plato frío: en la sartén caliente sigue tostándose y se te pasa en segundos.'
+            '<b>Sácalo del calor de inmediato</b> y pásalo a un plato frío: en la sartén caliente sigue tostándose y se te pasa en segundos.'
           ]},
           { t:'seq', titulo:'El tostado', items:[
             ['acab-pandedios-2','<b>Sartén seca, fuego medio, moviendo.</b> 3 a 4 minutos y afuera.']
@@ -796,7 +796,7 @@ window.MODULO_4 = {
           titulo: 'Bolear — 10 minutos',
           p: 'Bolas chicas y parejas. El mismo bolleo del pan de leche.',
           pasos: [
-            '<b>Ahuecá la mano</b> sobre la porción, como una cúpula.',
+            '<b>Ahueca la mano</b> sobre la porción, como una cúpula.',
             '<b>Movimientos circulares</b> con presión hacia abajo, hasta que la superficie quede lisa y tensa.',
             'Piezas de <b>70 g</b>, todas iguales: son chicas y la diferencia de tamaño se nota mucho más que en un pan grande.'
           ],
@@ -811,9 +811,9 @@ window.MODULO_4 = {
           titulo: 'Leche condensada y coco — 5 minutos',
           p: 'El orden y la velocidad lo son todo: <b>el coco va mientras la leche condensada sigue pegajosa</b>.',
           pasos: [
-            'Pintá con <b>leche condensada a temperatura ambiente</b>, con brocha suave. Capa generosa, pero que no chorree.',
-            '<b>Aplicá el coco tostado inmediatamente</b>, mientras la leche condensada está pegajosa. Si esperás, no agarra.',
-            '<b>Presioná suavemente con la mano</b> para que se adhiera.',
+            'Pinta con <b>leche condensada a temperatura ambiente</b>, con brocha suave. Capa generosa, pero que no chorree.',
+            '<b>Aplica el coco tostado inmediatamente</b>, mientras la leche condensada está pegajosa. Si esperas, no agarra.',
+            '<b>Presiona suavemente con la mano</b> para que se adhiera.',
             'Al horno.'
           ],
           seqTitulo: 'La cobertura, paso a paso',
@@ -883,8 +883,8 @@ window.MODULO_4 = {
           titulo: 'Formar el óvalo — 10 minutos',
           p: 'Antes de cortar nada, la forma tiene que estar perfecta: <b>un óvalo más alto que ancho</b>. Si la pieza queda chata, los cortes no tienen dónde abrirse.',
           pasos: [
-            'Aplaná la bola y <b>enrollá cerrando hacia adentro</b>, buscando altura.',
-            'Sellá la costura y dejala <b>hacia abajo</b>.',
+            'Aplana la bola y <b>enrolla cerrando hacia adentro</b>, buscando altura.',
+            'Sella la costura y déjala <b>hacia abajo</b>.',
             'El resultado tiene que ser un <b>óvalo perfecto, más alto que ancho</b>, con la superficie tensa y sin arrugas.',
             'Una superficie arrugada arruina el patrón: los cortes se ven torcidos.'
           ],
@@ -900,7 +900,7 @@ window.MODULO_4 = {
             '<b>Tijeras bien afiladas, a 45° respecto a la superficie.</b> Nunca perpendicular: el corte vertical aplasta sin abrir.',
             '<b>El patrón va en filas alternadas:</b> primera fila 3 cortes · segunda fila 2 cortes desplazados · tercera fila 3 cortes. Alternando, para que se arme el efecto de escamas de piña.',
             '<b>Cada corte penetra 1,5 cm.</b> Menos no abre; más atraviesa la pieza y la colapsa.',
-            'Levantá un poco cada escama con la punta de la tijera al cortar, para que quede despegada.'
+            'Levanta un poco cada escama con la punta de la tijera al cortar, para que quede despegada.'
           ],
           seqTitulo: 'El corte, paso a paso',
           seq: [
@@ -914,8 +914,8 @@ window.MODULO_4 = {
           { t:'h', c:'Al salir del horno · El almíbar' },
           { t:'p', c:'Este es el único pan del catálogo que se pinta <b>después</b> de hornear.' },
           { t:'pasos', items:[
-            'Disolvé al fuego <b>azúcar y agua en partes iguales</b> (1:1) hasta que quede transparente.',
-            'Con el pan <b>todavía tibio</b>, pintá con brocha por encima, entrando entre las escamas.',
+            'Disuelve al fuego <b>azúcar y agua en partes iguales</b> (1:1) hasta que quede transparente.',
+            'Con el pan <b>todavía tibio</b>, pinta con brocha por encima, entrando entre las escamas.',
             'Ese brillo es la firma de la piñita, y es lo que la hace fotografiable.'
           ]},
           { t:'seq', titulo:'El almíbar', items:[
@@ -959,7 +959,7 @@ window.MODULO_4 = {
           ['Sal',10,'g'],
           ['Bocadillo de guayaba',250,'g']
         ]},
-      { t:'nota', tt:'Las seis medidas que no se improvisan', c:'Rectángulo de <b>40 × 25 cm</b> · grosor de masa <b>5 mm</b> · <b>250 g</b> de bocadillo por kilo de harina · capa de bocadillo de <b>3 mm</b> · cada caracol de <b>3 a 4 cm</b> de grosor · horno a <b>170 °C</b>. Cambiá una y cambia el resultado.' },
+      { t:'nota', tt:'Las seis medidas que no se improvisan', c:'Rectángulo de <b>40 × 25 cm</b> · grosor de masa <b>5 mm</b> · <b>250 g</b> de bocadillo por kilo de harina · capa de bocadillo de <b>3 mm</b> · cada caracol de <b>3 a 4 cm</b> de grosor · horno a <b>170 °C</b>. Cambia una y cambia el resultado.' },
 
       { t:'h', c:'Cuánto tarda y cuánto de eso es esperar' },
       { t:'linea', nota:'El rollo se hace entero y después se corta: es una sola operación para 23 piezas.', items:[
@@ -979,11 +979,11 @@ window.MODULO_4 = {
           titulo: 'Estirar, rellenar, enrollar y cortar — 20 minutos',
           p: 'Todo el producto es la espiral, y la espiral depende de <b>la tensión del enrollado</b>. Ni floja ni apretada de más.',
           pasos: [
-            'Estirá en un <b>rectángulo de 40 × 25 cm</b>, con <b>grosor parejo de 5 mm</b>. Más delgado y el relleno atraviesa la masa; más grueso y el caracol queda macizo sin que se aprecie la espiral.',
+            'Estira en un <b>rectángulo de 40 × 25 cm</b>, con <b>grosor parejo de 5 mm</b>. Más delgado y el relleno atraviesa la masa; más grueso y el caracol queda macizo sin que se aprecie la espiral.',
             'Bocadillo <b>a temperatura ambiente</b>, blando pero firme, en <b>capa pareja de 3 mm</b>, dejando <b>2 cm libres</b> en el borde de arriba.',
-            '<b>Enrollá desde el borde inferior con tensión constante.</b> Poca tensión y el caracol se abre al cortar; demasiada y la masa se desgarra.',
-            '<b>Sellá la costura</b> pellizcando a lo largo.',
-            '<b>Cortá con hilo de cocina, no con cuchillo.</b> Pasás el hilo por debajo del rollo, lo cruzás por arriba y tirás: el hilo corta sin aplastar y la espiral queda perfecta. El cuchillo la chafa.',
+            '<b>Enrolla desde el borde inferior con tensión constante.</b> Poca tensión y el caracol se abre al cortar; demasiada y la masa se desgarra.',
+            '<b>Sella la costura</b> pellizcando a lo largo.',
+            '<b>Corta con hilo de cocina, no con cuchillo.</b> Pasas el hilo por debajo del rollo, lo cruzas por arriba y tiras: el hilo corta sin aplastar y la espiral queda perfecta. El cuchillo la chafa.',
             'Cada caracol de <b>3 a 4 cm de grosor</b>. Acostados en la bandeja, con la espiral hacia arriba.'
           ],
           seqTitulo: 'El caracol, paso a paso',
@@ -1048,7 +1048,7 @@ window.MODULO_4 = {
           ['Sal',10,'g'],
           ['Mantequilla fría, para laminar',100,'g']
         ]},
-      { t:'nota', tt:'Son dos mantequillas y hacen cosas distintas', c:'Los <b>160 g van dentro de la masa</b> y la enriquecen. Los <b>100 g de mantequilla FRÍA se laminan</b>: son los que crean las capas. Si mezclás la de laminar dentro de la masa, no hay hojaldre — hay un pan enriquecido y nada más.' },
+      { t:'nota', tt:'Son dos mantequillas y hacen cosas distintas', c:'Los <b>160 g van dentro de la masa</b> y la enriquecen. Los <b>100 g de mantequilla FRÍA se laminan</b>: son los que crean las capas. Si mezclas la de laminar dentro de la masa, no hay hojaldre — hay un pan enriquecido y nada más.' },
 
       { t:'h', c:'Cuánto tarda y cuánto de eso es esperar' },
       { t:'linea', nota:'De las casi 4 horas, <b>solo 55 minutos son de trabajo</b>. Lo demás es la masa fermentando y la mantequilla enfriándose, que es igual de importante.', items:[
@@ -1071,20 +1071,20 @@ window.MODULO_4 = {
       { t:'h', c:'Proceso 3 · A la nevera — 30 minutos' },
       { t:'p', c:'El frío no es un descanso: es <b>parte de la técnica</b>. La mantequilla tiene que estar firme para que se lamine en láminas en vez de mezclarse con la masa.' },
       { t:'pasos', items:[
-        'Aplastá la masa fermentada en un rectángulo grueso y envolvela.',
+        'Aplasta la masa fermentada en un rectángulo grueso y envolvela.',
         '<b>30 minutos de nevera.</b> Tiene que quedar fría pero manejable, no congelada.',
-        'Sacá también la mantequilla de laminar, para que llegue a <b>13-15 °C</b>: ni blanda ni dura como piedra.'
+        'Saca también la mantequilla de laminar, para que llegue a <b>13-15 °C</b>: ni blanda ni dura como piedra.'
       ]},
-      { t:'nota', tt:'Los 13-15 °C de la mantequilla', c:'Es el punto exacto: <b>ni muy blanda</b> (se absorbe en la masa y no crea capas) <b>ni muy dura</b> (rompe el gluten al laminar). A esa temperatura se dobla sin romperse ni chorrear. Sacala de la nevera unos 15 minutos antes.' },
+      { t:'nota', tt:'Los 13-15 °C de la mantequilla', c:'Es el punto exacto: <b>ni muy blanda</b> (se absorbe en la masa y no crea capas) <b>ni muy dura</b> (rompe el gluten al laminar). A esa temperatura se dobla sin romperse ni chorrear. Sácala de la nevera unos 15 minutos antes.' },
 
       { t:'h', c:'Proceso 4 · Las dos vueltas — 60 minutos' },
       { t:'p', c:'Una "vuelta" es <b>estirar, poner mantequilla, doblar en tres y enfriar</b>. El criollito lleva dos; el mil hojas, tres. Cada vuelta multiplica las capas.' },
       { t:'pasos', items:[
-        '<b>Estirá</b> la masa fría en un rectángulo, con el palo de amasar, de grosor parejo.',
-        '<b>Poné la mantequilla fría en láminas</b> sobre dos tercios del rectángulo, dejando un tercio libre.',
-        '<b>Doblá en tres, como una carta:</b> el tercio libre encima del centro, y el otro tercio encima de ese. Ahora la mantequilla quedó encerrada entre capas de masa.',
-        '<b>A la nevera, 20 minutos.</b> Este paso no se salta: si laminás con la mantequilla blanda, se mezcla con la masa y no hay capas.',
-        '<b>Repetí una vez más.</b> Con dos vueltas alcanza para el criollito.'
+        '<b>Estira</b> la masa fría en un rectángulo, con el palo de amasar, de grosor parejo.',
+        '<b>Pon la mantequilla fría en láminas</b> sobre dos tercios del rectángulo, dejando un tercio libre.',
+        '<b>Dobla en tres, como una carta:</b> el tercio libre encima del centro, y el otro tercio encima de ese. Ahora la mantequilla quedó encerrada entre capas de masa.',
+        '<b>A la nevera, 20 minutos.</b> Este paso no se salta: si laminas con la mantequilla blanda, se mezcla con la masa y no hay capas.',
+        '<b>Repite una vez más.</b> Con dos vueltas alcanza para el criollito.'
       ]},
       { t:'seq', titulo:'Una vuelta, movimiento por movimiento', items:[
         ['tec-lamin-1','<b>1 · La mantequilla fría</b>, en láminas sobre la masa estirada.'],
@@ -1095,9 +1095,9 @@ window.MODULO_4 = {
 
       { t:'h', c:'Proceso 5 · Estirar y cortar — 10 minutos' },
       { t:'pasos', items:[
-        '<b>Estirá la última vez a 1 cm de grosor</b>, parejo. Más fino y no se ven las capas; más grueso y el centro queda crudo.',
-        '<b>Cortá en cuadros de 6 × 6 cm</b> con un cuchillo muy afilado.',
-        '<b>De un solo golpe seco hacia abajo.</b> Si arrastrás el cuchillo, sellás los costados y el hojaldre no abre: te quedan cuadros macizos.',
+        '<b>Estira la última vez a 1 cm de grosor</b>, parejo. Más fino y no se ven las capas; más grueso y el centro queda crudo.',
+        '<b>Corta en cuadros de 6 × 6 cm</b> con un cuchillo muy afilado.',
+        '<b>De un solo golpe seco hacia abajo.</b> Si arrastras el cuchillo, sellas los costados y el hojaldre no abre: te quedan cuadros macizos.',
         'Acomodalos en la bandeja separados.'
       ]},
       { t:'seq', titulo:'El corte', items:[
@@ -1112,15 +1112,15 @@ window.MODULO_4 = {
       { t:'pasos', items:[
         'Huevo batido con una cucharada de leche.',
         '<b>SOLO la cara de arriba.</b> Ni un toque en los costados.',
-        'Si el huevo chorrea por los lados, pasá el dedo y limpialo: donde toca, sella.'
+        'Si el huevo chorrea por los lados, pasa el dedo y limpialo: donde toca, sella.'
       ]},
 
       ...PROCESOS.hornear({ temp:180, min:15, max:18, pieza:'55 g' }),
       ...PROCESOS.conservar(),
 
-      { t:'tip', tt:'Cómo sabés que te salió', c:'Miralo <b>de costado</b> antes de comerlo. Tienen que verse las capas apiladas, y al levantarlo deben caer hojuelas sueltas en la bandeja. <b>Si el costado se ve liso y compacto, el laminado falló</b> — casi siempre por mantequilla demasiado blanda o por haberse saltado un paso por la nevera.' },
+      { t:'tip', tt:'Cómo sabes que te salió', c:'Míralo <b>de costado</b> antes de comerlo. Tienen que verse las capas apiladas, y al levantarlo deben caer hojuelas sueltas en la bandeja. <b>Si el costado se ve liso y compacto, el laminado falló</b> — casi siempre por mantequilla demasiado blanda o por haberse saltado un paso por la nevera.' },
       { t:'nota', tt:'Volumen sobre margen', c:'Tiene el margen individual más bajo del catálogo pero <b>el volumen más alto</b>. La estrategia es producir en cantidad, no subir el precio unitario. Es el pan con el que se escala un negocio.' },
-      { t:'tip', tt:'Por qué conviene aprenderlo después del mil hojas', c:'Es la misma técnica con menos vueltas. Si primero peleás con el mil hojas, <b>el criollito te va a salir fácil</b> — y no al revés. El criollito parece simple pero no es un pan de principiante.' },
+      { t:'tip', tt:'Por qué conviene aprenderlo después del mil hojas', c:'Es la misma técnica con menos vueltas. Si primero peleas con el mil hojas, <b>el criollito te va a salir fácil</b> — y no al revés. El criollito parece simple pero no es un pan de principiante.' },
       { t:'ilustra', items:[['mantequilla','Mantequilla fría'],['tijeras','Corte de un golpe'],['huevo','Huevo solo arriba'],['horno','180 °C']] }
     ]
   },
@@ -1142,7 +1142,7 @@ window.MODULO_4 = {
         ['Dificultad','Muy alta']
       ]},
 
-      { t:'p', c:'Cuando lo dominás, es el producto que <b>ninguna panadería de tu ciudad puede igualar</b>. Es tu diferenciador máximo y el que convierte una panadería en destino: la gente maneja para venir a buscarlo.' },
+      { t:'p', c:'Cuando lo dominas, es el producto que <b>ninguna panadería de tu ciudad puede igualar</b>. Es tu diferenciador máximo y el que convierte una panadería en destino: la gente maneja para venir a buscarlo.' },
       { t:'p', c:'Es también <b>el más rentable del catálogo, con 70% de margen</b>, y la razón es simple: el valor está en la técnica, no en el ingrediente. Harina, mantequilla y tiempo.' },
 
       { t:'escala', titulo:'Los gramos, para la tanda que vayas a hacer',
@@ -1183,32 +1183,32 @@ window.MODULO_4 = {
 
       { t:'h', c:'Proceso 3 · A la nevera — 30 minutos' },
       { t:'pasos', items:[
-        'Aplastá la masa fermentada en un rectángulo y envolvela.',
+        'Aplasta la masa fermentada en un rectángulo y envolvela.',
         '<b>30 minutos de nevera.</b> Fría pero manejable, <b>no congelada</b>.',
-        'Sacá la mantequilla de laminar para que llegue a <b>13-15 °C</b>.'
+        'Saca la mantequilla de laminar para que llegue a <b>13-15 °C</b>.'
       ]},
-      { t:'nota', tt:'La mantequilla a 13-15 °C', c:'Es el punto exacto: <b>ni muy blanda</b> (se absorbe en la masa y no crea capas) <b>ni muy dura</b> (rompe el gluten al laminar). A esa temperatura se dobla sin romperse ni chorrear. Sacala de la nevera unos 15 minutos antes de usarla.' },
+      { t:'nota', tt:'La mantequilla a 13-15 °C', c:'Es el punto exacto: <b>ni muy blanda</b> (se absorbe en la masa y no crea capas) <b>ni muy dura</b> (rompe el gluten al laminar). A esa temperatura se dobla sin romperse ni chorrear. Sácala de la nevera unos 15 minutos antes de usarla.' },
 
       { t:'h', c:'Proceso 4 · Las tres vueltas — 90 minutos' },
       { t:'p', c:'Acá está el pan entero. <b>Tres vueltas</b>, cada una con 50 g de mantequilla y cada una seguida de 20 minutos de nevera. El frío entre vueltas no es opcional.' },
       { t:'pasos', items:[
-        '<b>Primera vuelta:</b> estirá en rectángulo, untá <b>50 g de mantequilla fría</b> en láminas, doblá en tres como una carta. <b>A la nevera, 20 minutos.</b>',
-        '<b>Segunda vuelta:</b> estirá otra vez, otros <b>50 g</b>, doblá en tres. <b>Nevera, 20 minutos.</b>',
-        '<b>Tercera vuelta:</b> los últimos <b>50 g</b>, doblá en tres. <b>Nevera, 20 minutos.</b>',
-        'Con tres vueltas ya tenés capas suficientes. Más vueltas no mejoran: <b>las capas se vuelven tan finas que se rompen</b> y el hojaldre se pierde.'
+        '<b>Primera vuelta:</b> estira en rectángulo, unta <b>50 g de mantequilla fría</b> en láminas, dobla en tres como una carta. <b>A la nevera, 20 minutos.</b>',
+        '<b>Segunda vuelta:</b> estira otra vez, otros <b>50 g</b>, dobla en tres. <b>Nevera, 20 minutos.</b>',
+        '<b>Tercera vuelta:</b> los últimos <b>50 g</b>, dobla en tres. <b>Nevera, 20 minutos.</b>',
+        'Con tres vueltas ya tienes capas suficientes. Más vueltas no mejoran: <b>las capas se vuelven tan finas que se rompen</b> y el hojaldre se pierde.'
       ]},
       { t:'seq', titulo:'Una vuelta, movimiento por movimiento', items:[
         ['tec-lamin-1','<b>1 · La mantequilla fría</b>, en láminas sobre la masa estirada.'],
         ['tec-lamin-2','<b>2 · Doblar en tres</b>, como una carta.'],
         ['tec-lamin-3','<b>3 · Estirar de nuevo</b>, ya frío, para la vuelta siguiente.'],
-        ['tec-lamin-4','<b>4 · Las capas.</b> Por el canto se ve todo lo que llevás construido.']
+        ['tec-lamin-4','<b>4 · Las capas.</b> Por el canto se ve todo lo que llevas construido.']
       ]},
 
       { t:'h', c:'Proceso 5 · Estirar y cortar — 10 minutos' },
       { t:'pasos', items:[
-        '<b>Estirá fino</b> — bastante más fino que el criollito. Acá se buscan muchas capas delgadas, no un bloque grueso.',
+        '<b>Estira fino</b> — bastante más fino que el criollito. Acá se buscan muchas capas delgadas, no un bloque grueso.',
         '<b>Cuchillo muy afilado, cortes limpios, sin arrastrar.</b> Arrastrar sella las capas y elimina el hojaldrado. Es el error número uno.',
-        'Acomodá las piezas en la bandeja separadas.'
+        'Acomoda las piezas en la bandeja separadas.'
       ]},
       { t:'seq', titulo:'El estirado final y el resultado', items:[
         ['form-milhojas-1','<b>Fino y parejo.</b> Mucho más fino que el criollito.'],
@@ -1227,8 +1227,8 @@ window.MODULO_4 = {
       ...PROCESOS.conservar(),
 
       { t:'tip', tt:'Por qué la temperatura más alta del catálogo', c:'El calor intenso <b>convierte el agua de la mantequilla en vapor instantáneo</b>, y ese vapor es lo que separa las capas. A temperatura baja las capas se funden entre sí en vez de separarse, y en lugar de hojaldre te queda un pan denso. Es el único pan del catálogo donde subir la temperatura es la técnica, no un riesgo.' },
-      { t:'p', c:'<b>No necesitás más recetas. Necesitás dominar estas.</b> Cubren todo el espectro del mercado: las que dan rotación diaria (criollito, camaleón), las que dan margen (mil hojas, trenzado) y las que abren clientela (acema, pan de queso).' },
-      { t:'nota', tt:'Antes de agregar un pan nuevo', c:'Preguntate cuál de estos doce todavía no vendés bien. <b>Casi siempre el crecimiento está en producir mejor lo que ya tenés</b>, no en sumar un producto más que nadie te pidió.' },
+      { t:'p', c:'<b>No necesitas más recetas. Necesitas dominar estas.</b> Cubren todo el espectro del mercado: las que dan rotación diaria (criollito, camaleón), las que dan margen (mil hojas, trenzado) y las que abren clientela (acema, pan de queso).' },
+      { t:'nota', tt:'Antes de agregar un pan nuevo', c:'Pregúntate cuál de estos doce todavía no vendes bien. <b>Casi siempre el crecimiento está en producir mejor lo que ya tienes</b>, no en sumar un producto más que nadie te pidió.' },
       { t:'sello', img:'pan', pie:'Doce recetas. Un negocio completo' }
     ]
   },
@@ -1295,10 +1295,10 @@ window.MODULO_4 = {
           { t:'h', c:'La noche anterior · El melado de papelón' },
           { t:'p', c:'Esto no se improvisa el mismo día: <b>el melado se prepara la noche anterior</b> para que esté frío y espeso cuando lo uses.' },
           { t:'pasos', items:[
-            'Rallá <b>300 g de papelón</b> y ponelo en una olla con <b>135 ml de agua</b>.',
-            'Agregá <b>una rama de canela</b> y una cucharada de <b>anís en semilla</b>.',
+            'Ralla <b>300 g de papelón</b> y ponlo en una olla con <b>135 ml de agua</b>.',
+            'Agrega <b>una rama de canela</b> y una cucharada de <b>anís en semilla</b>.',
             'Fuego bajo, revolviendo, hasta que el papelón se disuelva del todo y el líquido espese.',
-            'Colalo y dejalo <b>reposar toda la noche</b>. Al día siguiente estará espeso y listo para pintar.'
+            'Cuélalo y déjalo <b>reposar toda la noche</b>. Al día siguiente estará espeso y listo para pintar.'
           ]},
           { t:'seq', titulo:'El melado', items:[
             ['tec-melado','<b>Papelón, agua, canela en rama y anís.</b> Fuego bajo hasta que espese, y a reposar toda la noche.']
@@ -1308,11 +1308,11 @@ window.MODULO_4 = {
           titulo: 'Estirar, rellenar, enrollar y cortar — 20 minutos',
           p: 'El golfeado es un caracol como el de bocadillo, pero el relleno va <b>seco</b>: papelón rallado y queso, no una pasta.',
           pasos: [
-            'Estirá la masa en un rectángulo de <b>35 a 40 cm de largo por 25 a 30 cm de ancho</b>.',
-            'Repartí el <b>papelón rallado</b>, el <b>queso blanco rallado</b>, el <b>anís</b> y la <b>canela en polvo</b> sobre la masa.',
-            'Dejá libres <b>dos o tres dedos</b> en el borde de arriba: ahí es donde después sella.',
-            '<b>Enrollá apretado</b> desde el borde largo, con tensión pareja.',
-            'Sellá la costura y <b>cortá rodajas de 5 cm de ancho</b>.',
+            'Estira la masa en un rectángulo de <b>35 a 40 cm de largo por 25 a 30 cm de ancho</b>.',
+            'Reparte el <b>papelón rallado</b>, el <b>queso blanco rallado</b>, el <b>anís</b> y la <b>canela en polvo</b> sobre la masa.',
+            'Deja libres <b>dos o tres dedos</b> en el borde de arriba: ahí es donde después sella.',
+            '<b>Enrolla apretado</b> desde el borde largo, con tensión pareja.',
+            'Sella la costura y <b>corta rodajas de 5 cm de ancho</b>.',
             'Acomodalas acostadas en la bandeja, con la espiral hacia arriba.'
           ],
           seqTitulo: 'El golfeado, paso a paso',
@@ -1330,16 +1330,16 @@ window.MODULO_4 = {
           titulo: 'Tener el melado listo — 2 minutos',
           p: 'Acá no se pinta con huevo. <b>Se pinta con melado, y durante el horneado</b>, no antes.',
           pasos: [
-            'Sacá el melado de la noche anterior y tenelo al lado del horno, con una brocha.',
+            'Saca el melado de la noche anterior y tenelo al lado del horno, con una brocha.',
             'Los golfeados entran al horno <b>sin pintar</b>.'
           ]
         },
         horno: { temp:190, min:25, max:30, extra:[
-          '<b>Los primeros 10 minutos, tapá la bandeja</b> con papel aluminio: así el golfeado sube antes de que el papelón empiece a quemarse.',
-          '<b>Destapá y pintá con melado cada 5 minutos</b> hasta el final. Cada capa que agregás es una capa más de brillo.'
+          '<b>Los primeros 10 minutos, tapa la bandeja</b> con papel aluminio: así el golfeado sube antes de que el papelón empiece a quemarse.',
+          '<b>Destapa y pinta con melado cada 5 minutos</b> hasta el final. Cada capa que agregas es una capa más de brillo.'
         ]},
         trasHornear: [
-          { t:'nota', tt:'Se come tibio', c:'El golfeado <b>se sirve tibio, con el papelón todavía líquido</b>. Frío pierde la mitad de la gracia — y eso también manda sobre cómo lo vendés: horneá tandas chicas y seguidas, no una sola tanda grande a primera hora.' }
+          { t:'nota', tt:'Se come tibio', c:'El golfeado <b>se sirve tibio, con el papelón todavía líquido</b>. Frío pierde la mitad de la gracia — y eso también manda sobre cómo lo vendes: hornea tandas chicas y seguidas, no una sola tanda grande a primera hora.' }
         ]
       })
     ]
@@ -1369,7 +1369,7 @@ window.MODULO_4 = {
       { t:'nota', tt:'De dónde sale esta receta', c:'La quesadilla <b>no viene en el curso</b>. Está tomada del <b>Mapa de Panes Venezolanos</b>, que documenta la receta de <b>La Grita</b> — el pueblo tachirense de donde es originaria. Ahí dice textual: <i>«En La Grita se hace el disco y se pellizca cinco (5) veces»</i>. Los gramos originales son para 10 piezas; acá están escalados a kilo de harina.' },
 
       { t:'p', c:'Es de las piezas más representativas de la repostería criolla andina: masa tierna apenas perfumada, y en el centro una <b>crema de queso blanco con huevo y azúcar</b> que sube y se dora en el horno.' },
-      { t:'nota', tt:'Esta lleva levadura, no talvina', c:'A diferencia de los doce panes tachirenses del catálogo, <b>la quesadilla se hace con levadura</b>. Es otra familia: no es un pan de talvina, es repostería. Si querés hacerla con talvina, reemplazá los 10 g de levadura por 300 g de talvina activa y contá con que la fermentación se va a ir bastante más larga.' },
+      { t:'nota', tt:'Esta lleva levadura, no talvina', c:'A diferencia de los doce panes tachirenses del catálogo, <b>la quesadilla se hace con levadura</b>. Es otra familia: no es un pan de talvina, es repostería. Si quieres hacerla con talvina, reemplaza los 10 g de levadura por 300 g de talvina activa y cuenta con que la fermentación se va a ir bastante más larga.' },
 
       { t:'escala', titulo:'La masa, para la tanda que vayas a hacer',
         base:'1 kg de harina · 1.840 g de masa · 24 piezas de 76 g',
@@ -1414,8 +1414,8 @@ window.MODULO_4 = {
 
       { t:'h', c:'Proceso 1 · Preparar la crema de queso' },
       { t:'pasos', items:[
-        'Rallá el queso blanco fino.',
-        'Mezclalo con el <b>azúcar, la leche en polvo, el huevo, la miel y la vainilla</b> hasta formar una crema pareja.',
+        'Ralla el queso blanco fino.',
+        'Mézclalo con el <b>azúcar, la leche en polvo, el huevo, la miel y la vainilla</b> hasta formar una crema pareja.',
         'Tiene que quedar <b>cremosa pero no líquida</b>: si escurre, se sale del disco en el horno.'
       ]},
 
@@ -1424,9 +1424,9 @@ window.MODULO_4 = {
 
       { t:'h', c:'Proceso 3 · Dividir y preformar — 20 minutos' },
       { t:'pasos', items:[
-        'Dividí en piezas de <b>76 g</b>, con báscula.',
-        'Boleá cada una <b>sin apretar</b>, con la mano ahuecada.',
-        'Cubrilas y dejalas <b>10 minutos</b>, hasta que estén relajadas y no se encojan al estirarlas.'
+        'Divide en piezas de <b>76 g</b>, con báscula.',
+        'Bolea cada una <b>sin apretar</b>, con la mano ahuecada.',
+        'Cúbrelas y déjalas <b>10 minutos</b>, hasta que estén relajadas y no se encojan al estirarlas.'
       ]},
       { t:'seq', titulo:'El preformado', items:[
         ['tec-bolleo-1','<b>La cúpula.</b> La mano ahuecada encima.'],
@@ -1436,25 +1436,25 @@ window.MODULO_4 = {
       { t:'h', c:'Proceso 4 · El disco, la baranda y los cinco pellizcos — 15 minutos' },
       { t:'p', c:'Acá está toda la identidad de la pieza. Y el número no es decorativo: <b>en La Grita son cinco pellizcos</b>, ni cuatro ni seis.' },
       { t:'pasos', items:[
-        '<b>Estirá cada bolita con rodillo</b> hasta dejarla como un disco fino, de menos de 1 cm.',
-        'Pasala a la bandeja.',
-        '<b>Presioná el centro con los dedos</b>, dejando un borde levantado alrededor: eso es la <b>baranda</b>, y es lo que después contiene el queso.',
-        'Poné <b>55 g de la crema de queso</b> en el hueco del centro.',
-        '<b>Hacé cinco pellizcos</b> en el borde, repartidos alrededor. Al hornearse abren y arman la forma de estrella.',
+        '<b>Estira cada bolita con rodillo</b> hasta dejarla como un disco fino, de menos de 1 cm.',
+        'Pásala a la bandeja.',
+        '<b>Presiona el centro con los dedos</b>, dejando un borde levantado alrededor: eso es la <b>baranda</b>, y es lo que después contiene el queso.',
+        'Pon <b>55 g de la crema de queso</b> en el hueco del centro.',
+        '<b>Haz cinco pellizcos</b> en el borde, repartidos alrededor. Al hornearse abren y arman la forma de estrella.',
         'Opcional: una franja de <b>bocadillo o jalea de guayaba</b> al lado del queso.'
       ]},
       { t:'seq', titulo:'La quesadilla, movimiento por movimiento', items:[
         ['form-quesadilla-1','<b>1 · El disco.</b> Estirado con rodillo, fino y parejo.'],
-        ['form-quesadilla-2','<b>2 · La baranda.</b> Presionás el centro y dejás el borde levantado.'],
+        ['form-quesadilla-2','<b>2 · La baranda.</b> Presionas el centro y dejas el borde levantado.'],
         ['form-quesadilla-3','<b>3 · La crema.</b> 55 g en el hueco del centro.'],
         ['form-quesadilla-4','<b>4 · Los cinco pellizcos.</b> Repartidos en el borde. Cinco, no cuatro.']
       ]},
 
       { t:'h', c:'Proceso 5 · Fermentación final — 90 minutos' },
       { t:'pasos', items:[
-        'Cubrí las bandejas sin que el paño toque la crema.',
+        'Cubre las bandejas sin que el paño toque la crema.',
         '<b>90 minutos</b>, con el ambiente entre <b>22 y 26 °C</b>.',
-        'Precalentá el horno en la última media hora.'
+        'Precalienta el horno en la última media hora.'
       ]},
 
       ...PROCESOS.hornear({ temp:180, min:20, max:20, pieza:'76 g' }),
@@ -1520,20 +1520,20 @@ window.MODULO_4 = {
 
       { t:'h', c:'Proceso 3 · Dividir y preformar — 20 minutos' },
       { t:'pasos', items:[
-        'Dividí en piezas de <b>31 g</b>, con báscula. Son chicas: a ojo salen dispares y se nota mucho.',
-        'Boleá cada una sin apretar.',
-        'Cubrilas <b>10 minutos</b> hasta que se relajen.'
+        'Divide en piezas de <b>31 g</b>, con báscula. Son chicas: a ojo salen dispares y se nota mucho.',
+        'Bolea cada una sin apretar.',
+        'Cúbrelas <b>10 minutos</b> hasta que se relajen.'
       ]},
 
       { t:'h', c:'Proceso 4 · El formado "como cuaderno" — 15 minutos' },
       { t:'p', c:'La forma es de <b>aceituna</b>: gorda en el centro y afinada en las puntas. Se consigue con un doblado en dos tiempos, no boleando.',
       },
       { t:'pasos', items:[
-        'Aplaná cada bolita en un <b>círculo de unos 10 cm</b>.',
-        '<b>Doblá la parte de arriba hacia el centro</b> y cerrá el borde con los dedos, presionando.',
-        '<b>Doblá la parte de abajo hacia el centro</b> y cerrá otra vez.',
-        '<b>Uní los dos lados</b> y sellá a lo largo.',
-        'Rodá apenas con las palmas para afinar las puntas. El centro queda más gordo: esa es la forma de aceituna.'
+        'Aplana cada bolita en un <b>círculo de unos 10 cm</b>.',
+        '<b>Dobla la parte de arriba hacia el centro</b> y cierra el borde con los dedos, presionando.',
+        '<b>Dobla la parte de abajo hacia el centro</b> y cierra otra vez.',
+        '<b>Uní los dos lados</b> y sella a lo largo.',
+        'Rueda apenas con las palmas para afinar las puntas. El centro queda más gordo: esa es la forma de aceituna.'
       ]},
       { t:'seq', titulo:'El doblado, paso a paso', items:[
         ['form-banquete-1','<b>1 · El círculo.</b> Aplanado, de unos 10 cm.'],
@@ -1552,7 +1552,7 @@ window.MODULO_4 = {
       ...PROCESOS.hornear({ temp:180, min:15, max:20, pieza:'31 g' }),
       ...PROCESOS.conservar(),
 
-      { t:'nota', tt:'No los dores de más', c:'Es el error más común con este pan: <b>si se doran demasiado quedan secos</b>. Son piezas chicas y se pasan rápido. Sacalos apenas tomen color, y dejalos enfriar <b>al menos 20 minutos</b> antes de embolsar.' },
+      { t:'nota', tt:'No los dores de más', c:'Es el error más común con este pan: <b>si se doran demasiado quedan secos</b>. Son piezas chicas y se pasan rápido. Sacalos apenas tomen color, y déjalos enfriar <b>al menos 20 minutos</b> antes de embolsar.' },
       { t:'tip', tt:'Las zonas blancas no son un defecto', c:'Los costados pálidos son donde se despegaron unos de otros al salir del horno. <b>Eso es la señal de que se hornearon juntos</b>, que es como corresponde en este pan.' }
     ]
   },
@@ -1611,17 +1611,17 @@ window.MODULO_4 = {
 
       { t:'h', c:'Proceso 3 · Dividir y preformar — 20 minutos' },
       { t:'pasos', items:[
-        'Dividí en piezas de <b>474 g</b>, con báscula.',
-        'Preformá en bola suave, sin tensión.',
-        'Cubrí y dejá <b>10 minutos</b> hasta que se relajen.'
+        'Divide en piezas de <b>474 g</b>, con báscula.',
+        'Preforma en bola suave, sin tensión.',
+        'Cubre y deja <b>10 minutos</b> hasta que se relajen.'
       ]},
 
       { t:'h', c:'Proceso 4 · Formar — 10 minutos' },
       { t:'p', c:'Este pan no lleva molde ni relleno: <b>toda su forma la sostiene la tensión de la superficie</b>. Si la tensión es floja, se desparrama en la bandeja.' },
       { t:'pasos', items:[
-        '<b>Para hogaza:</b> boleá generando tensión, girando la masa contra la mesa hasta que la superficie quede tirante.',
-        '<b>Para barra:</b> estirá en rectángulo con el rodillo y enrollá apretado, sellando la costura.',
-        'Poné en bandeja y cubrí.'
+        '<b>Para hogaza:</b> bolea generando tensión, girando la masa contra la mesa hasta que la superficie quede tirante.',
+        '<b>Para barra:</b> estira en rectángulo con el rodillo y enrolla apretado, sellando la costura.',
+        'Pon en bandeja y cubre.'
       ]},
       { t:'seq', titulo:'El formado', items:[
         ['form-espanol-1','<b>Tensión en la superficie.</b> Es lo único que sostiene la forma.']
@@ -1629,14 +1629,14 @@ window.MODULO_4 = {
 
       { t:'h', c:'Proceso 5 · Maduración — 2 h 30 a 3 h' },
       { t:'pasos', items:[
-        'Dejá los panes cubiertos <b>hasta que dupliquen</b> — dos horas y media a tres, según la temperatura del día.',
-        '<b>Precalentá el horno a 240 °C</b> con una bandeja metálica vacía en el piso del horno. Va a servir para el vapor.'
+        'Deja los panes cubiertos <b>hasta que dupliquen</b> — dos horas y media a tres, según la temperatura del día.',
+        '<b>Precalienta el horno a 240 °C</b> con una bandeja metálica vacía en el piso del horno. Va a servir para el vapor.'
       ]},
 
       { t:'h', c:'Proceso 6 · Rociar y cortar — 5 minutos' },
       { t:'pasos', items:[
-        '<b>Rociá agua</b> sobre cada pan con un pulverizador.',
-        'Hacé <b>tres cortes en la dirección del pan</b>, y que cada corte <b>se solape un tercio con el anterior</b>.',
+        '<b>Rocía agua</b> sobre cada pan con un pulverizador.',
+        'Haz <b>tres cortes en la dirección del pan</b>, y que cada corte <b>se solape un tercio con el anterior</b>.',
         '<b>Nunca cortes transversales</b> que atraviesen el pan de lado a lado: ahí se abre mal y pierde la forma.'
       ]},
       { t:'seq', titulo:'Los cortes solapados', items:[
@@ -1646,10 +1646,10 @@ window.MODULO_4 = {
       { t:'h', c:'Proceso 7 · El vapor — los primeros 10 minutos' },
       { t:'p', c:'Acá está la diferencia entre este pan y todos los demás del catálogo. <b>Sin vapor no hay costra.</b>' },
       { t:'pasos', items:[
-        '<b>Bajá el horno a 220 °C</b> y meté la bandeja de panes.',
-        '<b>Tirá tres hielos en la bandeja del piso</b> y cerrá la puerta rápido.',
-        'Dejá el vapor adentro <b>10 minutos</b>. El vapor mantiene la superficie húmeda para que el pan siga creciendo antes de que se forme la costra.',
-        '<b>Abrí con cuidado y dejá escapar el vapor.</b> Bajá a <b>180 °C</b>.'
+        '<b>Baja el horno a 220 °C</b> y mete la bandeja de panes.',
+        '<b>Tira tres hielos en la bandeja del piso</b> y cierra la puerta rápido.',
+        'Deja el vapor adentro <b>10 minutos</b>. El vapor mantiene la superficie húmeda para que el pan siga creciendo antes de que se forme la costra.',
+        '<b>Abre con cuidado y deja escapar el vapor.</b> Baja a <b>180 °C</b>.'
       ]},
       { t:'seq', titulo:'El vapor', items:[
         ['form-espanol-3','<b>Agua en la bandeja del piso.</b> Diez minutos de vapor, y después se libera.']
@@ -1663,7 +1663,7 @@ window.MODULO_4 = {
 
       ...PROCESOS.conservar(),
 
-      { t:'nota', tt:'Dejalo enfriar una hora entera', c:'Con este pan el enfriado <b>es parte de la cocción</b>: la miga termina de asentarse fuera del horno. Si lo cortás caliente, se apelmaza. Una hora en rejilla, mínimo.' }
+      { t:'nota', tt:'Déjalo enfriar una hora entera', c:'Con este pan el enfriado <b>es parte de la cocción</b>: la miga termina de asentarse fuera del horno. Si lo cortas caliente, se apelmaza. Una hora en rejilla, mínimo.' }
     ]
   }
 
