@@ -276,6 +276,55 @@ window.CIUDAD = {
   },
 
   /* ════════ 5 ════════ */
+  { tipo:'largo', titulo:'El horno de tu casa',
+    lede:'Lo que hace la diferencia entre pan de casa y pan de panadería.',
+    bloques:[
+      { t:'p', c:'Estas cuatro masas están pensadas para un horno de cocina, no para uno de piso. Pero hay <b>tres cosas</b> que un horno de panadería hace solo y en el tuyo hay que provocar. Si haces estas tres, tu pan no se distingue del de un local.' },
+
+      { t:'h', c:'Uno · El vapor, y por qué al principio' },
+      { t:'p', c:'El pan hace casi todo su crecimiento en los <b>primeros minutos</b>, mientras el gas empuja hacia arriba. El vapor mantiene la corteza blanda justo en esa ventana, para que la masa siga subiendo en vez de encontrarse una pared.' },
+      { t:'nota', tt:'La regla que casi nadie respeta', c:'El vapor va <b>al principio y se saca</b>. Si lo dejas todo el horneado, la humedad queda alrededor del pan después de que terminó de crecer y la corteza no cristaliza: te queda pálida y correosa. <b>Empieza húmedo, termina seco.</b>' },
+      { t:'lista', items:[
+        '<b>La bandeja.</b> Una bandeja de metal vacía en el piso del horno desde que precalienta. Al meter el pan, media taza de agua hirviendo adentro y cierras rápido.',
+        '<b>La olla.</b> Para la hogaza: olla de hierro con tapa, precalentada. La masa suelta su propia humedad y queda atrapada. Es vapor gratis y el más parejo de los tres.',
+        '<b>El rociador.</b> El más flojo, pero sirve si no tienes lo otro: tres rociadas a las paredes del horno al meter el pan, y otra vez al minuto.'
+      ]},
+      { t:'tip', tt:'Cuidado con el vidrio', c:'El agua hirviendo nunca va sobre el vidrio de la puerta ni sobre una bandeja de vidrio: el choque térmico lo revienta. Solo metal, y abajo.' },
+
+      { t:'h', c:'Dos · El corte, que no es decoración' },
+      { t:'p', c:'El corte decide <b>por dónde se abre el pan</b>. Si no cortas, se rompe por donde puede, casi siempre por un costado y feo. Si cortas bien, se abre por donde vos quisiste y sube más.' },
+      { t:'tabla', cols:['Qué','El número','Por qué'], filas:[
+        ['Profundidad','<b>3 a 6 mm</b>','Más superficial no dirige nada; más profundo desinfla la pieza'],
+        ['Ángulo de la hoja','<b>10° a 25°</b>, casi acostada','Es lo que levanta la "oreja", esa cresta que se despega'],
+        ['Filo','Hoja de afeitar o cuchilla nueva','Una hoja gastada arrastra la masa en vez de cortarla'],
+        ['Velocidad','Un solo movimiento decidido','Dudar a mitad de corte deforma la pieza']
+      ]},
+      { t:'nota', tt:'Cuánto pesa el corte', c:'Los cortes hechos a esos números <b>dirigen entre el 80% y el 90% del crecimiento del horno</b> hacia esas líneas — está medido por <b>Modernist Cuisine</b>. Pero ojo con el reparto: el 90% del resultado lo decide el estado de la masa; el corte y el vapor son el 10% que termina de definir. <b>Un corte perfecto no arregla una fermentación mala.</b>' },
+      { t:'tip', tt:'Si la hoja se pega', c:'Casi siempre es una de tres: masa sobrefermentada, hoja gastada, o cortaste despacio. Mojar la hoja con agua o aceite ayuda a que deslice.' },
+
+      { t:'h', c:'Tres · Las temperaturas, y cuándo está listo' },
+      { t:'p', c:'La regla profesional es <b>arrancar caliente y bajar</b>: el golpe inicial da el crecimiento, y la temperatura más baja termina de cocinar el centro sin quemar la corteza.' },
+      { t:'tabla', cols:['Masa','Primeros minutos','Después','Total'], filas:[
+        ['Magra (baguette)','250 °C con vapor, 15 min','230 °C sin vapor','25 a 27 min'],
+        ['Mojada (ciabatta)','240 °C con vapor, 15 min','230 °C sin vapor','25 min'],
+        ['Con aceite (focaccia)','230 °C, sin vapor','—','20 a 25 min'],
+        ['Larga (hogaza)','250 °C tapada, 20 min','230 °C destapada','45 min']
+      ]},
+      { t:'nota', tt:'El número que no miente', c:'La temperatura <b>adentro</b> del pan. El umbral mínimo de cocido es <b>88 °C</b>, pero eso alcanza para panes con leche, huevo o mantequilla. <b>Estas cuatro masas son magras y quieren 96 a 98 °C</b>: por debajo, la miga queda gomosa aunque la corteza se vea perfecta. Un termómetro de pincho cuesta poco y es lo que más rápido te mejora el pan.' },
+      { t:'tip', tt:'Si tu horno no marca grados', c:'Riega una cucharada de harina en una bandeja y métela con el horno prendido en el punto medio. Si se dora en <b>1 minuto justo</b>, estás en 180 °C. En 30 segundos, pasaste los 220 °C. Marcá esa posición de la perilla con un plumón: esa marca es tuya para siempre.' },
+
+      { t:'h', c:'Los tres secretos que no están en las recetas' },
+      { t:'lista', items:[
+        '<b>El horno miente y siempre para abajo.</b> Precalienta 20 minutos más de lo que crees, aunque la lucecita ya se haya apagado. La lucecita mide el aire; vos necesitas que estén calientes las paredes y la bandeja.',
+        '<b>El pan se sigue cocinando fuera del horno.</b> No lo cortes caliente: la miga todavía está terminando de asentar y si lo abres se apelmaza. <b>Una hora sobre rejilla</b>, nunca sobre un plato — abajo necesita aire o se humedece.',
+        '<b>La masa fría se hornea fría.</b> La hogaza sale de la nevera y va directo al horno. Esperar a que "se temple" es perder la ventaja: <b>la masa fría aguanta más antes de que se le forme la corteza</b>, y por eso crece más.'
+      ]},
+      { t:'ilustra', items:[['horno','Precalienta de más'],['termometro','96 a 98 adentro'],['reloj','Y no lo cortes caliente']] },
+      { t:'nota', tt:'De dónde salen estos números', c:'Profundidad de 3 a 6 mm y ángulo de 10° a 25° dirigiendo el 80-90% del crecimiento: medición de <b>Modernist Cuisine</b>. El arranque a 250 °C bajando a 230 °C y la regla de vapor al principio: <b>The Perfect Loaf</b> (hornear con vapor en horno de casa). El umbral de 88 °C de cocido y el rango alto para masas magras: mismas fuentes.' }
+    ]
+  },
+
+  /* ════════ 6 ════════ */
   { tipo:'largo', titulo:'Cuáles se cobran más caro',
     lede:'Ahí está el negocio, y no es donde uno cree.',
     bloques:[
@@ -299,6 +348,49 @@ window.CIUDAD = {
       ]},
       { t:'tip', tt:'Empieza por una', c:'No arranques con las cuatro. <b>Elige la focaccia</b>: no hay que formar nada, perdona el horno y es la que mejor se cobra. Cuando esa te salga sin pensar, sumas la mojada.' },
       { t:'ilustra', items:[['horno','Una horneada'],['tijeras','Doce cortes'],['pan','Doce precios']] }
+    ]
+  },
+
+  /* ════════ 7 ════════ */
+  { tipo:'largo', titulo:'Conservar, recuperar y no perder plata',
+    lede:'El pan que sobra no es pérdida si sabés qué hacer con él.',
+    bloques:[
+      { t:'p', c:'El pan magro <b>se pone duro en un día</b>. Eso no es un defecto, es lo que es: sin grasa ni azúcar que retengan humedad, el almidón se reordena y endurece. El que vende pan y no sabe esto pierde plata todos los días.' },
+
+      { t:'h', c:'Cuánto dura cada una' },
+      { t:'tabla', cols:['Masa','Dura bien','Por qué'], filas:[
+        ['Magra (baguette)','<b>El mismo día</b>','Sin grasa. A las 12 horas ya no es la misma'],
+        ['Mojada (ciabatta)','1 a 2 días','Tanta agua le da margen'],
+        ['Con aceite (focaccia)','<b>2 a 3 días</b>','El aceite retiene humedad. La que más aguanta'],
+        ['Larga (hogaza)','<b>3 a 4 días</b>','La fermentación larga y la corteza gruesa la protegen']
+      ]},
+      { t:'nota', tt:'Nunca en la nevera', c:'La nevera es lo <b>peor</b> que le podés hacer al pan: entre 0 y 8 °C el almidón se endurece más rápido que a temperatura ambiente. Un pan en la nevera envejece en un día lo que en la mesa en tres. <b>O afuera, o congelado.</b> El punto del medio lo mata.' },
+
+      { t:'h', c:'Congelar bien' },
+      { t:'lista', items:[
+        '<b>Se congela el mismo día</b>, apenas se enfría. No cuando ya empezó a ponerse duro: el frío no revierte, solo detiene.',
+        '<b>Entero, no rebanado</b>, salvo el pan de molde. Menos superficie expuesta es menos hielo.',
+        '<b>Bolsa apretada</b>, sacándole todo el aire.',
+        '<b>Para recuperar:</b> directo del congelador al horno a 200 °C, 10 a 12 minutos. Sale <b>como recién hecho</b>, no "descongelado".'
+      ]},
+
+      { t:'h', c:'Qué hacer con el del día anterior' },
+      { t:'tabla', cols:['Lo que sobró','En qué se convierte','Cómo se cobra'], filas:[
+        ['Baguette dura','Crostini: rebanada fina, aceite, 160 °C hasta dorar','Por bolsa, y no lleva harina nueva'],
+        ['Ciabatta dura','Pan rallado, o cubos para ensalada','Insumo propio: dejás de comprarlo'],
+        ['Focaccia del día anterior','Se recalienta 5 min a 180 °C y vuelve a estar tierna','Al mismo precio'],
+        ['Hogaza dura','Tostadas gruesas para picada, o pan rallado','Se vende como producto aparte']
+      ]},
+      { t:'nota', tt:'La cuenta que cambia el negocio', c:'El pan del día anterior <b>ya está pago</b>: la harina, el gas y tu tiempo se gastaron ayer. Todo lo que le saques hoy es margen limpio. Las panaderías que ganan plata no son las que no les sobra pan — son las que <b>tienen a dónde mandarlo</b>.' },
+
+      { t:'h', c:'Cómo se arranca a vender' },
+      { t:'lista', items:[
+        '<b>Una sola masa, tres productos.</b> Focaccia clásica, focaccia rellena y pizza al taglio salen todas de la misma bandeja. Tres precios distintos, un amasado.',
+        '<b>Encargue antes que mostrador.</b> Horneás lo vendido, no lo que esperás vender. Sin sobrante no hay pérdida mientras aprendés cuánto se mueve.',
+        '<b>El pan magro se hornea para la hora.</b> La baguette se vende caliente o no se vende: sacala una hora antes de que pase tu cliente, no a las siete de la mañana.',
+        '<b>La hogaza es la que te compra el que compra caro.</b> Es la que se lleva quien busca pan de verdad, y la que menos trabajo activo te da porque duerme en la nevera.'
+      ]},
+      { t:'tip', tt:'Antes de poner precio', c:'Sacá el costo real por unidad con la <b>calculadora de costo por pan</b> que ya tenés en Herramientas. Poné lo que pagás vos por la harina donde vivís, no lo que dice ninguna receta.' }
     ]
   }
 
