@@ -988,29 +988,30 @@ svg .trazado{stroke-dasharray:var(--l);stroke-dashoffset:var(--l);
 <!-- La versión del enlace obliga al navegador a bajar los archivos
      nuevos. Sin esto, el que ya abrió la app antes se queda con los
      viejos en caché y ve la app a medias. Se cambia en cada publicación. -->
-<script src="dibujos.js?v=202608062015"></script>
+<script src="dibujos.js?v=202608062346"></script>
 <!-- Los procesos comunes a los 12 panes. Va ANTES de los contenido-*,
      porque las recetas los invocan al construirse. -->
-<script src="procesos.js?v=202608062015"></script>
-<script src="ayuda.js?v=202608062015"></script>
-<script src="contenido-regalo-1.js?v=202608062015"></script>
-<script src="contenido-regalo-2.js?v=202608062015"></script>
-<script src="contenido-regalo-3.js?v=202608062015"></script>
-<script src="contenido-regalo-4.js?v=202608062015"></script>
-<script src="contenido-regalo-5.js?v=202608062015"></script>
-<script src="contenido-modulo-1.js?v=202608062015"></script>
-<script src="contenido-modulo-2.js?v=202608062015"></script>
-<script src="contenido-modulo-3.js?v=202608062015"></script>
-<script src="contenido-modulo-4.js?v=202608062015"></script>
-<script src="contenido-modulo-5.js?v=202608062015"></script>
-<script src="contenido-modulo-6.js?v=202608062015"></script>
-<script src="calculadora.js?v=202608062015"></script>
-<script src="talvina.js?v=202608062015"></script>
-<script src="panes.js?v=202608062015"></script>
-<script src="fichas.js?v=202608062015"></script>
-<script src="contenido-napa.js?v=202608062015"></script>
-<script src="contenido-ciudad.js?v=202608062015"></script>
-<script src="ronald.js?v=202608062015"></script>
+<script src="procesos.js?v=202608062346"></script>
+<script src="ayuda.js?v=202608062346"></script>
+<script src="contenido-regalo-1.js?v=202608062346"></script>
+<script src="contenido-regalo-2.js?v=202608062346"></script>
+<script src="contenido-regalo-3.js?v=202608062346"></script>
+<script src="contenido-regalo-4.js?v=202608062346"></script>
+<script src="contenido-regalo-5.js?v=202608062346"></script>
+<script src="contenido-modulo-1.js?v=202608062346"></script>
+<script src="contenido-modulo-2.js?v=202608062346"></script>
+<script src="contenido-modulo-3.js?v=202608062346"></script>
+<script src="contenido-modulo-4.js?v=202608062346"></script>
+<script src="contenido-modulo-5.js?v=202608062346"></script>
+<script src="contenido-modulo-6.js?v=202608062346"></script>
+<script src="calculadora.js?v=202608062346"></script>
+<script src="talvina.js?v=202608062346"></script>
+<script src="panes.js?v=202608062346"></script>
+<script src="fichas.js?v=202608062346"></script>
+<script src="contenido-napa.js?v=202608062346"></script>
+<script src="contenido-ciudad.js?v=202608062346"></script>
+<script src="contenido-dulceria.js?v=202608062346"></script>
+<script src="ronald.js?v=202608062346"></script>
 <script>
 /* ══ Catálogo ══ */
 const MODULOS = [
@@ -1037,6 +1038,7 @@ const REGALOS = [
    dejar un botón muerto. */
 const URL_OTO1 = '';
 const URL_OTO2 = '';
+const URL_OTO3 = '';
 
 const UPSELL = [
   /* El libro son las 4 masas (contenido-ciudad.js). La ñapa —la guía de la
@@ -1065,7 +1067,18 @@ const UPSELL = [
    aclara:'<b>Esto no venía con tu compra, y no te falta nada.</b> Todas las recetas '+
      'están abiertas en la pantalla anterior y ahí se quedan. Esto es otra cosa: alguien '+
      'a quien preguntarle un domingo a las seis de la mañana, cuando la masa no sube y '+
-     'no hay a quién llamar.'}
+     'no hay a quién llamar.'},
+
+  /* La otra mitad de la panadería. Todo lo que el comprador tiene hasta acá
+     es pan o salado; la vitrina dulce no está por ningún lado. Mismo molde
+     que el OTO1: seis bases en vez de cuatro masas. */
+  {id:'o3',col:'#8a4a2f', n:'La Dulcería Criolla', img:'mockup-dulceria',
+   meta:'No viene con tu compra', codigo:'VITRINA', datos:window.DULCERIA,
+   gancho:'El pan te cubre los costos fijos. La vitrina dulce es la que te paga a ti.',
+   precio:'$27', url:URL_OTO3, kick:'Curso aparte',
+   aclara:'<b>Esto no venía con tu compra, y no te falta nada.</b> El curso que pagaste '+
+     'está completo. Esto es la otra mitad del oficio: los dulces criollos que ninguna '+
+     'panadería de tu ciudad está haciendo, y que son los que dejan margen de verdad.'}
 ];
 
 /* Se cablea aparte y no dentro del objeto: si ronald.js no cargara,
